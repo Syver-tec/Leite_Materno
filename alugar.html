@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <title>Kreed Bakery</title>
+    <link rel="stylesheet" href="/Leite_Materno/styles/alugar.css">
+    <link rel="stylesheet" href="/Leite_Materno/styles/footer.css">
+    <link rel="stylesheet" href="/Leite_Materno/styles/header.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container header-flex">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="/Leite_Materno/imgs/Logo.png" alt="Leite Materno">
+            </a>
+
+            <!-- MENU -->
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="alugar.html">Alugar</a>
+                <a href="comprar.html">Comprar</a>
+                <a href="contato.html">Contato</a>
+
+                <!-- Botão no mobile -->
+                <a href="login.html" class="btn-mobile">Entrar</a>
+            </nav>
+
+            <!-- DIREITA -->
+            <div class="nav-right">
+
+                <!-- CARRINHO (abre drawer) -->
+                <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
+                    <span class="valor">R$0,00</span>
+                    <div class="cart-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+
+                <!-- REDES SOCIAIS -->
+                <div class="redes">
+                    <a href="https://facebook.com" target="_blank" class="social" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" class="social" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Botão no desktop -->
+                <a href="login.html" class="btn-desktop">Entrar</a>
+
+                <!-- MENU HAMBURGUER -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- PRODUTOS -->
+    <section class="produtos-grid">
+        <h2 class="titulo-produtos">Todos os Produtos</h2>
+
+        <div class="grid">
+
+            <button class="card-produto" data-img="imgs/alugar/freestyle-duplo.jpg"" data-titulo=" Free Style – Duplo"
+                data-categorias="Alugar, Duplo" data-preco="R$160,00 – R$240,00"
+                data-desc="Portátil, bateria recarregável e extração dupla para mais praticidade.">
+                <img src="imgs/alugar/freestyle-duplo.jpg" alt="">
+                <h3>Free Style – Duplo</h3>
+                <p class="preco">R$160,00–R$240,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/freestyle-single.png" data-titulo="Free Style – Single"
+                data-categorias="Alugar, Single" data-preco="R$120,00 – R$200,00"
+                data-desc="Compacto e leve, ideal para uso diário com extração simples.">
+                <img src="imgs/alugar/freestyle-single.png" alt="">
+                <h3>Free Style – Single</h3>
+                <p class="preco">R$120,00–R$200,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/lactina-duplo.jpg" data-titulo="Lactina – Duplo"
+                data-categorias="Alugar, Duplo" data-preco="R$290,00 – R$440,00"
+                data-desc="Alta performance para extração dupla com maior eficiência.">
+                <img src="imgs/alugar/lactina-duplo.jpg" alt="">
+                <h3>Lactina – Duplo</h3>
+                <p class="preco">R$290,00–R$440,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/lactina-single.jpg" data-titulo="Lactina – Single"
+                data-categorias="Alugar, Single" data-preco="R$250,00 – R$400,00"
+                data-desc="Modelo robusto e confiável para extração simples.">
+                <img src="imgs/alugar/lactina-single.jpg" alt="">
+                <h3>Lactina – Single</h3>
+                <p class="preco">R$250,00–R$400,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/pumpstyle-duplo.png" data-titulo="Pump Style – Duplo"
+                data-categorias="Alugar, Duplo" data-preco="R$155,00 – R$215,00"
+                data-desc="Prático, acompanha bolsa e acessórios para extração dupla.">
+                <img src="imgs/alugar/pumpstyle-duplo.png" alt="">
+                <h3>Pump Style – Duplo</h3>
+                <p class="preco">R$155,00–R$215,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/pumpstyle-single.png" data-titulo="Pump Style – Single"
+                data-categorias="Alugar, Single" data-preco="R$115,00 – R$175,00"
+                data-desc="Versão simples com kit prático para o dia a dia.">
+                <img src="imgs/alugar/pumpstyle-single.png" alt="">
+                <h3>Pump Style – Single</h3>
+                <p class="preco">R$115,00–R$175,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/swing-single.png" data-titulo="Swing – Single"
+                data-categorias="Alugar, Single" data-preco="R$95,00 – R$115,00"
+                data-desc="Compacto, silencioso e simples de usar para extração única.">
+                <img src="imgs/alugar/swing-single.png" alt="">
+                <h3>Swing – Single</h3>
+                <p class="preco">R$95,00–R$115,00</p>
+            </button>
+
+            <button class="card-produto" data-img="imgs/alugar/symphony-duplo.png" data-titulo="Symphony – Duplo"
+                data-categorias="Alugar, Duplo" data-preco="R$850,00 – R$1.600,00"
+                data-desc="Equipamento premium hospitalar com alta eficiência para extração dupla.">
+                <img src="imgs/alugar/symphony-duplo.png" alt="">
+                <h3>Symphony – Duplo</h3>
+                <p class="preco">R$850,00–R$1.600,00</p>
+            </button>
+
+        </div>
+    </section>
+
+
+    <!-- MODAL (fica separado) -->
+    <div class="produto-modal" id="modal-produto" aria-hidden="true">
+        <div class="produto-modal-overlay" data-close="true"></div>
+
+        <div class="produto-modal-box">
+            <button class="produto-modal-close" id="modal-close">&times;</button>
+
+            <div class="modal-topo">
+                <div class="modal-img-area">
+                    <img id="m-img" src="" alt="">
+                </div>
+
+                <div class="modal-info">
+                    <h2 id="m-titulo"></h2>
+                    <p>Categorias: <span id="m-categorias"></span></p>
+                    <p id="m-desc"></p>
+
+                    <p class="m-preco">A partir de: <span id="m-preco"></span></p>
+
+                    <div class="m-compra">
+                        <label class="m-label">
+                            Período de Locação
+                            <select class="m-select" id="m-periodo">
+                                <option value="">Escolha uma opção</option>
+                                <option value="15">15 dias</option>
+                                <option value="30">30 dias</option>
+                            </select>
+                        </label>
+
+                        <div class="m-linha">
+                            <input class="m-qty" id="m-qty" type="number" min="1" value="1">
+                            <button class="m-btn" id="m-add">ADICIONAR AO CARRINHO</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DRAWER (fora do modal!) -->
+    <div class="drawer" id="drawer-cart" aria-hidden="true">
+        <div class="drawer-overlay" data-close-cart="true"></div>
+
+        <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Carrinho">
+            <div class="drawer-header">
+                <h3>Seu carrinho</h3>
+                <button class="drawer-close" id="drawer-close" aria-label="Fechar">&times;</button>
+            </div>
+
+            <div class="drawer-body" id="drawer-items"></div>
+
+            <div class="drawer-footer">
+                <div class="drawer-total">
+                    <span>Total</span>
+                    <strong id="drawer-total">R$0,00</strong>
+                </div>
+
+                <div class="drawer-actions">
+                    <button class="drawer-btn outline" id="drawer-clear">Limpar</button>
+                    <button class="drawer-btn" id="drawer-checkout">Finalizar</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <footer class="footer-leite">
+        <div class="container">
+            <div class="row">
+
+                <!-- LOGO -->
+                <div class="col-md-4">
+                    <img src="/Leite_Materno/imgs/Logo.png" class="footer-logo">
+
+                </div>
+
+                <!-- ENDEREÇO -->
+                <div class="col-md-3">
+                    <h5 class="footer-title">Onde nos encontrar</h5>
+
+                    <p>
+                        Rua Ribeiro de Brito, 544, sala 201,<br>
+                        Boa Viagem
+                    </p>
+
+                    <p>
+                        (81) 4117-0033<br>
+                        (81) 9.8737-0033
+                    </p>
+                </div>
+
+                <!-- HORÁRIO -->
+                <div class="col-md-3">
+                    <h5 class="footer-title">Horário de Funcionamento</h5>
+
+                    <p>
+                        Segunda a sexta, das 9h às 12h<br>
+                        e das 14h às 17h
+                    </p>
+
+                    <p>
+                        Autoatendimento:<br>
+                        sábados, domingos e feriados
+                    </p>
+                </div>
+
+                <!-- INFO -->
+                <div class="col-md-2">
+                    <h5 class="footer-title">Informações</h5>
+
+                    <p>Sobre nós</p>
+                    <p>Política de Privacidade</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JS (sempre no final do body) -->
+    <script src="/Leite_Materno/scripts/alugar.js"></script>
+    </script>
+
+</body>
+
+
+</html>

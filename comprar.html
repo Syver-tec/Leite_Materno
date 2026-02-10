@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Kreed Bakery</title>
+
+    <link rel="stylesheet" href="/Leite_Materno/styles/comprar.css">
+    <link rel="stylesheet" href="/Leite_Materno/styles/footer.css">
+    <link rel="stylesheet" href="/Leite_Materno/styles/header.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-flex">
+
+            <!-- LOGO -->
+            <a href="index.html" class="logo">
+                <img src="/Leite_Materno/imgs/Logo.png" alt="Leite Materno">
+            </a>
+
+            <!-- MENU -->
+            <nav class="nav" id="nav">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="alugar.html">Alugar</a>
+                <a href="comprar.html">Comprar</a>
+                <a href="contato.html">Contato</a>
+
+                <!-- Botão no mobile -->
+                <a href="login.html" class="btn-mobile">Entrar</a>
+            </nav>
+
+            <!-- DIREITA -->
+            <div class="nav-right">
+
+                <!-- CARRINHO (abre drawer) -->
+                <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
+                    <span class="valor">R$0,00</span>
+                    <div class="cart-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                </div>
+
+                <!-- REDES SOCIAIS -->
+                <div class="redes">
+                    <a href="https://facebook.com" target="_blank" class="social" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="https://instagram.com" target="_blank" class="social" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+
+                <!-- Botão no desktop -->
+                <a href="login.html" class="btn-desktop">Entrar</a>
+
+                <!-- MENU HAMBURGUER -->
+                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" type="button">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+            </div>
+        </div>
+    </header>
+
+
+
+    <!-- PRODUTOS -->
+    <section class="produtos-grid">
+        <h2 class="titulo-produtos">Todos os Produtos</h2>
+
+        <div class="grid">
+
+            <!-- 1 -->
+            <button class="card-produto" data-img="imgs/comprar/copa-medela150.png" data-titulo="Copa Medela"
+                data-preco="R$150,00" data-desc="Copa Medela.">
+                <img src="imgs/comprar/copa-medela150.png" alt="Copa Medela">
+                <h3>Copa Medela</h3>
+                <p class="preco">R$150,00</p>
+            </button>
+
+            <!-- 2 -->
+            <button class="card-produto" data-img="imgs/comprar/copa-medela280.png" data-titulo="Copa Medela"
+                data-preco="R$280,00" data-desc="Copa Medela.">
+                <img src="imgs/comprar/copa-medela280.png" alt="Copa Medela 280">
+                <h3>Copa Medela</h3>
+                <p class="preco">R$280,00</p>
+            </button>
+
+            <!-- 3 -->
+            <button class="card-produto" data-img="imgs/comprar/copo-dosador.jpg" data-titulo="Copo Dosador"
+                data-preco="R$10,00" data-desc="Copo dosador.">
+                <img src="imgs/comprar/copo-dosador.jpg" alt="Copo Dosador">
+                <h3>Copo Dosador</h3>
+                <p class="preco">R$10,00</p>
+            </button>
+
+            <!-- 4 -->
+            <button class="card-produto" data-img="imgs/comprar/correia-dentada.jpg" data-titulo="Correia Dentada"
+                data-preco="R$750,00" data-desc="Correia dentada.">
+                <img src="imgs/comprar/correia-dentada.jpg" alt="Correia Dentada">
+                <h3>Correia Dentada</h3>
+                <p class="preco">R$750,00</p>
+            </button>
+
+            <!-- 5 -->
+            <button class="card-produto" data-img="imgs/comprar/gelox-medela.jpg" data-titulo="Gelox"
+                data-preco="R$45,00" data-desc="Gelox.">
+                <img src="imgs/comprar/gelox-medela.jpg" alt="Gelox">
+                <h3>Gelox</h3>
+                <p class="preco">R$45,00</p>
+            </button>
+
+            <!-- 6 -->
+            <button class="card-produto" data-img="imgs/comprar/kit-DESCARTAVEL.png" data-titulo="Kit Descartável"
+                data-preco="R$150,00" data-desc="Kit descartável.">
+                <img src="imgs/comprar/kit-DESCARTAVEL.png" alt="Kit Descartável">
+                <h3>Kit Descartável</h3>
+                <p class="preco">R$150,00</p>
+            </button>
+
+            <!-- 7 -->
+            <button class="card-produto" data-img="imgs/comprar/kit-universal.png" data-titulo="Kit Universal"
+                data-preco="R$340,00" data-desc="Kit universal.">
+                <img src="imgs/comprar/kit-universal.png" alt="Kit Universal">
+                <h3>Kit Universal</h3>
+                <p class="preco">R$340,00</p>
+            </button>
+
+            <!-- 8 -->
+            <button class="card-produto" data-img="imgs/comprar/mamadeira_calma.jpg" data-titulo="Mamadeira Calma"
+                data-preco="R$220,00" data-desc="Mamadeira Calma.">
+                <img src="imgs/comprar/mamadeira_calma.jpg" alt="Mamadeira Calma">
+                <h3>Mamadeira Calma</h3>
+                <p class="preco">R$220,00</p>
+            </button>
+
+            <!-- 9 -->
+            <button class="card-produto" data-img="imgs/comprar/mangueira-medela.jpg" data-titulo="Mangueira Medela"
+                data-preco="R$85,00" data-desc="Mangueira Medela.">
+                <img src="imgs/comprar/mangueira-medela.jpg" alt="Mangueira Medela">
+                <h3>Mangueira Medela</h3>
+                <p class="preco">R$85,00</p>
+            </button>
+
+            <!-- 10 -->
+            <button class="card-produto" data-img="imgs/comprar/mangueira-pump-style.webp"
+                data-titulo="Mangueira Pump Style" data-preco="R$100,00" data-desc="Mangueira Pump Style.">
+                <img src="imgs/comprar/mangueira-pump-style.webp" alt="Mangueira Pump Style">
+                <h3>Mangueira Pump Style</h3>
+                <p class="preco">R$100,00</p>
+            </button>
+
+            <!-- 11 -->
+            <button class="card-produto" data-img="imgs/comprar/mangueira-tubo.jpg" data-titulo="Mangueira Tubo"
+                data-preco="R$220,00" data-desc="Mangueira tubo.">
+                <img src="imgs/comprar/mangueira-tubo.jpg" alt="Mangueira Tubo">
+                <h3>Mangueira Tubo</h3>
+                <p class="preco">R$220,00</p>
+            </button>
+
+            <!-- 12 -->
+            <button class="card-produto" data-img="imgs/comprar/membrana.png" data-titulo="Membrana"
+                data-preco="R$45,00" data-desc="Membrana.">
+                <img src="imgs/comprar/membrana.png" alt="Membrana">
+                <h3>Membrana</h3>
+                <p class="preco">R$45,00</p>
+            </button>
+
+            <!-- 13 -->
+            <button class="card-produto" data-img="imgs/comprar/pote-70ml.jpeg" data-titulo="Pote 70ml"
+                data-preco="R$25,00" data-desc="Pote 70ml.">
+                <img src="imgs/comprar/pote-70ml.jpeg" alt="Pote 70ml">
+                <h3>Pote 70ml</h3>
+                <p class="preco">R$25,00</p>
+            </button>
+
+            <!-- 14 -->
+            <button class="card-produto" data-img="imgs/comprar/pote-100.png" data-titulo="Pote 100ml"
+                data-preco="R$10,00" data-desc="Pote 100ml.">
+                <img src="imgs/comprar/pote-100.png" alt="Pote 100ml">
+                <h3>Pote 100ml</h3>
+                <p class="preco">R$10,00</p>
+            </button>
+
+            <!-- 15 -->
+            <button class="card-produto" data-img="imgs/comprar/pote-de-vidro-150ml.png"
+                data-titulo="Pote de Vidro 150ml" data-preco="R$10,00" data-desc="Pote de vidro 150ml.">
+                <img src="imgs/comprar/pote-de-vidro-150ml.png" alt="Pote de Vidro 150ml">
+                <h3>Pote de Vidro 150ml</h3>
+                <p class="preco">R$10,00</p>
+            </button>
+
+            <!-- 16 -->
+            <button class="card-produto" data-img="imgs/comprar/pote-de-vidro-200.jpeg"
+                data-titulo="Pote de Vidro 200ml" data-preco="R$10,00" data-desc="Pote de vidro 200ml.">
+                <img src="imgs/comprar/pote-de-vidro-200.jpeg" alt="Pote de Vidro 200ml">
+                <h3>Pote de Vidro 200ml</h3>
+                <p class="preco">R$10,00</p>
+            </button>
+
+            <!-- 17 -->
+            <button class="card-produto" data-img="imgs/comprar/pote-de-vidro-200r.jpeg"
+                data-titulo="Pote de Vidro 200ml (Rosa)" data-preco="R$10,00" data-desc="Pote de vidro 200ml (Rosa).">
+                <img src="imgs/comprar/pote-de-vidro-200r.jpeg" alt="Pote de Vidro 200ml Rosa">
+                <h3>Pote de Vidro 200ml (Rosa)</h3>
+                <p class="preco">R$10,00</p>
+            </button>
+
+            <!-- 18 -->
+            <button class="card-produto" data-img="imgs/comprar/recipiente-70.jpg" data-titulo="Recipiente 70ml"
+                data-preco="R$100,00" data-desc="Recipiente 70ml.">
+                <img src="imgs/comprar/recipiente-70.jpg" alt="Recipiente 70ml">
+                <h3>Recipiente 70ml</h3>
+                <p class="preco">R$100,00</p>
+            </button>
+
+            <!-- 19 -->
+            <button class="card-produto" data-img="imgs/comprar/tampa-medela.jpg" data-titulo="Tampa Medela"
+                data-preco="R$45,00" data-desc="Tampa Medela.">
+                <img src="imgs/comprar/tampa-medela.jpg" alt="Tampa Medela">
+                <h3>Tampa Medela</h3>
+                <p class="preco">R$45,00</p>
+            </button>
+
+            <!-- 20 -->
+            <button class="card-produto" data-img="imgs/comprar/valvula-e-membrana.jpg" data-titulo="Válvula e Membrana"
+                data-preco="R$90,00" data-desc="Válvula e membrana.">
+                <img src="imgs/comprar/valvula-e-membrana.jpg" alt="Válvula e Membrana">
+                <h3>Válvula e Membrana</h3>
+                <p class="preco">R$90,00</p>
+            </button>
+
+            <!-- 21 -->
+            <button class="card-produto" data-img="imgs/comprar/valvula.jpg" data-titulo="Válvula" data-preco="R$45,00"
+                data-desc="Válvula.">
+                <img src="imgs/comprar/valvula.jpg" alt="Válvula">
+                <h3>Válvula</h3>
+                <p class="preco">R$45,00</p>
+            </button>
+
+        </div>
+
+        <!-- PAGINAÇÃO (FORA DA GRID) -->
+        <div class="paginacao" id="paginacao" aria-label="Paginação de produtos"></div>
+    </section>
+
+
+    <!-- MODAL (só 1!) -->
+    <div class="produto-modal" id="modal-produto" aria-hidden="true">
+        <div class="produto-modal-overlay" data-close="true"></div>
+
+        <div class="produto-modal-box">
+            <button class="produto-modal-close" id="modal-close">&times;</button>
+
+            <div class="modal-topo">
+                <div class="modal-img-area">
+                    <img id="m-img" src="" alt="">
+                </div>
+
+                <div class="modal-info">
+                    <h2 id="m-titulo"></h2>
+                    <p id="m-desc"></p>
+
+                    <p class="m-preco">Preço: <span id="m-preco"></span></p>
+
+                    <div class="m-compra">
+                        <div class="m-linha">
+                            <input class="m-qty" id="m-qty" type="number" min="1" value="1">
+                            <button class="m-btn" id="m-add">ADICIONAR AO CARRINHO</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- DRAWER -->
+    <div class="drawer" id="drawer-cart" aria-hidden="true">
+        <div class="drawer-overlay" data-close-cart="true"></div>
+
+        <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Carrinho">
+            <div class="drawer-header">
+                <h3>Seu carrinho</h3>
+                <button class="drawer-close" id="drawer-close" aria-label="Fechar">&times;</button>
+            </div>
+
+            <div class="drawer-body" id="drawer-items"></div>
+
+            <div class="drawer-footer">
+                <div class="drawer-total">
+                    <span>Total</span>
+                    <strong id="drawer-total">R$0,00</strong>
+                </div>
+
+                <div class="drawer-actions">
+                    <button class="drawer-btn outline" id="drawer-clear">Limpar</button>
+                    <button class="drawer-btn" id="drawer-checkout">Finalizar</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-leite">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/Leite_Materno/imgs/Logo.png" class="footer-logo" alt="">
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="footer-title">Onde nos encontrar</h5>
+                    <p>Rua Ribeiro de Brito, 544, sala 201,<br>Boa Viagem</p>
+                    <p>(81) 4117-0033<br>(81) 9.8737-0033</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="footer-title">Horário de Funcionamento</h5>
+                    <p>Segunda a sexta, das 9h às 12h<br>e das 14h às 17h</p>
+                    <p>Autoatendimento:<br>sábados, domingos e feriados</p>
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="footer-title">Informações</h5>
+                    <p>Sobre nós</p>
+                    <p>Política de Privacidade</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="/Leite_Materno/scripts/comprar.js"></script>
+
+</body>
+
+</html>
