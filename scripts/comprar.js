@@ -1,14 +1,28 @@
+// comprar.js (CORRIGIDO / organizado / carrinho ÚNICO em todas as páginas)
+//
+// ✅ Use a MESMA key em todas as páginas: cart_leite_materno
+// ✅ Evita crash se algum elemento não existir
+// ✅ Paginação funciona e não quebra clique dos cards
+// ✅ Modal + Drawer + Navbar ok
+
 document.addEventListener("DOMContentLoaded", () => {
+    // =========================
+    // CONFIG
+    // =========================
+    const CART_KEY = "cart_leite_materno"; // <-- MESMA KEY EM TODAS AS PÁGINAS
 
     // =========================
-    // CARRINHO (localStorage)
+    // HELPERS
     // =========================
-    const CART_KEY = "cart_compras_leite_materno";
-
-    function getCart() { return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); }
-    function setCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
-    function moneyBR(v) { return (v || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" }); }
-
+    function getCart() {
+        return JSON.parse(localStorage.getItem(CART_KEY) || "[]");
+    }
+    function setCart(cart) {
+        localStorage.setItem(CART_KEY, JSON.stringify(cart));
+    }
+    function moneyBR(v) {
+        return (v || 0).toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+    }
     function parsePreco(txt) {
         const num = (txt || "")
             .replace("R$", "")
@@ -18,20 +32,25 @@ document.addEventListener("DOMContentLoaded", () => {
         const v = Number(num);
         return Number.isFinite(v) ? v : 0;
     }
+    function safeQty(v) {
+        const n = Number(v);
+        return Number.isFinite(n) && n > 0 ? n : 1;
+    }
 
-    // Navbar
+    // =========================
+    // NAVBAR
+    // =========================
     const navTotal = document.querySelector("#btn-cart .valor");
     const navCount = document.querySelector("#btn-cart .cart-count");
 
     function updateNavbar() {
         const cart = getCart();
-        const count = cart.reduce((a, i) => a + i.qty, 0);
-        const total = cart.reduce((a, i) => a + (i.price * i.qty), 0);
+        const count = cart.reduce((a, i) => a + (Number(i.qty) || 0), 0);
+        const total = cart.reduce((a, i) => a + ((Number(i.price) || 0) * (Number(i.qty) || 0)), 0);
         if (navCount) navCount.textContent = count;
         if (navTotal) navTotal.textContent = moneyBR(total);
     }
     updateNavbar();
-
 
     // =========================
     // MODAL
@@ -50,7 +69,10 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentProduct = null;
 
     function openModal(card) {
+        if (!modal) return;
+
         currentProduct = {
+            type: "comprar",
             title: card.dataset.titulo || "",
             priceText: card.dataset.preco || "",
             price: parsePreco(card.dataset.preco),
@@ -58,36 +80,40 @@ document.addEventListener("DOMContentLoaded", () => {
             img: card.dataset.img || ""
         };
 
-        mImg.src = currentProduct.img;
-        mTitulo.textContent = currentProduct.title;
-        mPreco.textContent = currentProduct.priceText;
-        mDesc.textContent = currentProduct.desc;
-        mQty.value = 1;
+        if (mImg) mImg.src = currentProduct.img;
+        if (mTitulo) mTitulo.textContent = currentProduct.title;
+        if (mPreco) mPreco.textContent = currentProduct.priceText;
+        if (mDesc) mDesc.textContent = currentProduct.desc;
+        if (mQty) mQty.value = 1;
 
         modal.classList.add("open");
         document.body.style.overflow = "hidden";
     }
 
     function closeModal() {
+        if (!modal) return;
         modal.classList.remove("open");
         document.body.style.overflow = "auto";
         currentProduct = null;
     }
 
-    document.querySelectorAll(".card-produto").forEach(card => {
+    // clique nos cards (abre modal)
+    const allCards = Array.from(document.querySelectorAll(".card-produto"));
+    allCards.forEach((card) => {
         card.addEventListener("click", () => openModal(card));
     });
 
-    closeBtn.addEventListener("click", closeModal);
+    if (closeBtn) closeBtn.addEventListener("click", closeModal);
 
-    modal.addEventListener("click", (e) => {
-        if (e.target?.dataset?.close === "true") closeModal();
-    });
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target?.dataset?.close === "true") closeModal();
+        });
+    }
 
     window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal.classList.contains("open")) closeModal();
+        if (e.key === "Escape" && modal?.classList.contains("open")) closeModal();
     });
-
 
     // =========================
     // DRAWER
@@ -101,6 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const drawerCheckout = document.getElementById("drawer-checkout");
 
     function renderDrawer() {
+        if (!drawerItems || !drawerTotal) return;
+
         const cart = getCart();
 
         if (!cart.length) {
@@ -111,152 +139,178 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let total = 0;
 
-        drawerItems.innerHTML = cart.map(item => {
-            const subtotal = item.price * item.qty;
-            total += subtotal;
+        drawerItems.innerHTML = cart
+            .map((item) => {
+                const qty = Number(item.qty) || 0;
+                const price = Number(item.price) || 0;
+                const subtotal = price * qty;
+                total += subtotal;
 
-            return `
-            <div class="cart-item" data-id="${item.id}">
-              <img src="${item.img}" alt="">
-              <div>
-                <h4>${item.title}</h4>
-                <div class="price">${moneyBR(item.price)} x ${item.qty} = ${moneyBR(subtotal)}</div>
-              </div>
+                const periodLine =
+                    item.type === "alugar" && item.period
+                        ? `<div class="meta">Período: ${item.period} dias</div>`
+                        : ``;
 
-              <div class="right">
-                <div class="qty-controls">
-                  <button class="qty-btn" data-action="dec">-</button>
-                  <span class="qty-number">${item.qty}</span>
-                  <button class="qty-btn" data-action="inc">+</button>
-                </div>
-                <button class="remove-btn" data-action="remove">Remover</button>
-              </div>
+                return `
+          <div class="cart-item" data-id="${item.id}">
+            <img src="${item.img}" alt="">
+            <div>
+              <h4>${item.title}</h4>
+              ${periodLine}
+              <div class="price">${moneyBR(price)} x ${qty} = ${moneyBR(subtotal)}</div>
             </div>
-          `;
-        }).join("");
+
+            <div class="right">
+              <div class="qty-controls">
+                <button class="qty-btn" data-action="dec">-</button>
+                <span class="qty-number">${qty}</span>
+                <button class="qty-btn" data-action="inc">+</button>
+              </div>
+              <button class="remove-btn" data-action="remove">Remover</button>
+            </div>
+          </div>
+        `;
+            })
+            .join("");
 
         drawerTotal.textContent = moneyBR(total);
     }
 
     function openDrawer() {
+        if (!drawer) return;
         drawer.classList.add("open");
         document.body.style.overflow = "hidden";
         renderDrawer();
     }
 
     function closeDrawer() {
+        if (!drawer) return;
         drawer.classList.remove("open");
         document.body.style.overflow = "auto";
     }
 
-    btnCart.addEventListener("click", openDrawer);
-    btnCart.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") openDrawer();
-    });
+    if (btnCart) {
+        btnCart.addEventListener("click", openDrawer);
+        btnCart.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") openDrawer();
+        });
+    }
 
-    drawerClose.addEventListener("click", closeDrawer);
+    if (drawerClose) drawerClose.addEventListener("click", closeDrawer);
 
-    drawer.addEventListener("click", (e) => {
-        if (e.target?.dataset?.closeCart === "true") closeDrawer();
-    });
+    if (drawer) {
+        drawer.addEventListener("click", (e) => {
+            if (e.target?.dataset?.closeCart === "true") closeDrawer();
+        });
+    }
 
     window.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && drawer.classList.contains("open")) closeDrawer();
+        if (e.key === "Escape" && drawer?.classList.contains("open")) closeDrawer();
     });
 
-    drawerItems.addEventListener("click", (e) => {
-        const action = e.target?.dataset?.action;
-        if (!action) return;
+    if (drawerItems) {
+        drawerItems.addEventListener("click", (e) => {
+            const action = e.target?.dataset?.action;
+            if (!action) return;
 
-        const row = e.target.closest(".cart-item");
-        if (!row) return;
+            const row = e.target.closest(".cart-item");
+            if (!row) return;
 
-        const id = row.dataset.id;
-        const cart = getCart();
-        const item = cart.find(i => i.id === id);
-        if (!item) return;
+            const id = row.dataset.id;
+            const cart = getCart();
+            const item = cart.find((i) => i.id === id);
+            if (!item) return;
 
-        if (action === "inc") item.qty += 1;
-        if (action === "dec") item.qty = Math.max(1, item.qty - 1);
-        if (action === "remove") {
-            const idx = cart.findIndex(i => i.id === id);
-            if (idx >= 0) cart.splice(idx, 1);
-        }
+            if (action === "inc") item.qty = (Number(item.qty) || 1) + 1;
+            if (action === "dec") item.qty = Math.max(1, (Number(item.qty) || 1) - 1);
+            if (action === "remove") {
+                const idx = cart.findIndex((i) => i.id === id);
+                if (idx >= 0) cart.splice(idx, 1);
+            }
 
-        setCart(cart);
-        updateNavbar();
-        renderDrawer();
-    });
+            setCart(cart);
+            updateNavbar();
+            renderDrawer();
+        });
+    }
 
-    drawerClear.addEventListener("click", () => {
-        setCart([]);
-        updateNavbar();
-        renderDrawer();
-    });
+    if (drawerClear) {
+        drawerClear.addEventListener("click", () => {
+            setCart([]);
+            updateNavbar();
+            renderDrawer();
+        });
+    }
 
-    drawerCheckout.addEventListener("click", () => {
-        const cart = getCart();
-        if (!cart.length) return alert("Seu carrinho está vazio.");
-        alert("Finalizar compra (próximo passo: WhatsApp/checkout).");
-    });
-
+    if (drawerCheckout) {
+        drawerCheckout.addEventListener("click", () => {
+            const cart = getCart();
+            if (!cart.length) return alert("Seu carrinho está vazio.");
+            alert("Finalizar compra (próximo passo: WhatsApp/checkout).");
+        });
+    }
 
     // =========================
     // ADD TO CART (MODAL)
     // =========================
-    mAdd.addEventListener("click", () => {
-        if (!currentProduct) return;
+    if (mAdd) {
+        mAdd.addEventListener("click", () => {
+            if (!currentProduct) return;
 
-        const qty = Math.max(1, Number(mQty.value || 1));
-        const id = currentProduct.title.toLowerCase().trim();
+            const qty = safeQty(mQty?.value);
 
-        const cart = getCart();
-        const existing = cart.find(i => i.id === id);
+            // ✅ id único (melhor que só "title", evita conflito de item com mesmo nome no futuro)
+            const id = ("comprar_" + currentProduct.title).toLowerCase().trim();
 
-        if (existing) existing.qty += qty;
-        else {
-            cart.push({
-                id,
-                title: currentProduct.title,
-                qty,
-                price: currentProduct.price,
-                img: currentProduct.img
-            });
-        }
+            const cart = getCart();
+            const existing = cart.find((i) => i.id === id);
 
-        setCart(cart);
-        updateNavbar();
+            if (existing) existing.qty = (Number(existing.qty) || 0) + qty;
+            else {
+                cart.push({
+                    id,
+                    type: "comprar",
+                    title: currentProduct.title,
+                    qty,
+                    price: currentProduct.price,
+                    img: currentProduct.img
+                });
+            }
 
-        closeModal();
-        openDrawer();
-    });
+            setCart(cart);
+            updateNavbar();
 
+            closeModal();
+            openDrawer();
+        });
+    }
 
     // =========================
-    // PAGINAÇÃO AUTOMÁTICA
+    // PAGINAÇÃO (IMPORTANTE: fora da .grid)
     // =========================
     const pag = document.getElementById("paginacao");
-    const cards = Array.from(document.querySelectorAll(".card-produto"));
-
-    const ITEMS_PER_PAGE = 8; // <-- ajuste aqui
+    const ITEMS_PER_PAGE = 8;
     let currentPage = 1;
 
     function totalPages() {
-        return Math.max(1, Math.ceil(cards.length / ITEMS_PER_PAGE));
+        return Math.max(1, Math.ceil(allCards.length / ITEMS_PER_PAGE));
     }
 
-    function renderPage(page) {
-        currentPage = Math.min(Math.max(1, page), totalPages());
+    function pageBtn(n) {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = n;
+        if (n === currentPage) btn.classList.add("active");
+        btn.addEventListener("click", () => renderPage(n));
+        return btn;
+    }
 
-        const start = (currentPage - 1) * ITEMS_PER_PAGE;
-        const end = start + ITEMS_PER_PAGE;
-
-        cards.forEach((card, idx) => {
-            card.style.display = (idx >= start && idx < end) ? "" : "none";
-        });
-
-        renderPagination();
-        window.scrollTo({ top: 0, behavior: "smooth" });
+    function dots() {
+        const span = document.createElement("span");
+        span.textContent = "...";
+        span.style.color = "#8e4aa3";
+        span.style.fontWeight = "800";
+        return span;
     }
 
     function renderPagination() {
@@ -266,6 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
         pag.innerHTML = "";
 
         const prev = document.createElement("button");
+        prev.type = "button";
         prev.className = "nav-btn";
         prev.textContent = "←";
         prev.disabled = currentPage === 1;
@@ -294,6 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         const next = document.createElement("button");
+        next.type = "button";
         next.className = "nav-btn";
         next.textContent = "→";
         next.disabled = currentPage === pages;
@@ -301,22 +357,43 @@ document.addEventListener("DOMContentLoaded", () => {
         pag.appendChild(next);
     }
 
-    function pageBtn(n) {
-        const btn = document.createElement("button");
-        btn.textContent = n;
-        if (n === currentPage) btn.classList.add("active");
-        btn.addEventListener("click", () => renderPage(n));
-        return btn;
+    function renderPage(page) {
+        currentPage = Math.min(Math.max(1, page), totalPages());
+
+        const start = (currentPage - 1) * ITEMS_PER_PAGE;
+        const end = start + ITEMS_PER_PAGE;
+
+        allCards.forEach((card, idx) => {
+            card.style.display = idx >= start && idx < end ? "" : "none";
+        });
+
+        renderPagination();
+        window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    function dots() {
-        const span = document.createElement("span");
-        span.textContent = "...";
-        span.style.color = "#8e4aa3";
-        span.style.fontWeight = "800";
-        return span;
+    // inicia paginação
+    if (pag && allCards.length) renderPage(1);
+
+    // =========================
+    // MENU MOBILE (HAMBURGER)
+    // =========================
+    const toggle = document.getElementById("menu-toggle");
+    const nav = document.getElementById("nav");
+
+    if (toggle && nav) {
+        toggle.addEventListener("click", () => nav.classList.toggle("active"));
+
+        nav.querySelectorAll("a").forEach((a) => {
+            a.addEventListener("click", () => nav.classList.remove("active"));
+        });
+
+        document.addEventListener("click", (e) => {
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove("active");
+            }
+        });
     }
 
-    renderPage(1);
-
+    // garante navbar correta ao abrir
+    updateNavbar();
 });
