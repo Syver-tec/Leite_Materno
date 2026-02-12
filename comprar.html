@@ -26,17 +26,16 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
-        <div class="container header-flex">
+        <div class="container header-row">
 
             <!-- LOGO -->
-            <a href="index.html" class="logo">
+            <a class="logo" href="index.html" aria-label="Leite Materno - Home">
                 <img src="/Leite_Materno/imgs/Logo.png" alt="Leite Materno">
             </a>
 
-            <!-- MENU -->
-            <nav class="nav" id="nav">
+            <!-- NAV -->
+            <nav class="nav" id="nav" aria-label="Navegação principal">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -44,35 +43,29 @@
                 <a href="depoimentos.html">Depoimentos</a>
                 <a href="dicas.html">Dicas</a>
             </nav>
-            </nav>
 
-            <!-- DIREITA -->
+            <!-- AÇÕES (DIREITA) -->
             <div class="nav-right">
 
-                <!-- CARRINHO (abre drawer) -->
+                <!-- CARRINHO -->
                 <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
                     <span class="valor">R$0,00</span>
-                    <div class="cart-icon">
+
+                    <span class="cart-icon" aria-hidden="true">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-count">0</span>
-                    </div>
+                    </span>
                 </div>
 
-                <!-- REDES SOCIAIS -->
+                <!-- REDES -->
                 <div class="redes">
-                    <a href="https://facebook.com" target="_blank" class="social" aria-label="Facebook">
-                        <i class="fa-brands fa-facebook-f"></i>
-                    </a>
-
-                    <a href="https://instagram.com" target="_blank" class="social" aria-label="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
+                    <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" class="social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
-
-                <!-- MENU HAMBURGUER -->
-                <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu" type="button">
-                    <i class="fa-solid fa-bars"></i>
+                <!-- HAMBURGUER (MOBILE) -->
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">
+                    ☰
                 </button>
 
             </div>

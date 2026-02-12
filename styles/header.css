@@ -1,44 +1,58 @@
+/* ===== HEADER PADRÃO (igual em todas as páginas) ===== */
 .header {
   background: #fff;
-  padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+  padding: 18px 0;
 }
 
-.header-flex{
+.header .container {
+  width: min(92%, 1400px);
+  margin: 0 auto;
+}
+
+.header-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 18px;
+  gap: 22px;
 }
 
+/* logo */
 .logo img {
-  height: clamp(40px, 5vw, 60px);
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
+/* NAV central */
 .nav {
   display: flex;
   align-items: center;
-  gap: clamp(12px, 2vw, 26px);
+  justify-content: center;
+  gap: 30px;
+  flex: 1;
+  /* faz o menu ficar no MEIO */
 }
 
 .nav a {
   text-decoration: none;
   color: #7b5c7b;
-  font-weight: 600;
-  font-size: clamp(14px, 1.2vw, 16px);
+  font-weight: 500;
+  font-size: 16px;
 }
 
-/* Right side */
-.nav-right{
+.nav a:hover {
+  color: #8e4aa3;
+}
+
+/* direita */
+.nav-right {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-/* Carrinho */
-.carrinho{
+/* carrinho (pílula) */
+.carrinho {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -50,112 +64,92 @@
   user-select: none;
 }
 
-.carrinho .valor{
+.carrinho .valor {
   font-weight: 800;
-  font-size: 14px;
 }
 
-.cart-icon{
+.cart-icon {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
 }
 
-.cart-icon i{
-  font-size: 16px;
-}
-
-.cart-count{
+.cart-count {
   position: absolute;
-  top: -8px;
+  top: -10px;
   right: -10px;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: #fff;
   color: #8e4aa3;
   font-weight: 900;
+  border-radius: 999px;
   font-size: 12px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  border: 2px solid #8e4aa3;
 }
 
-/* Redes */
-.redes{
+/* redes */
+.redes {
   display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.social{
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: #cdbb73; /* dourado do print */
-  display: grid;
-  place-items: center;
-  color: #fff;
-  text-decoration: none;
-}
-
-.social i{
-  font-size: 16px;
-}
-
-/* Botão entrar */
-.btn-desktop,
-.btn-mobile{
-  padding: 0.6rem 1.3rem;
-  border: 2px solid #b79ac0;
+.social {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d6c26f;
+  color: #6a4a6f;
   border-radius: 999px;
   text-decoration: none;
-  color: #b79ac0;
-  font-weight: 700;
-  transition: .2s;
 }
 
-.btn-desktop:hover,
-.btn-mobile:hover{
-  background: #b79ac0;
-  color: #fff;
+.social:hover {
+  filter: brightness(.95);
 }
 
-/* Hamburguer */
-.menu-toggle{
+/* hambúrguer (só mobile) */
+.menu-toggle {
   display: none;
   border: 0;
   background: transparent;
   font-size: 26px;
+  color: #7b5c7b;
   cursor: pointer;
-  color: #8e4aa3;
 }
 
-/* Mobile */
-.btn-mobile{ display: none; }
-
-@media (max-width: 768px){
-  .menu-toggle{ display: block; }
-  .btn-desktop{ display: none; }
-
-  .nav{
-    position: absolute;
-    top: 78px;
-    right: 16px;
-    background: #fff;
-    flex-direction: column;
-    width: 220px;
-    padding: 14px;
-    display: none;
-    box-shadow: 0 8px 24px rgba(0,0,0,.12);
-    border-radius: 12px;
+/* ===== MOBILE ===== */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: block;
   }
 
-  .nav.active{ display: flex; }
+  .nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 92px;
+    /* ajuste se o header mudar altura */
+    background: #fff;
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 0;
+    border-top: 1px solid #eee;
+    display: none;
+    z-index: 999;
+  }
 
-  .btn-mobile{
-    display: block;
-    width: 100%;
-    text-align: center;
+  .nav.active {
+    display: flex;
+  }
+
+  .header-row {
+    position: relative;
   }
 }
