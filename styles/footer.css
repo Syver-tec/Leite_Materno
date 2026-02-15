@@ -48,3 +48,8 @@
     margin-bottom: 10px;
     line-height: 1.6;
 }
+
+.link-footer{
+    color: #000;
+    text-decoration: none;
+}
