@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Home - Leite Materno</title>
+
+    <link rel="stylesheet" href="   styles/sobre.css">
+    <link rel="stylesheet" href="   styles/footer.css">
+    <link rel="stylesheet" href="   styles/header.css">
+    <link rel="stylesheet" href="   styles/fonts.css">
+    <link rel="stylesheet" href="   styles/index.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="   styles/cart.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-row">
+
+            <!-- LOGO -->
+            <a class="logo" href="index.html" aria-label="Leite Materno - Home">
+                <img src="  imgs/Logo.png" alt="Leite Materno">
+            </a>
+
+            <!-- NAV -->
+            <nav class="nav" id="nav" aria-label="Navegação principal">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre</a>
+                <a href="alugar.html">Alugar</a>
+                <a href="comprar.html">Comprar</a>
+                <a href="depoimentos.html">Depoimentos</a>
+                <a href="dicas.html">Dicas</a>
+            </nav>
+
+            <!-- AÇÕES -->
+            <div class="nav-right">
+
+                <!-- CARRINHO -->
+                <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
+                    <span class="valor">R$0,00</span>
+
+                    <span class="cart-icon" aria-hidden="true">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </span>
+                </div>
+
+                <!-- REDES -->
+                <div class="redes">
+                    <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+
+                <!-- HAMBURGUER -->
+                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- DRAWER DO CARRINHO (OBRIGATÓRIO EM TODAS AS PÁGINAS) -->
+    <div class="drawer" id="drawer-cart" aria-hidden="true">
+        <div class="drawer-overlay" data-close-cart="true"></div>
+
+        <aside class="drawer-panel" role="dialog" aria-modal="true" aria-label="Carrinho">
+            <div class="drawer-header">
+                <h3>Seu carrinho</h3>
+                <button class="drawer-close" id="drawer-close" aria-label="Fechar">&times;</button>
+            </div>
+
+            <div class="drawer-body" id="drawer-items"></div>
+
+            <div class="drawer-footer">
+                <div class="drawer-total">
+                    <span>Total</span>
+                    <strong id="drawer-total">R$0,00</strong>
+                </div>
+
+                <div class="drawer-actions">
+                    <button class="drawer-btn outline" id="drawer-clear">Limpar</button>
+                    <button class="drawer-btn" id="drawer-checkout">Finalizar</button>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- CONTEÚDO -->
+
+    <!-- HERO -->
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="10000">
+        <img src="imgs/index/img1.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+        <img src="imgs/index/img2.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+        <img src="imgs/index/img3.png" class="d-block w-100" alt="...">
+        </div>
+        
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+    </div>
+
+    <!-- NÚMEROS -->
+    <section class="stats">
+        <div class="stat">
+            <h2 class="counter" data-target="18">0</h2>
+            <p>Anos no mercado</p>
+        </div>
+        <div class="stat">
+            <h2 class="counter" data-target="10000">0</h2>
+            <p>Locações realizadas</p>
+        </div>
+    </section>
+
+    <!-- ALUGUEL DE EQUIPAMENTOS -->
+    <section class="equipamentos">
+    <h2 class="titulo-secao">Aluguel de Equipamentos</h2>
+
+    <div class="grid-equipamentos">
+
+        <div class="card">
+            <img src="imgs/index/prod1.png" alt="">
+            <h3>Symphony - Duplo</h3>
+        </div>
+
+        <div class="card">
+            <img src="imgs/index/prod2.jpg" alt="">
+            <h3>Lactina - Single</h3>
+        </div>
+
+        <div class="card">
+            <img src="imgs/index/prod4.jpg" alt="">
+            <h3>Lactina - Duplo</h3>
+        </div>
+
+        <div class="card">
+            <img src="imgs/index/prod3.png" alt="">
+            <h3>Freestyle - Single</h3>
+        </div>
+
+    </div>
+
+    <a href="alugar.html" class="btn-alugar">Alugue Agora</a>
+    </section>
+
+    <!-- PACOTES -->
+    <section class="packages fade-section   ">
+        <h2>Pacotes de locação</h2>
+
+        <div class="package-grid">
+            <div class="package-card">
+                <h3>15 dias</h3>
+                <p>Ideal para que a mamãe conheça o equipamento e se adapte com tranquilidade.</p>
+            </div>
+
+            <div class="package-card">
+                <h3>30 dias</h3>
+                <p>Ideal para quem já conhece o equipamento e busca continuidade no uso.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- INFORMAÇÕES -->
+    <section class="info">
+        <h2>Informações do Serviço</h2>
+
+        <div class="info-container">
+            <div class="info-box">
+                <h4>Incluso no serviço</h4>
+                <ul>
+                    <li>✔ 01 kit para retirada de leite</li>
+                    <li>✔ Contrato enviado por e-mail</li>
+                    <li>✔ Acompanhamento na primeira utilização</li>
+                    <li>✔ Orientação completa sobre higienização</li>
+                </ul>
+            </div>
+
+            <div class="info-box warning">
+                <h4>Importante saber</h4>
+                <p>Não retiramos o equipamento da sua casa. Podemos indicar transportador (frete sob consulta).</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+    const track = document.querySelector('.carousel-track');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let index = 0;
+    const cardWidth = 330;
+
+    next.addEventListener('click', () => {
+        if(index < track.children.length - 1){
+            index++;
+            track.style.transform = `translateX(-${cardWidth * index}px)`;
+        }
+    });
+
+    prev.addEventListener('click', () => {
+        if(index > 0){
+            index--;
+            track.style.transform = `translateX(-${cardWidth * index}px)`;
+        }
+    });
+    </script>
+
+    </body>
+    </html>
+
+
+    <!-- FOOTER -->
+    <footer class="footer-leite">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4">
+                    <img src="  imgs/Logo.png" class="footer-logo" alt="Logo">
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="footer-title">Onde nos encontrar</h5>
+                    <p>Rua Ribeiro de Brito, 544, sala 201,<br>Boa Viagem</p>
+                    <p>(81) 4117-0033<br>(81) 9.8737-0033</p>
+                </div>
+
+                <div class="col-md-3">
+                    <h5 class="footer-title">Horário de Funcionamento</h5>
+                    <p>Segunda a sexta, das 9h às 12h<br>e das 14h às 17h</p>
+                    <p>Autoatendimento:<br>sábados, domingos e feriados</p>
+                </div>
+
+                <div class="col-md-2">
+                    <h5 class="footer-title">Informações</h5>
+                    <a class="link-footer" href="sobre.html">Sobre nós</a>
+                    <p>Política de Privacidade</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="scripts/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

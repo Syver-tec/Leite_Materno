@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f4f1f6;
+    color: #444;
+}
+
+section {
+    padding: 100px 10%;
+}
+
+/* HERO */
+
+.carousel {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10%;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+}
+
+/* Aluguel de equipamentos */
+.equipamentos {
+    padding: 80px 5%;
+    text-align: center;
+    background: #f9f9f9;
+}
+
+.titulo-secao {
+    font-size: 42px;
+    color: #8e44ad;
+    margin-bottom: 60px;
+}
+
+.grid-equipamentos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.8s forwards;
+}
+
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.card h3 {
+    margin-top: 20px;
+    color: #8e44ad;
+    font-weight: 600;
+}
+
+.btn-alugar {
+    display: inline-block;
+    margin-top: 60px;
+    padding: 15px 45px;
+    background: #8e44ad;
+    color: #fff;
+    border-radius: 40px;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-alugar:hover {
+    background: #732d91;
+    transform: scale(1.05);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+    .grid-equipamentos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-equipamentos {
+        grid-template-columns: 1fr;
+    }
+
+    .titulo-secao {
+        font-size: 30px;
+    }
+}
+
+/* Indicadores personalizados */
+#carouselExampleCaptions .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    border: none;
+}
+
+#carouselExampleCaptions .carousel-indicators .active {
+    background-color: #8e44ad;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    #carouselExampleCaptions .carousel-item img {
+        height: 350px;
+    }
+
+    #carouselExampleCaptions .carousel-caption h5 {
+        font-size: 24px;
+    }
+
+    #carouselExampleCaptions .carousel-caption p {
+        font-size: 14px;
+    }
+}
+
+/* BOTÕES */
+
+.btn-primary,
+.btn-secondary {
+    padding: 14px 30px;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: #8e44ad;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #732d91;
+}
+
+.btn-secondary {
+    background: white;
+    color: #8e44ad;
+    border: 2px solid #8e44ad;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.btn-secondary:hover {
+    background: #8e44ad;
+    color: white;
+}
+
+/* STATS */
+
+.stats {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 40px;
+    color: #6a8b48;
+}
+
+.stat-item p {
+    margin-top: 8px;
+}
+
+/* CARROSSEL */
+
+.carousel-section {
+    background: #faf7fb;
+    text-align: center;
+}
+
+.carousel-section h2 {
+    font-size: 34px;
+    color: #8e44ad;
+    margin-bottom: 60px;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 950px;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.card {
+    min-width: 300px;
+    margin: 0 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+}
+
+.card h3 {
+    margin-top: 20px;
+    color: #8e44ad;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #8e44ad;
+    border: none;
+    color: white;
+    font-size: 22px;
+    padding: 12px 16px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+/* PACOTES COM ANIMAÇÃO */
+
+.packages {
+    background: #efe5f5;
+    text-align: center;
+}
+
+.packages h2 {
+    font-size: 34px;
+    color: #8e44ad;
+    margin-bottom: 60px;
+}
+
+.package-grid {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.package-card {
+    background: white;
+    padding: 50px;
+    border-radius: 25px;
+    width: 320px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.06);
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+    animation: fadeUp 1s ease forwards;
+}
+
+.package-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.package-card h3 {
+    font-size: 32px;
+    color: #8e44ad;
+    margin-bottom: 15px;
+}
+
+.package-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* INFORMAÇÕES */
+
+.info {
+    background: white;
+}
+
+.info h2 {
+    text-align: center;
+    color: #8e44ad;
+    margin-bottom: 60px;
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    background: #f7f3f9;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+}
+
+.info-box h4 {
+    margin-bottom: 20px;
+    color: #8e44ad;
+}
+
+.info-box ul {
+    line-height: 1.8;
+}
+
+.warning {
+    background: #fff3f3;
+    border-left: 6px solid #d9534f;
+}
+
+.stats {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  padding: 60px 0;
+}
+
+.stat h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #8e44ad;
+}
+
+.stat p {
+  font-size: 18px;
+  color: #666;
+}
