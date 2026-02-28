@@ -1,3 +1,7 @@
+/* Base responsiva - evita scroll horizontal */
+html {
+  overflow-x: hidden;
+}
 
 .space-mono-regular {
     font-family: "Space Mono", monospace;

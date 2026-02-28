@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <title>Depoimentos - Leite Materno</title>
 
-    <link rel="stylesheet" href="   styles/sobre.css">
-    <link rel="stylesheet" href="   styles/footer.css">
-    <link rel="stylesheet" href="   styles/header.css">
-    <link rel="stylesheet" href="   styles/fonts.css">
+    <link rel="stylesheet" href="styles/sobre.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/depoimentos.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="   styles/cart.css">
     <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
 
     <style>
@@ -31,11 +32,13 @@
 
             <!-- LOGO -->
             <a class="logo" href="index.html" aria-label="Leite Materno - Home">
-                <img src="  imgs/Logo.png" alt="Leite Materno">
+                <img src="imgs/Logo.png" alt="Leite Materno">
             </a>
 
+            <input type="checkbox" id="menu-check" class="menu-check" aria-hidden="true" />
+
             <!-- NAV -->
-            <nav class="nav" id="nav" aria-label="Navegação principal">
+            <nav class="main-nav" id="nav" aria-label="Navegação principal">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -60,13 +63,16 @@
                 <!-- REDES -->
                 <div class="redes">
                     <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr"
+                        class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
                 <!-- HAMBURGUER -->
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
+                <label class="menu-toggle" for="menu-check" aria-label="Abrir menu">☰</label>
 
             </div>
+
+            <label class="menu-overlay" for="menu-check" aria-label="Fechar menu"></label>
         </div>
     </header>
 
@@ -97,7 +103,105 @@
     </div>
 
     <!-- CONTEÚDO -->
-    <h1>Depoimentos</h1>
+    <main class="depoimentos-page">
+        <h1>O que nossas clientes dizem</h1>
+        <p class="intro">
+            Conheça a experiência de mamães que confiaram na Leite Materno para locação de equipamentos
+            e material de apoio. Suas histórias nos motivam a continuar cuidando de cada detalhe.
+        </p>
+
+        <div class="depoimentos-grid">
+            <div class="depoimento-card">
+                <blockquote>
+                    Aluguei a Lactina Duplo quando voltei ao trabalho e foi um alívio! O equipamento veio
+                    impecável, higienizado, e a equipe me orientou na primeira extração. Hoje consigo manter
+                    o estoque de leite para minha filha sem estresse.
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">M</div>
+                    <div>
+                        <div class="nome">Maria F.</div>
+                        <div class="meta">Lactina Duplo · Boa Viagem</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <blockquote>
+                    Recomendo demais! Precisava de algo portátil e o Freestyle foi perfeito. Atendimento
+                    humanizado, equipamento em ótimo estado e preço justo. Minha experiência com a Leite
+                    Materno foi excelente do início ao fim.
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">A</div>
+                    <div>
+                        <div class="nome">Ana Carolina S.</div>
+                        <div class="meta">Freestyle · Recife</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <blockquote>
+                    Minha bebê nasceu prematurinha e precisava de extração desde o primeiro dia. A Heloiana
+                    me acolheu com tanto carinho e me ajudou a escolher o equipamento certo. O Symphony fez
+                    toda a diferença na minha produção. Gratidão!
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">J</div>
+                    <div>
+                        <div class="nome">Juliana R.</div>
+                        <div class="meta">Symphony Duplo</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <blockquote>
+                    Já aluguei duas vezes com a Leite Materno. Sempre tudo certinho, kit completo e
+                    orientações claras. O diferencial é o acompanhamento e a preocupação com a mamãe.
+                    Indico para todas as minhas amigas!
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">F</div>
+                    <div>
+                        <div class="nome">Fernanda T.</div>
+                        <div class="meta">Pump Style · Olinda</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <blockquote>
+                    Comprei o kit de extração e os recipientes aqui. Qualidade ótima e preço acessível.
+                    O atendimento é rápido e atencioso. Já indiquei para outras mamães do grupo de
+                    amamentação.
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">P</div>
+                    <div>
+                        <div class="nome">Patrícia L.</div>
+                        <div class="meta">Material de apoio</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="depoimento-card">
+                <blockquote>
+                    O Swing Single resolveu meu caso: compacto, silencioso e eficiente. Para quem quer
+                    começar com extração ocasional ou precisa de algo mais simples, é uma ótima opção.
+                    Adorei o serviço da Leite Materno!
+                </blockquote>
+                <div class="autor">
+                    <div class="avatar">C</div>
+                    <div>
+                        <div class="nome">Camila M.</div>
+                        <div class="meta">Swing Single · Jaboatão</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-leite">
@@ -105,7 +209,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <img src="  imgs/Logo.png" class="footer-logo" alt="Logo">
+                    <img src="imgs/Logo.png" class="footer-logo" alt="Logo">
                 </div>
 
                 <div class="col-md-3">
@@ -130,16 +234,13 @@
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JS (menu hambúrguer é puro CSS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-    <!-- O sobre.js pode ficar só pro carrossel etc (se você tiver) -->
-    <script src="   scripts/sobre.js"></script>
-
-    <!-- ESSE É O MAIS IMPORTANTE: carrinho global (mesma key em tudo) -->
-    <script src="   scripts/cart.js"></script>
+    <script src="scripts/sobre.js"></script>
+    <script src="scripts/whatsapp-config.js"></script>
+    <script src="scripts/cart.js"></script>
 
 </body>
 

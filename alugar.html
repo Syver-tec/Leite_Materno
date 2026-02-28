@@ -1,42 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Alugar - Leite Materno</title>
-    <link rel="stylesheet" href="styles/alugar.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles/header.css">
-    <link rel="stylesheet" href="styles/fonts.css">
 
+    <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png" />
+
+    <link rel="stylesheet" href="styles/fonts.css" />
+    <link rel="stylesheet" href="styles/header.css" />
+    <link rel="stylesheet" href="styles/cart.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/alugar.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/cart.css">
-    <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Space+Grotesk:wght@300..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
     </style>
-
 </head>
 
 <body>
+    <!-- HEADER -->
     <header class="header">
         <div class="container header-row">
-
-            <!-- LOGO -->
             <a class="logo" href="index.html" aria-label="Leite Materno - Home">
-                <img src="imgs/Logo.png" alt="Leite Materno">
+                <img src="imgs/Logo.png" alt="Leite Materno" />
             </a>
 
-            <!-- NAV -->
-            <nav class="nav" id="nav" aria-label="Navegação principal">
+            <input type="checkbox" id="menu-check" class="menu-check" aria-hidden="true" />
+
+            <nav class="main-nav" id="nav" aria-label="Navegação principal">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -45,34 +42,29 @@
                 <a href="dicas.html">Dicas</a>
             </nav>
 
-            <!-- AÇÕES (DIREITA) -->
             <div class="nav-right">
-
-                <!-- CARRINHO -->
                 <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
                     <span class="valor">R$0,00</span>
-
                     <span class="cart-icon" aria-hidden="true">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-count">0</span>
                     </span>
                 </div>
 
-                <!-- REDES -->
                 <div class="redes">
                     <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr"
+                        class="social" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
 
-                <!-- HAMBURGUER (MOBILE) -->
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">
-                    ☰
-                </button>
-
+                <label class="menu-toggle" for="menu-check" aria-label="Abrir menu">☰</label>
             </div>
+
+            <label class="menu-overlay" for="menu-check" aria-label="Fechar menu"></label>
         </div>
     </header>
-
 
     <!-- PRODUTOS -->
     <section class="produtos-grid">
@@ -147,17 +139,16 @@
         </div>
     </section>
 
-
-    <!-- MODAL (fica separado) -->
+    <!-- MODAL -->
     <div class="produto-modal" id="modal-produto" aria-hidden="true">
         <div class="produto-modal-overlay" data-close="true"></div>
 
         <div class="produto-modal-box">
-            <button class="produto-modal-close" id="modal-close">&times;</button>
+            <button class="produto-modal-close" id="modal-close" aria-label="Fechar modal">&times;</button>
 
             <div class="modal-topo">
                 <div class="modal-img-area">
-                    <img id="m-img" src="" alt="">
+                    <img id="m-img" src="" alt="" />
                 </div>
 
                 <div class="modal-info">
@@ -178,18 +169,16 @@
                         </label>
 
                         <div class="m-linha">
-                            <input class="m-qty" id="m-qty" type="number" min="1" value="1">
+                            <input class="m-qty" id="m-qty" type="number" min="1" value="1" />
                             <button class="m-btn" id="m-add">ADICIONAR AO CARRINHO</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- DRAWER (fora do modal!) -->
+    <!-- DRAWER DO CARRINHO -->
     <div class="drawer" id="drawer-cart" aria-hidden="true">
         <div class="drawer-overlay" data-close-cart="true"></div>
 
@@ -214,65 +203,43 @@
             </div>
         </aside>
     </div>
+
+    <!-- FOOTER -->
     <footer class="footer-leite">
         <div class="container">
             <div class="row">
-
-                <!-- LOGO -->
                 <div class="col-md-4">
-                    <img src="imgs/Logo.png" class="footer-logo">
-
+                    <img src="imgs/Logo.png" class="footer-logo" alt="Logo" />
                 </div>
 
-                <!-- ENDEREÇO -->
                 <div class="col-md-3">
                     <h5 class="footer-title">Onde nos encontrar</h5>
-
-                    <p>
-                        Rua Ribeiro de Brito, 544, sala 201,<br>
-                        Boa Viagem
-                    </p>
-
-                    <p>
-                        (81) 4117-0033<br>
-                        (81) 9.8737-0033
-                    </p>
+                    <p>Rua Ribeiro de Brito, 544, sala 201,<br />Boa Viagem</p>
+                    <p>(81) 4117-0033<br />(81) 9.8737-0033</p>
                 </div>
 
-                <!-- HORÁRIO -->
                 <div class="col-md-3">
                     <h5 class="footer-title">Horário de Funcionamento</h5>
-
-                    <p>
-                        Segunda a sexta, das 9h às 12h<br>
-                        e das 14h às 17h
-                    </p>
-
-                    <p>
-                        Autoatendimento:<br>
-                        sábados, domingos e feriados
-                    </p>
+                    <p>Segunda a sexta, das 9h às 12h<br />e das 14h às 17h</p>
+                    <p>Autoatendimento:<br />sábados, domingos e feriados</p>
                 </div>
 
-                <!-- INFO -->
                 <div class="col-md-2">
                     <h5 class="footer-title">Informações</h5>
                     <a class="link-footer" href="sobre.html">Sobre nós</a>
                     <p>Política de Privacidade</p>
                 </div>
-
             </div>
         </div>
     </footer>
 
-
-    <!-- JS (sempre no final do body) -->
+    <!-- JS (menu hambúrguer é puro CSS) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="scripts/alugar.js"></script>
-    </script>
+    <script src="scripts/whatsapp-config.js"></script>
     <script src="scripts/cart.js"></script>
-
-
 </body>
-
 
 </html>

@@ -189,9 +189,53 @@ document.addEventListener("DOMContentLoaded", () => {
         drawerCheckout.addEventListener("click", () => {
             const cart = getCart();
             if (!cart.length) return alert("Seu carrinho está vazio.");
-            alert("Finalizar compra (próximo passo: WhatsApp/checkout).");
+            
+            // Função para enviar ao WhatsApp
+            sendCartToWhatsApp(cart);
         });
     }
+
+    // ====== FUNÇÃO WHATSAPP ======
+    window.sendCartToWhatsApp = function(cart) {
+        if (!cart || !cart.length) return alert("Seu carrinho está vazio.");
+
+        // Monta a mensagem bonitinha com emojis
+        let message = "Ola! Gostaria de fazer um pedido!\n\n";
+        message += "LEITE MATERNO\n";
+        message += "======================\n\n";
+        
+        let total = 0;
+
+        cart.forEach((item, index) => {
+            const subtotal = (Number(item.price) || 0) * (Number(item.qty) || 0);
+            total += subtotal;
+
+            message += `${index + 1}. ${item.title}\n`;
+            message += `   Quantidade: ${item.qty} ${item.qty > 1 ? 'unidades' : 'unidade'}\n`;
+            message += `   Preco: ${moneyBR(item.price)} cada\n`;
+            message += `   ${item.qty} x ${moneyBR(item.price)} = ${moneyBR(subtotal)}\n`;
+
+            if (item.type === "alugar" && item.period) {
+                message += `   Periodo: ${item.period} dias\n`;
+            }
+            message += "\n";
+        });
+
+        message += `======================\n`;
+        message += `TOTAL DO PEDIDO\n`;
+        message += `${moneyBR(total)}\n`;
+        message += `======================\n\n`;
+        message += `Por favor, confirme o pedido!\n`;
+        message += `Entraremos em contato em breve.\n`;
+        message += `Obrigado! Aguardamos! :)`;
+
+        // Codifica a mensagem para URL preservando emojis
+        const encodedMessage = encodeURIComponent(message);
+
+        // Abre o WhatsApp com a mensagem (usa o número configurado no whatsapp-config.js)
+        const whatsappURL = `https://wa.me/${window.WHATSAPP_NUMBER}?text=${encodedMessage}`;
+        window.open(whatsappURL, "_blank");
+    };
 
     // ====== FUNÇÕES GLOBAIS (qualquer página adiciona item) ======
     window.cartLM = {

@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mTitulo = document.getElementById("m-titulo");
     const mPreco = document.getElementById("m-preco");
     const mDesc = document.getElementById("m-desc");
+    const mCategorias = document.getElementById("m-categorias");
 
     const mQty = document.getElementById("m-qty");
     const mAdd = document.getElementById("m-add");
@@ -77,13 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
             priceText: card.dataset.preco || "",
             price: parsePreco(card.dataset.preco),
             desc: card.dataset.desc || "",
-            img: card.dataset.img || ""
+            img: card.dataset.img || "",
+            categorias: card.dataset.categorias || ""
         };
 
         if (mImg) mImg.src = currentProduct.img;
         if (mTitulo) mTitulo.textContent = currentProduct.title;
         if (mPreco) mPreco.textContent = currentProduct.priceText;
         if (mDesc) mDesc.textContent = currentProduct.desc;
+        if (mCategorias) mCategorias.textContent = currentProduct.categorias ? `Categorias: ${currentProduct.categorias}` : "";
         if (mQty) mQty.value = 1;
 
         modal.classList.add("open");
@@ -373,26 +376,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // inicia paginação
     if (pag && allCards.length) renderPage(1);
-
-    // =========================
-    // MENU MOBILE (HAMBURGER)
-    // =========================
-    const toggle = document.getElementById("menu-toggle");
-    const nav = document.getElementById("nav");
-
-    if (toggle && nav) {
-        toggle.addEventListener("click", () => nav.classList.toggle("active"));
-
-        nav.querySelectorAll("a").forEach((a) => {
-            a.addEventListener("click", () => nav.classList.remove("active"));
-        });
-
-        document.addEventListener("click", (e) => {
-            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
-                nav.classList.remove("active");
-            }
-        });
-    }
 
     // garante navbar correta ao abrir
     updateNavbar();

@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <title>Dicas - Leite Materno</title>
 
-    <link rel="stylesheet" href="   styles/sobre.css">
-    <link rel="stylesheet" href="   styles/footer.css">
-    <link rel="stylesheet" href="   styles/header.css">
-    <link rel="stylesheet" href="   styles/fonts.css">
+    <link rel="stylesheet" href="styles/sobre.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/dicas.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="   styles/cart.css">
     <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
 
     <style>
@@ -31,11 +32,13 @@
 
             <!-- LOGO -->
             <a class="logo" href="index.html" aria-label="Leite Materno - Home">
-                <img src="  imgs/Logo.png" alt="Leite Materno">
+                <img src="imgs/Logo.png" alt="Leite Materno">
             </a>
 
+            <input type="checkbox" id="menu-check" class="menu-check" aria-hidden="true" />
+
             <!-- NAV -->
-            <nav class="nav" id="nav" aria-label="Navegação principal">
+            <nav class="main-nav" id="nav" aria-label="Navegação principal">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -60,13 +63,16 @@
                 <!-- REDES -->
                 <div class="redes">
                     <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr"
+                        class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
                 <!-- HAMBURGUER -->
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
+                <label class="menu-toggle" for="menu-check" aria-label="Abrir menu">☰</label>
 
             </div>
+
+            <label class="menu-overlay" for="menu-check" aria-label="Fechar menu"></label>
         </div>
     </header>
 
@@ -97,7 +103,100 @@
     </div>
 
     <!-- CONTEÚDO -->
-    <h1>Dicas</h1>
+    <main class="dicas-page">
+        <h1>Dicas para Amamentação e Extração</h1>
+        <p class="intro">
+            Separamos informações importantes para ajudar você nessa jornada. Confira nossas dicas sobre
+            extração, armazenamento e cuidados com o leite materno.
+        </p>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-droplet"></i> Primeira extração</h2>
+            <p>
+                A primeira extração pode parecer desafiadora, mas é normal! Procure um ambiente tranquilo,
+                relaxe e massageie suavemente as mamas antes de começar. O estímulo do bebê ou o contato
+                visual com uma foto dele podem ajudar na descida do leite.
+            </p>
+            <ul>
+                <li>Extraia logo após a mamada, quando as mamas ainda estão macias</li>
+                <li>Comece com sucção suave e aumente gradualmente o ritmo</li>
+                <li>Use compressas mornas nos seios alguns minutos antes</li>
+            </ul>
+        </article>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-bottle-droplet"></i> Armazenamento do leite materno</h2>
+            <p>
+                O leite materno pode ser conservado em temperatura ambiente, na geladeira ou no freezer,
+                dependendo do tempo de uso. Use recipientes limpos, de preferência de vidro ou plástico
+                adequado, e identifique com data e hora da extração.
+            </p>
+            <ul>
+                <li><strong>Ambiente (25°C):</strong> até 4 horas</li>
+                <li><strong>Geladeira (0–4°C):</strong> até 5 dias</li>
+                <li><strong>Freezer (-18°C):</strong> até 6 meses</li>
+                <li>Descongele em banho-maria e nunca no micro-ondas</li>
+            </ul>
+        </article>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-spray-can-sparkles"></i> Higienização dos equipamentos</h2>
+            <p>
+                A limpeza correta dos acessórios evita contaminação e protege a saúde do bebê.
+                Lave as peças após cada uso com água e sabão neutro, enxágue bem e deixe secar
+                ao ar ou com papel toalha limpo.
+            </p>
+            <ul>
+                <li>Desmonte todas as peças antes de lavar</li>
+                <li>Use escovinhas próprias para alcançar cantos e conexões</li>
+                <li>Esterilize conforme orientação do fabricante quando necessário</li>
+                <li>Guarde em local seco e protegido até o próximo uso</li>
+            </ul>
+        </article>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-hand-holding-heart"></i> Cuidados com as mamas</h2>
+            <p>
+                Fissuras e desconfortos são comuns, mas podem ser prevenidos. Verifique se a flange
+                está no tamanho adequado e se a sucção não está muito forte. Pomadas à base de lanolina
+                e o próprio leite materno ajudam na cicatrização.
+            </p>
+            <ul>
+                <li>Escolha o tamanho correto da flange (concha)</li>
+                <li>Evite sucção excessiva nos primeiros dias</li>
+                <li>Alternar os seios e fazer pausas reduz o cansaço</li>
+                <li>Em caso de dor persistente, procure apoio profissional</li>
+            </ul>
+        </article>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-clock"></i> Frequência de extração</h2>
+            <p>
+                A regularidade da extração influencia na produção de leite. Se o bebê não estiver
+                sugando diretamente, tente extrair no mínimo 8 vezes em 24 horas para manter a
+                produção e evitar empedramento.
+            </p>
+            <ul>
+                <li>Extraia nos mesmos horários em que o bebê mama, quando possível</li>
+                <li>Extração noturna ajuda a manter os níveis de prolactina</li>
+                <li>Mesmo pequenos volumes são válidos — acumule para formar uma porção</li>
+            </ul>
+        </article>
+
+        <article class="dica-card">
+            <h2><i class="fa-solid fa-phone"></i> Precisa de ajuda?</h2>
+            <p>
+                Estamos à disposição para orientar sobre o uso dos equipamentos e tirar dúvidas.
+                Entre em contato ou venha nos visitar — nosso atendimento inclui acompanhamento
+                na primeira utilização.
+            </p>
+            <p style="margin-top: 16px;">
+                <a href="sobre.html" style="color: #8e4aa3; font-weight: 700; text-decoration: none;">
+                    Saiba mais sobre nós →
+                </a>
+            </p>
+        </article>
+    </main>
 
     <!-- FOOTER -->
     <footer class="footer-leite">
@@ -105,7 +204,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <img src="  imgs/Logo.png" class="footer-logo" alt="Logo">
+                    <img src="imgs/Logo.png" class="footer-logo" alt="Logo">
                 </div>
 
                 <div class="col-md-3">
@@ -130,16 +229,13 @@
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JS (menu hambúrguer é puro CSS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-    <!-- O sobre.js pode ficar só pro carrossel etc (se você tiver) -->
-    <script src="   scripts/sobre.js"></script>
-
-    <!-- ESSE É O MAIS IMPORTANTE: carrinho global (mesma key em tudo) -->
-    <script src="   scripts/cart.js"></script>
+    <script src="scripts/sobre.js"></script>
+    <script src="scripts/whatsapp-config.js"></script>
+    <script src="scripts/cart.js"></script>
 
 </body>
 

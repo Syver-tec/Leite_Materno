@@ -1,0 +1,90 @@
+/* DICAS - Leite Materno */
+.dicas-page {
+    padding: 40px 0 80px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dicas-page h1 {
+    text-align: center;
+    color: #8e4aa3;
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 16px;
+    font-weight: 800;
+}
+
+.dicas-page .intro {
+    text-align: center;
+    color: #6b7a99;
+    font-size: 17px;
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.dica-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    border-left: 5px solid #8e4aa3;
+}
+
+.dica-card h2 {
+    color: #8e4aa3;
+    font-size: 20px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dica-card h2 i {
+    color: #d6c26f;
+    font-size: 22px;
+}
+
+.dica-card p {
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 12px;
+}
+
+.dica-card ul {
+    margin: 8px 0 0 20px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.dica-card:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .dicas-page {
+    padding: 24px 16px 60px;
+  }
+
+  .dica-card {
+    padding: 20px 20px;
+  }
+
+  .dicas-page .intro {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dicas-page {
+    padding: 20px 12px 50px;
+  }
+
+  .dica-card {
+    padding: 18px 16px;
+    border-left-width: 4px;
+  }
+
+  .dica-card h2 {
+    font-size: 18px;
+  }
+}

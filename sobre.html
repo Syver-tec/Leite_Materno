@@ -6,16 +6,16 @@
     <meta charset="UTF-8">
     <title>Sobre - Leite Materno</title>
 
-    <link rel="stylesheet" href="   styles/sobre.css">
-    <link rel="stylesheet" href="   styles/footer.css">
-    <link rel="stylesheet" href="   styles/header.css">
-    <link rel="stylesheet" href="   styles/fonts.css">
+    <link rel="stylesheet" href="styles/sobre.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/cart.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="   styles/cart.css">
     <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
 
     <style>
@@ -31,11 +31,13 @@
 
             <!-- LOGO -->
             <a class="logo" href="index.html" aria-label="Leite Materno - Home">
-                <img src="  imgs/Logo.png" alt="Leite Materno">
+                <img src="imgs/Logo.png" alt="Leite Materno">
             </a>
 
+            <input type="checkbox" id="menu-check" class="menu-check" aria-hidden="true" />
+
             <!-- NAV -->
-            <nav class="nav" id="nav" aria-label="Navegação principal">
+            <nav class="main-nav" id="nav" aria-label="Navegação principal">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -47,10 +49,12 @@
             <!-- AÇÕES -->
             <div class="nav-right">
 
+                <!-- HAMBURGUER -->
+                <label class="menu-toggle" for="menu-check" aria-label="Abrir menu">☰</label>
+
                 <!-- CARRINHO -->
                 <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
                     <span class="valor">R$0,00</span>
-
                     <span class="cart-icon" aria-hidden="true">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-count">0</span>
@@ -60,13 +64,15 @@
                 <!-- REDES -->
                 <div class="redes">
                     <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr"
+                        class="social" aria-label="Instagram" target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
                 </div>
 
-                <!-- HAMBURGUER -->
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
-
             </div>
+
+            <label class="menu-overlay" for="menu-check" aria-label="Fechar menu"></label>
         </div>
     </header>
 
@@ -120,7 +126,7 @@
 
         <div class="hero-right">
             <div class="circle-bg"></div>
-            <img src="  imgs/sobre/Foto_Heloiana" class="hero-img" alt="Foto Heloiana">
+            <img src="imgs/sobre/Foto_Heloiana.jpg" class="hero-img" alt="Foto Heloiana">
         </div>
     </section>
 
@@ -137,55 +143,51 @@
 
     <div class="carousel">
         <div class="group">
-            <div class="card-carousel"><img src="   imgs/sobre/cisam.jpeg" alt="logo cisam"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/imip.jpeg" alt="logo imip"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/ham.png" alt="logo ham"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/memorial-guararapes.jpeg"
-                    alt="logo memorial guararapes"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/edson-ramalho.png"
-                    alt="logo Hospital do Servidor"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/memorial-sao-jose.jpeg"
-                    alt="logo memorial são josé"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/unimed-joao-Pessoa.jpeg"
-                    alt="logo unimed joão pessoa"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/unimed-caruaru.png"
-                    alt="logo unimed caruaru"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/Unimed-Recife.png" alt="logo unimed recife">
+            <div class="card-carousel"><img src="imgs/sobre/cisam.jpeg" alt="logo cisam"></div>
+            <div class="card-carousel"><img src="imgs/sobre/imip.jpeg" alt="logo imip"></div>
+            <div class="card-carousel"><img src="imgs/sobre/ham.png" alt="logo ham"></div>
+            <div class="card-carousel"><img src="imgs/sobre/memorial-guararapes.jpeg" alt="logo memorial guararapes">
             </div>
-            <div class="card-carousel"><img src="   imgs/sobre/RHP.png" alt="logo RHP"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/santa-joana.png" alt="logo santa joana">
+            <div class="card-carousel"><img src="imgs/sobre/edson-ramalho.png" alt="logo Hospital do Servidor"></div>
+            <div class="card-carousel"><img src="imgs/sobre/memorial-sao-jose.jpeg" alt="logo memorial são josé">
             </div>
-            <div class="card-carousel"><img src="   imgs/sobre/Vitarella.jpeg" alt="logo vitarella"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/hospital-tricentenario.png"
+            <div class="card-carousel"><img src="imgs/sobre/unimed-joao-Pessoa.jpeg" alt="logo unimed joão pessoa">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/unimed-caruaru.png" alt="logo unimed caruaru"></div>
+            <div class="card-carousel"><img src="imgs/sobre/Unimed-Recife.png" alt="logo unimed recife">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/RHP.png" alt="logo RHP"></div>
+            <div class="card-carousel"><img src="imgs/sobre/santa-joana.png" alt="logo santa joana">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/Vitarella.jpeg" alt="logo vitarella"></div>
+            <div class="card-carousel"><img src="imgs/sobre/hospital-tricentenario.png"
                     alt="logo hospital tricentenario"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/hospital-da-mulher.jpeg"
-                    alt="logo hospital da mulher"></div>
+            <div class="card-carousel"><img src="imgs/sobre/hospital-da-mulher.jpeg" alt="logo hospital da mulher">
+            </div>
         </div>
 
         <div aria-hidden="true" class="group">
-            <div class="card-carousel"><img src="   imgs/sobre/cisam.jpeg" alt="logo cisam"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/imip.jpeg" alt="logo imip"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/ham.png" alt="logo ham"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/memorial-guararapes.jpeg"
-                    alt="logo memorial guararapes"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/edson-ramalho.png"
-                    alt="logo Hospital do Servidor"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/memorial-sao-jose.jpeg"
-                    alt="logo memorial são josé"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/unimed-joao-Pessoa.jpeg"
-                    alt="logo unimed joão pessoa"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/unimed-caruaru.png"
-                    alt="logo unimed caruaru"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/Unimed-Recife.png" alt="logo unimed recife">
+            <div class="card-carousel"><img src="imgs/sobre/cisam.jpeg" alt="logo cisam"></div>
+            <div class="card-carousel"><img src="imgs/sobre/imip.jpeg" alt="logo imip"></div>
+            <div class="card-carousel"><img src="imgs/sobre/ham.png" alt="logo ham"></div>
+            <div class="card-carousel"><img src="imgs/sobre/memorial-guararapes.jpeg" alt="logo memorial guararapes">
             </div>
-            <div class="card-carousel"><img src="   imgs/sobre/RHP.png" alt="logo RHP"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/santa-joana.png" alt="logo santa joana">
+            <div class="card-carousel"><img src="imgs/sobre/edson-ramalho.png" alt="logo Hospital do Servidor"></div>
+            <div class="card-carousel"><img src="imgs/sobre/memorial-sao-jose.jpeg" alt="logo memorial são josé">
             </div>
-            <div class="card-carousel"><img src="   imgs/sobre/Vitarella.jpeg" alt="logo vitarella"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/hospital-tricentenario.png"
+            <div class="card-carousel"><img src="imgs/sobre/unimed-joao-Pessoa.jpeg" alt="logo unimed joão pessoa">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/unimed-caruaru.png" alt="logo unimed caruaru"></div>
+            <div class="card-carousel"><img src="imgs/sobre/Unimed-Recife.png" alt="logo unimed recife">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/RHP.png" alt="logo RHP"></div>
+            <div class="card-carousel"><img src="imgs/sobre/santa-joana.png" alt="logo santa joana">
+            </div>
+            <div class="card-carousel"><img src="imgs/sobre/Vitarella.jpeg" alt="logo vitarella"></div>
+            <div class="card-carousel"><img src="imgs/sobre/hospital-tricentenario.png"
                     alt="logo hospital tricentenario"></div>
-            <div class="card-carousel"><img src="   imgs/sobre/hospital-da-mulher.jpeg"
-                    alt="logo hospital da mulher"></div>
+            <div class="card-carousel"><img src="imgs/sobre/hospital-da-mulher.jpeg" alt="logo hospital da mulher">
+            </div>
         </div>
     </div>
 
@@ -195,7 +197,7 @@
             <div class="row">
 
                 <div class="col-md-4">
-                    <img src="  imgs/Logo.png" class="footer-logo" alt="Logo">
+                    <img src="imgs/Logo.png" class="footer-logo" alt="Logo">
                 </div>
 
                 <div class="col-md-3">
@@ -220,16 +222,13 @@
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- JS (menu hambúrguer é puro CSS) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-    <!-- O sobre.js pode ficar só pro carrossel etc (se você tiver) -->
-    <script src="   scripts/sobre.js"></script>
-
-    <!-- ESSE É O MAIS IMPORTANTE: carrinho global (mesma key em tudo) -->
-    <script src="   scripts/cart.js"></script>
+    <script src="scripts/sobre.js"></script>
+    <script src="scripts/whatsapp-config.js"></script>
+    <script src="scripts/cart.js"></script>
 
 </body>
 

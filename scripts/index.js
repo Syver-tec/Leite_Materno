@@ -1,8 +1,8 @@
 const counters = document.querySelectorAll(".counter");
 
 counters.forEach(counter => {
-  const target = + counter.getAttribute("data-target");
-  const duration = 2000; // duração da animação em ms
+  const target = +counter.getAttribute("data-target");
+  const duration = 2000;
   const startTime = performance.now();
 
   function updateCounter(currentTime) {
@@ -20,54 +20,43 @@ counters.forEach(counter => {
   requestAnimationFrame(updateCounter);
 });
 
+// Carrossel customizado (só roda se os elementos existirem na página)
 document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".carousel-track");
+  const carouselCards = document.querySelectorAll(".carousel-track .card");
+  const nextBtn = document.querySelector(".next");
+  const prevBtn = document.querySelector(".prev");
+  const container = document.querySelector(".carousel-container");
 
-    const track = document.querySelector('.carousel-track');
-    const carouselCards = document.querySelectorAll('.carousel-track .card');
-    const nextBtn = document.querySelector('.next');
-    const prevBtn = document.querySelector('.prev');
+  if (!track || !nextBtn || !prevBtn || !carouselCards.length || !container) return;
 
-    let index = 0;
+  let index = 0;
 
-    function getCardWidth() {
-        return carouselCards[0].offsetWidth + 30; // gap
+  function getCardWidth() {
+    return carouselCards[0].offsetWidth + 30;
+  }
+
+  function getVisibleCards() {
+    return Math.floor(container.offsetWidth / (carouselCards[0].offsetWidth + 30));
+  }
+
+  function updateCarousel() {
+    track.style.transform = `translateX(-${index * getCardWidth()}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < carouselCards.length - getVisibleCards()) {
+      index++;
+      updateCarousel();
     }
+  });
 
-    function getVisibleCards() {
-        return Math.floor(document.querySelector('.carousel-container').offsetWidth / carouselCards[0].offsetWidth);
-    }
-
-    function updateCarousel() {
-        track.style.transform = `translateX(-${index * getCardWidth()}px)`;
-    }
-
-    nextBtn.addEventListener('click', () => {
-        if (index < carouselCards.length - getVisibleCards()) {
-            index++;
-            updateCarousel();
-        }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (index > 0) {
-            index--;
-            updateCarousel();
-        }
-    });
-
-    window.addEventListener('resize', updateCarousel);
-
-});
-
-
-prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener("click", () => {
     if (index > 0) {
-        index--;
-        updateCarousel();
+      index--;
+      updateCarousel();
     }
+  });
+
+  window.addEventListener("resize", updateCarousel);
 });
-
-function updateCarousel() {
-    track.style.transform = `translateX(-${index * cardWidth}px)`;
-}
-

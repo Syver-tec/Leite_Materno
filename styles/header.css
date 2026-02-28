@@ -1,155 +1,190 @@
-/* ===== HEADER PADRÃO (igual em todas as páginas) ===== */
-.header {
-  background: #fff;
-  padding: 18px 0;
+/* ===== HEADER ===== */
+.header{
+  background:#fff;
+  padding:18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  overflow: visible;
 }
 
-.header .container {
-  width: min(92%, 1400px);
-  margin: 0 auto;
+.header .container{
+  width:min(92%,1400px);
+  margin:0 auto;
+  padding:0 16px;
 }
 
-.header-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 22px;
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  position:relative; /* base do dropdown */
 }
 
 /* logo */
-.logo img {
-  height: 56px;
-  width: auto;
-  display: block;
+.logo img{
+  height:56px;
+  width:auto;
+  display:block;
 }
 
-/* NAV central */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  flex: 1;
-  /* faz o menu ficar no MEIO */
+/* nav desktop (main-nav para não conflitar com Bootstrap .nav) */
+.main-nav{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:36px;
+  flex:1;
 }
 
-.nav a {
-  text-decoration: none;
-  color: #7b5c7b;
-  font-weight: 500;
-  font-size: 16px;
+.main-nav a{
+  text-decoration:none;
+  color:#7b5c7b;
+  font-weight:600;
+  font-size:17px;
 }
 
-.nav a:hover {
-  color: #8e4aa3;
-}
+.main-nav a:hover{ color:#8e4aa3; }
 
 /* direita */
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+.nav-right{
+  display:flex;
+  align-items:center;
+  gap:12px;
 }
 
-/* carrinho (pílula) */
-.carrinho {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  background: #8e4aa3;
-  color: #fff;
-  padding: 10px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  user-select: none;
+/* carrinho */
+.carrinho{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  background:#8e4aa3;
+  color:#fff;
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  user-select:none;
 }
 
-.carrinho .valor {
-  font-weight: 800;
+.carrinho .valor{ font-weight:800; }
+
+.cart-icon{
+  position:relative;
+  display:flex;
+  align-items:center;
 }
 
-.cart-icon {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.cart-count {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  width: 22px;
-  height: 22px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  color: #8e4aa3;
-  font-weight: 900;
-  border-radius: 999px;
-  font-size: 12px;
+.cart-count{
+  position:absolute;
+  top:-10px;
+  right:-12px;
+  width:22px;
+  height:22px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  color:#8e4aa3;
+  font-weight:900;
+  border-radius:999px;
+  font-size:12px;
 }
 
 /* redes */
-.redes {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+.redes{ display:flex; align-items:center; gap:10px; }
+.social{
+  width:34px;height:34px;
+  display:flex;align-items:center;justify-content:center;
+  background:#d6c26f;
+  color:#6a4a6f;
+  border-radius:999px;
+  text-decoration:none;
 }
 
-.social {
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #d6c26f;
-  color: #6a4a6f;
-  border-radius: 999px;
-  text-decoration: none;
+/* hamburguer */
+.menu-toggle{
+  display:none;
+  border:0;
+  background:transparent;
+  font-size:26px;
+  color:#7b5c7b;
+  cursor:pointer;
+  line-height:1;
+  padding:8px;
+  min-width:44px;
+  min-height:44px;
+  position:relative;
+  z-index:100001;
+  -webkit-tap-highlight-color:transparent;
 }
 
-.social:hover {
-  filter: brightness(.95);
+/* checkbox oculto para menu mobile (só CSS) */
+.menu-check{
+  position:absolute;
+  opacity:0;
+  width:1px;
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
 }
 
-/* hambúrguer (só mobile) */
-.menu-toggle {
-  display: none;
-  border: 0;
-  background: transparent;
-  font-size: 26px;
-  color: #7b5c7b;
-  cursor: pointer;
+/* overlay para fechar ao clicar fora */
+.menu-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:99998;
+  background:rgba(0,0,0,0.3);
+  cursor:pointer;
 }
 
 /* ===== MOBILE ===== */
-@media (max-width: 992px) {
-  .menu-toggle {
-    display: block;
+@media (max-width: 992px){
+  .menu-toggle{ display:flex; align-items:center; justify-content:center; }
+
+  .nav-right{ position:relative; z-index:100002; }
+
+  /* quando checkbox marcado: mostra nav e overlay */
+  .menu-check:checked ~ .main-nav{
+    display:flex !important;
+  }
+  .menu-check:checked ~ .menu-overlay{
+    display:block !important;
   }
 
-  .nav {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 92px;
-    /* ajuste se o header mudar altura */
-    background: #fff;
-    flex-direction: column;
-    gap: 14px;
-    padding: 18px 0;
-    border-top: 1px solid #eee;
-    display: none;
-    z-index: 999;
+  /* dropdown hamburguer */
+  .header-row{
+    flex-wrap: wrap;
+  }
+  .main-nav{
+    position:absolute;
+    left:12px; right:12px;
+    top: calc(100% + 8px);
+    background:#fff;
+    flex-direction:column;
+    gap:20px;
+    padding:22px 0;
+    border:1px solid #eee;
+    border-radius:14px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    display:none !important;
+    z-index:99999;
   }
 
-  .nav.active {
-    display: flex;
-  }
+  .main-nav a{ padding:10px 0; font-size:17px; font-weight:600; }
 
-  .header-row {
-    position: relative;
-  }
+  .logo img{ height:46px; }
+
+  .carrinho{ padding:8px 12px; }
+}
+
+/* mobile menor */
+@media (max-width: 480px){
+  .redes{ display:none; }
+  .main-nav a{ font-size:16px; }
+  .header .container{ padding:0 12px; }
+  .carrinho .valor{ font-size:13px; }
+  .carrinho{ padding:8px 12px; gap:6px; }
 }

@@ -6,18 +6,17 @@
     <meta charset="UTF-8">
     <title>Home - Leite Materno</title>
 
-    <link rel="stylesheet" href="   styles/sobre.css">
-    <link rel="stylesheet" href="   styles/footer.css">
-    <link rel="stylesheet" href="   styles/header.css">
-    <link rel="stylesheet" href="   styles/fonts.css">
-    <link rel="stylesheet" href="   styles/index.css">
+    <link rel="stylesheet" href="styles/sobre.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/fonts.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/cart.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="   styles/cart.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="icon" href="imgs/favicon/favicon.ico" type="image/png">
 
@@ -28,17 +27,15 @@
 
 <body>
 
-    <!-- HEADER -->
     <header class="header">
         <div class="container header-row">
-
-            <!-- LOGO -->
-            <a class="logo" href="index.html" aria-label="Leite Materno - Home">
-                <img src="  imgs/Logo.png" alt="Leite Materno">
+            <a class="logo" href="index.html">
+                <img src="imgs/Logo.png" alt="Leite Materno">
             </a>
 
-            <!-- NAV -->
-            <nav class="nav" id="nav" aria-label="Navegação principal">
+            <input type="checkbox" id="menu-check" class="menu-check" aria-hidden="true" />
+
+            <nav class="main-nav" id="nav">
                 <a href="index.html">Home</a>
                 <a href="sobre.html">Sobre</a>
                 <a href="alugar.html">Alugar</a>
@@ -47,33 +44,29 @@
                 <a href="dicas.html">Dicas</a>
             </nav>
 
-            <!-- AÇÕES -->
             <div class="nav-right">
-
-                <!-- CARRINHO -->
-                <div class="carrinho" id="btn-cart" role="button" tabindex="0" aria-label="Abrir carrinho">
+                <div class="carrinho" id="btn-cart" role="button" tabindex="0">
                     <span class="valor">R$0,00</span>
-
                     <span class="cart-icon" aria-hidden="true">
                         <i class="fa-solid fa-bag-shopping"></i>
                         <span class="cart-count">0</span>
                     </span>
                 </div>
 
-                <!-- REDES -->
                 <div class="redes">
-                    <a href="#" class="social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr" class="social" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/leitematernoficial?igsh=enNsY3l3M2dhaHA3&utm_source=qr"
+                        class="social" target="_blank"><i class="fa-brands fa-instagram"></i></a>
                 </div>
 
-                <!-- HAMBURGUER -->
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Abrir menu">☰</button>
-
+                <label class="menu-toggle" for="menu-check" aria-label="Abrir menu">☰</label>
             </div>
+
+            <label class="menu-overlay" for="menu-check" aria-label="Fechar menu"></label>
         </div>
     </header>
 
-    <!-- DRAWER DO CARRINHO (OBRIGATÓRIO EM TODAS AS PÁGINAS) -->
+    <!-- DRAWER -->
     <div class="drawer" id="drawer-cart" aria-hidden="true">
         <div class="drawer-overlay" data-close-cart="true"></div>
 
@@ -98,32 +91,58 @@
             </div>
         </aside>
     </div>
-
     <!-- CONTEÚDO -->
 
     <!-- HERO -->
-    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="10000">
-        <img src="imgs/index/img1.png" class="d-block w-100" alt="...">
+    <section class="hero-home">
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-pause="hover">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="6000">
+                    <img src="imgs/index/img1.png" class="d-block w-100" alt="Equipamentos para amamentação">
+                    <div class="hero-overlay">
+                        <div class="hero-content">
+                            <h1>Cuidando de você e do seu bebê</h1>
+                            <p>Locação de bombas de extração e material de apoio para sua jornada na amamentação.</p>
+                            <a href="alugar.html" class="hero-btn">Conheça nossos equipamentos</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="imgs/index/img2.png" class="d-block w-100" alt="Bombas de extração de leite">
+                    <div class="hero-overlay">
+                        <div class="hero-content">
+                            <h1>Qualidade e conforto</h1>
+                            <p>As melhores marcas do mercado para você extrair e armazenar seu leite com tranquilidade.</p>
+                            <a href="comprar.html" class="hero-btn outline">Ver material de apoio</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" data-bs-interval="6000">
+                    <img src="imgs/index/img3.png" class="d-block w-100" alt="Leite Materno">
+                    <div class="hero-overlay">
+                        <div class="hero-content">
+                            <h1>+18 anos de experiência</h1>
+                            <p>Acompanhamento humanizado e orientação completa para mamães de Recife e região.</p>
+                            <a href="sobre.html" class="hero-btn">Saiba mais sobre nós</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
         </div>
-        <div class="carousel-item" data-bs-interval="2000">
-        <img src="imgs/index/img2.png" class="d-block w-100" alt="...">
-        </div>
-        <div class="carousel-item">
-        <img src="imgs/index/img3.png" class="d-block w-100" alt="...">
-        </div>
-        
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-    </div>
+    </section>
 
     <!-- NÚMEROS -->
     <section class="stats">
@@ -139,37 +158,37 @@
 
     <!-- ALUGUEL DE EQUIPAMENTOS -->
     <section class="equipamentos">
-    <h2 class="titulo-secao">Aluguel de Equipamentos</h2>
+        <h2 class="titulo-secao">Aluguel de Equipamentos</h2>
 
-    <div class="grid-equipamentos">
+        <div class="grid-equipamentos">
 
-        <div class="card">
-            <img src="imgs/index/prod1.png" alt="">
-            <h3>Symphony - Duplo</h3>
+            <div class="card">
+                <img src="imgs/index/prod1.png" alt="">
+                <h3>Symphony - Duplo</h3>
+            </div>
+
+            <div class="card">
+                <img src="imgs/index/prod2.jpg" alt="">
+                <h3>Lactina - Single</h3>
+            </div>
+
+            <div class="card">
+                <img src="imgs/index/prod4.jpg" alt="">
+                <h3>Lactina - Duplo</h3>
+            </div>
+
+            <div class="card">
+                <img src="imgs/index/prod3.png" alt="">
+                <h3>Freestyle - Single</h3>
+            </div>
+
         </div>
 
-        <div class="card">
-            <img src="imgs/index/prod2.jpg" alt="">
-            <h3>Lactina - Single</h3>
-        </div>
-
-        <div class="card">
-            <img src="imgs/index/prod4.jpg" alt="">
-            <h3>Lactina - Duplo</h3>
-        </div>
-
-        <div class="card">
-            <img src="imgs/index/prod3.png" alt="">
-            <h3>Freestyle - Single</h3>
-        </div>
-
-    </div>
-
-    <a href="alugar.html" class="btn-alugar">Alugue Agora</a>
+        <a href="alugar.html" class="btn-alugar">Alugue Agora</a>
     </section>
 
     <!-- PACOTES -->
-    <section class="packages fade-section   ">
+    <section class="packages fade-section">
         <h2>Pacotes de locação</h2>
 
         <div class="package-grid">
@@ -207,68 +226,44 @@
         </div>
     </section>
 
-    <script>
-    const track = document.querySelector('.carousel-track');
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-
-    let index = 0;
-    const cardWidth = 330;
-
-    next.addEventListener('click', () => {
-        if(index < track.children.length - 1){
-            index++;
-            track.style.transform = `translateX(-${cardWidth * index}px)`;
-        }
-    });
-
-    prev.addEventListener('click', () => {
-        if(index > 0){
-            index--;
-            track.style.transform = `translateX(-${cardWidth * index}px)`;
-        }
-    });
-    </script>
-
-    </body>
-    </html>
-
-
     <!-- FOOTER -->
     <footer class="footer-leite">
         <div class="container">
-            <div class="row">
+        <div class="row">
 
-                <div class="col-md-4">
-                    <img src="  imgs/Logo.png" class="footer-logo" alt="Logo">
-                </div>
-
-                <div class="col-md-3">
-                    <h5 class="footer-title">Onde nos encontrar</h5>
-                    <p>Rua Ribeiro de Brito, 544, sala 201,<br>Boa Viagem</p>
-                    <p>(81) 4117-0033<br>(81) 9.8737-0033</p>
-                </div>
-
-                <div class="col-md-3">
-                    <h5 class="footer-title">Horário de Funcionamento</h5>
-                    <p>Segunda a sexta, das 9h às 12h<br>e das 14h às 17h</p>
-                    <p>Autoatendimento:<br>sábados, domingos e feriados</p>
-                </div>
-
-                <div class="col-md-2">
-                    <h5 class="footer-title">Informações</h5>
-                    <a class="link-footer" href="sobre.html">Sobre nós</a>
-                    <p>Política de Privacidade</p>
-                </div>
-
+            <div class="col-md-4">
+                <img src="imgs/Logo.png" class="footer-logo" alt="Logo">
             </div>
+
+            <div class="col-md-3">
+                <h5 class="footer-title">Onde nos encontrar</h5>
+                <p>Rua Ribeiro de Brito, 544, sala 201,<br>Boa Viagem</p>
+                <p>(81) 4117-0033<br>(81) 9.8737-0033</p>
+            </div>
+
+            <div class="col-md-3">
+                <h5 class="footer-title">Horário de Funcionamento</h5>
+                <p>Segunda a sexta, das 9h às 12h<br>e das 14h às 17h</p>
+                <p>Autoatendimento:<br>sábados, domingos e feriados</p>
+            </div>
+
+            <div class="col-md-2">
+                <h5 class="footer-title">Informações</h5>
+                <a class="link-footer" href="sobre.html">Sobre nós</a>
+                <p>Política de Privacidade</p>
+            </div>
+
+        </div>
         </div>
     </footer>
 
-    <!-- JS -->
-    <script src="scripts/index.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
+    <!-- JS (menu hambúrguer é puro CSS) -->
+    <script src="scripts/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="scripts/whatsapp-config.js"></script>
+    <script src="scripts/cart.js"></script>
 </body>
 
 </html>
