@@ -1,0 +1,560 @@
+/* =========================================================
+   IMPORTAÇÃO DE FONTES
+========================================================= */
+
+/* Fonte principal utilizada no projeto */
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap');
+
+/* IMPORTANTE:
+   A fonte Cheri normalmente não está no Google Fonts.
+   Caso tenha o arquivo local, utilize @font-face.
+   Exemplo:
+
+   @font-face {
+     font-family: 'Cheri';
+     src: url('./fonts/Cheri-Regular.woff2') format('woff2');
+   }
+*/
+
+
+/* =========================================================
+   RESET GLOBAL
+========================================================= */
+
+/* Remove margens e paddings padrão do navegador */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Facilita cálculo de largura */
+}
+
+/* Estilo base do documento */
+body {
+  font-family: 'Comfortaa', sans-serif;
+  color: #3e3e3e;
+  background: #fce6e2;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+/* Estrutura principal da barra de navegação */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  position: fixed;        /* Fixa no topo */
+  width: 100%;
+  top: 0;
+  background: transparent;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+/* Estilo aplicado via JS quando rolar a página */
+.navbar.scrolled {
+  background: rgba(252,230,226,0.95);
+  backdrop-filter: blur(10px);
+}
+
+/* Logo textual */
+.logo {
+  font-family: 'Cheri', cursive;
+  font-size: 22px;
+  color: #cfb1d1;
+}
+
+/* Destaque dentro da logo */
+.logo em {
+  color: #e2e1b2;
+  font-style: normal;
+}
+
+/* Links do menu */
+nav a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: #5a5a5a;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+/* Estado ativo ou hover */
+nav a.active,
+nav a:hover {
+  background: #cfb1d1;
+  color: white;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+/* Seção principal da página */
+.hero {
+  padding-top: 150px; /* Compensa navbar fixa */
+  min-height: 100vh;
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  background: linear-gradient(120deg, #cfb1d1, #e7d0e6, #f6f4d8);
+}
+
+/* Badge superior */
+.badge {
+  display: inline-block;
+  background: #e7d0e6;
+  padding: 10px 20px;
+  border-radius: 50px;
+  margin-bottom: 30px;
+  font-size: 13px;
+}
+
+/* Título principal */
+.hero h1 {
+  font-family: 'Cheri', cursive;
+  font-size: 70px;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+/* Destaque no título */
+.hero h1 em {
+  color: #cfb1d1;
+  font-style: normal;
+}
+
+/* Subtítulo */
+.subtitle {
+  max-width: 650px;
+  margin: 0 auto 20px auto;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Autor / Especialista */
+.author {
+  font-size: 14px;
+  margin-bottom: 40px;
+  color: #777;
+}
+
+/* Container dos botões */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Estilo base de botão */
+.btn {
+  padding: 14px 28px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* Botão principal */
+.primary {
+  background: #cfb1d1;
+  color: white;
+}
+
+/* Botão secundário */
+.secondary {
+  border: 1px solid #c6cdbd;
+  color: #5a6b55;
+}
+
+/* Animação leve ao passar o mouse */
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services {
+  padding: 100px 8%;
+  text-align: center;
+  background: #f6f4d8;
+}
+
+/* Texto pequeno superior da seção */
+.section-tag {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #cfb1d1;
+}
+
+/* Título da seção */
+.services h2 {
+  font-family: 'Cheri', cursive;
+  font-size: 42px;
+  margin: 20px 0 60px;
+  color: #4a4a4a;
+}
+
+/* Destaque no título */
+.services h2 em {
+  color: #cfb1d1;
+  font-style: normal;
+}
+
+/* Grid responsivo de cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 40px;
+}
+
+/* Card individual */
+.card {
+  background: #ffffff;
+  padding: 50px 30px;
+  border-radius: 25px;
+  border: 1px solid #e2e1b2;
+  transition: 0.4s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Classe ativada via JS para animação de entrada */
+.card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sombra ao passar o mouse */
+.card:hover {
+  box-shadow: 0 20px 40px rgba(207,177,209,0.25);
+}
+
+/* Ícone antigo (não está sendo usado atualmente) */
+.icon {
+  font-size: 30px;
+  margin-bottom: 20px;
+  color: #cfb1d1;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+  padding: 120px 20px;
+  text-align: center;
+  background: linear-gradient(120deg, #e2e1b2, #c6cdbd);
+}
+
+.cta h2 {
+  font-family: 'Cheri', cursive;
+  font-size: 45px;
+  margin-bottom: 20px;
+  color: #4a4a4a;
+}
+
+.cta h2 em {
+  color: #cfb1d1;
+  font-style: normal;
+}
+
+.cta p {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* Botão da CTA */
+.cta-btn {
+  background: #c6cdbd;
+  color: #3e3e3e;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+  background: #cfb1d1;
+  color: white;
+  padding: 60px 8%;
+}
+
+/* Parte superior do rodapé */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Links do rodapé */
+.footer-links a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #fce6e2;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+/* Linha divisória */
+.footer hr {
+  margin: 40px 0;
+  border: none;
+  height: 1px;
+  background: #e7d0e6;
+}
+
+/* Parte inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+
+/* =========================================================
+   RESPONSIVO
+========================================================= */
+
+@media(max-width: 768px) {
+
+  /* Reduz tamanho do título principal */
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  /* Rodapé em coluna */
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* Esconde navegação no mobile */
+  nav {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   COMPONENTES COMPLEMENTARES
+========================================================= */
+
+/* Wrapper dos ícones SVG */
+.icon-wrapper {
+  width: 70px;
+  height: 70px;
+  background: #e7d0e6;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 25px auto;
+}
+
+/* Estilização do SVG */
+.icon-wrapper svg {
+  width: 28px;
+  height: 28px;
+  stroke: #cfb1d1;
+  stroke-width: 1.8;
+  fill: none;
+}
+
+/* Segunda definição do card (efeito glass) */
+.card {
+  background: #ffffffcc;
+  backdrop-filter: blur(4px);
+  border: 1px solid #e7d0e6;
+}
+
+
+/* =========================================================
+   LOGO NAVBAR
+========================================================= */
+
+.logo img {
+  height: 55px;
+  width: auto;
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   SOCIAL NAVBAR
+========================================================= */
+
+.social {
+  display: flex;
+  gap: 15px;
+}
+
+.social a {
+  width: 38px;
+  height: 38px;
+  background: #e7d0e6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social a svg {
+  width: 18px;
+  height: 18px;
+  stroke: #cfb1d1;
+}
+
+.social a:hover {
+  background: #cfb1d1;
+}
+
+.social a:hover svg {
+  stroke: white;
+}
+
+
+/* =========================================================
+   FOOTER (EXTENSÕES)
+========================================================= */
+
+.footer {
+  background: #cfb1d1;
+  color: white;
+  padding: 60px 8%;
+}
+
+/* Logo no rodapé */
+.footer-logo {
+  height: 45px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Social no rodapé */
+.footer-social {
+  margin-top: 20px;
+}
+
+.footer-social a {
+  background: rgba(255,255,255,0.2);
+}
+
+.footer-social a svg {
+  stroke: white;
+}
+
+.footer-social a:hover {
+  background: white;
+}
+
+.footer-social a:hover svg {
+  stroke: #cfb1d1;
+}
+
+
+/* =========================================================
+   INDICADOR DE SCROLL
+========================================================= */
+
+.scroll {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Animação da seta */
+.arrow {
+  font-size: 26px;
+  opacity: 0.6;
+  animation: bounceArrow 2s infinite;
+}
+
+/* Animação suave e orgânica */
+@keyframes bounceArrow {
+  0% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(12px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.6;
+  }
+}
+
+/* =====================================
+   DIFERENÇA: LOCAÇÃO x ALUGUEL
+===================================== */
+
+.difference {
+  padding: 120px 8%;
+  text-align: center;
+  background: #fff8f6;
+}
+
+.difference h2 {
+  font-family: 'Cheri', cursive;
+  font-size: 42px;
+  margin: 20px 0 60px;
+  color: #4a4a4a;
+}
+
+.difference h2 em {
+  color: #cfb1d1;
+  font-style: normal;
+}
+
+.difference-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.difference-box {
+  background: white;
+  padding: 40px;
+  border-radius: 25px;
+  border: 1px solid #e7d0e6;
+  transition: 0.3s;
+}
+
+.difference-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(207,177,209,0.2);
+}
+
+.difference-box h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #cfb1d1;
+}
+
+.difference-note {
+  max-width: 700px;
+  margin: 0 auto;
+  background: linear-gradient(120deg, #e7d0e6, #f6f4d8);
+  padding: 30px;
+  border-radius: 25px;
+  font-size: 15px;
+}
