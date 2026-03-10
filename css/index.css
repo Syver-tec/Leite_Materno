@@ -74,7 +74,7 @@ body {
 }
 
 /* Links do menu */
-nav a {
+nav a{
   margin-left: 30px;
   text-decoration: none;
   color: #5a5a5a;
@@ -82,7 +82,9 @@ nav a {
   padding: 8px 18px;
   border-radius: 20px;
   transition: 0.3s;
+  white-space: nowrap;
 }
+
 
 /* Estado ativo ou hover */
 nav a.active,
@@ -319,12 +321,31 @@ nav a:hover {
 }
 
 /* Parte inferior */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  font-size: 13px;
+.footer-bottom{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
 }
 
+.footer-logo{
+  height:70px;
+  width:auto;
+  opacity:0.95;
+  transition:0.3s;
+}
+
+.footer-logo:hover{
+  transform:scale(1.05);
+}
+
+@media(min-width: 1024px){
+
+  .footer-logo{
+    height: 110px;
+  }
+
+}
 
 /* =========================================================
    RESPONSIVO
@@ -400,8 +421,9 @@ nav a:hover {
 ========================================================= */
 
 .social {
-  display: flex;
-  gap: 15px;
+  display:flex;
+  gap:15px;
+  margin-left:30px;
 }
 
 .social a {
@@ -557,4 +579,81 @@ nav a:hover {
   padding: 30px;
   border-radius: 25px;
   font-size: 15px;
+}
+
+/* ================================
+MENU HAMBURGER
+================================ */
+
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:5px;
+}
+
+.menu-toggle span{
+  width:25px;
+  height:3px;
+  background:#cfb1d1;
+  border-radius:5px;
+}
+
+
+/* ================================
+RESPONSIVO NAVBAR
+================================ */
+
+@media(max-width:768px){
+
+  .menu-toggle{
+    display:flex;
+  }
+
+  nav{
+    position:absolute;
+    top:90px;
+    left:0;
+    width:100%;
+    background:#fce6e2;
+
+    flex-direction:column;
+    align-items:center;
+
+    padding:30px 0;
+    gap:15px;
+
+    display:none;
+  }
+
+  nav a{
+    margin:0;
+  }
+
+  nav.active{
+    display:flex;
+  }
+
+  .social{
+    display:none;
+  }
+
+  .buttons{
+  flex-direction:column;
+  align-items:center;
+  }
+
+  .hero{
+    padding-top:130px;
+  }
+
+  .footer-links{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  }
+
+  .footer-links a{
+    margin-left:0;
+  }
 }

@@ -1,3 +1,25 @@
+// MENU HAMBURGER
+const menuToggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".navbar nav");
+
+menuToggle.addEventListener("click", () => {
+
+  nav.classList.toggle("active");
+  menuToggle.classList.toggle("active");
+
+});
+
+// FECHAR MENU AO CLICAR EM UM LINK (melhora UX mobile)
+
+const navLinks = document.querySelectorAll(".navbar nav a");
+
+navLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    nav.classList.remove("active");
+    menuToggle.classList.remove("active");
+  });
+});
+
 // Navbar background ao rolar
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
