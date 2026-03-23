@@ -34,9 +34,24 @@
 
   <!-- redes -->
   <div class="social">
-    <a href="#"><i data-lucide="facebook"></i></a>
-    <a href="#"><i data-lucide="instagram"></i></a>
-    <a href="#"><i data-lucide="youtube"></i></a>
+    <a href="#">
+    <svg viewBox="0 0 24 24">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+    </a>
+    <a href="#">
+  <svg viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  </svg>
+  </a>
+    <a href="#">
+  <svg viewBox="0 0 24 24">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+    <polygon points="9.5 15 15.5 12 9.5 9 9.5 15"/>
+  </svg>
+  </a>
   </div>
 
   <!-- hamburger -->
@@ -80,7 +95,7 @@ Psicóloga Heloiana Lima • Especialista em Psicologia Clínica e Obstétrica
 <section class="maternal-showcase">
 
 <span class="section-tag">ACOLHIMENTO</span>
-<h2>Cuidado, carinho e <em>segurança</em> desde o primeiro momento</h2>
+<h2 class="title-elegant">Alimentar, proteger e amar seu bebê.</h2>
 
 <div class="showcase-grid">
 
@@ -129,7 +144,7 @@ segurança e bem-estar para você e seu bebê.
 
 <span class="section-tag">NOSSOS SERVIÇOS</span>
 
-<h2>Como podemos te <em>ajudar</em></h2>
+<h2 class="title-elegant">Como podemos te <em>ajudar</em></h2>
 
 <div class="cards">
 
@@ -189,7 +204,7 @@ segurança e bem-estar para você e seu bebê.
     <span class="tag">NOSSOS PLANOS</span>
 
     <h2>
-        Melhor plano para te <span>ajudar</span>
+        Melhor opção para te <span>ajudar</span>
     </h2>
   </div>
     <div class="cards">
@@ -363,7 +378,7 @@ segurança e bem-estar para você e seu bebê.
     <a href="#" class="btn-cta">Confira mais produtos</a>
 </div>
 
-<!-- DIFERENÇA -->
+<!-- DIFERENÇA 
 <section class="difference">
 
 <span class="section-tag">VOCÊ SABIA?</span>
@@ -401,6 +416,7 @@ para você.
 </div>
 
 </section>
+-->
 
 <!-- CTA -->
 <section class="cta">
@@ -428,9 +444,24 @@ estamos aqui em cada etapa.
 <p>Cuidado materno especializado • Recife, PE</p>
 
 <div class="social footer-social">
-<a href="#"><i data-lucide="facebook"></i></a>
-<a href="#"><i data-lucide="instagram"></i></a>
-<a href="#"><i data-lucide="youtube"></i></a>
+<a href="#">
+    <svg viewBox="0 0 24 24">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+    </svg>
+    </a>
+    <a href="#">
+  <svg viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
+    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
+  </svg>
+  </a>
+    <a href="#">
+  <svg viewBox="0 0 24 24">
+    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
+    <polygon points="9.5 15 15.5 12 9.5 9 9.5 15"/>
+  </svg>
+  </a>
 </div>
 </div>
 
@@ -461,7 +492,9 @@ estamos aqui em cada etapa.
 <script src="https://unpkg.com/lucide@latest"></script>
 
 <script>
-lucide.createIcons();
+document.addEventListener("DOMContentLoaded", () => {
+  lucide.createIcons();
+});
 </script>
 
 <script src="scripts/index.js"></script>
