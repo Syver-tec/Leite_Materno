@@ -1,177 +1,243 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
 
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leite Materno</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leite Materno</title>
 
-<link rel="stylesheet" href="css/index.css" />
+  <link rel="stylesheet" href="css/index.css" />
 
-<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
 
-<!-- NAVBAR -->
-<header class="navbar">
+  <!-- NAVBAR -->
+  <header class="navbar">
 
-  <div class="logo">
-    <img src="imgs/logo_navbar.png" alt="Logo Leite Materno">
+    <div class="logo">
+      <img src="imgs/logo_navbar.png" alt="Logo Leite Materno">
+    </div>
+
+    <!-- menu -->
+    <nav class="nav-menu">
+      <a href="#" class="active">Home</a>
+      <a href="#">Sobre Nós</a>
+      <a href="#">Alugar</a>
+      <a href="#">Comprar</a>
+      <a href="#">Depoimentos</a>
+      <a href="#">Dicas</a>
+    </nav>
+
+    <!-- redes -->
+    <div class="social">
+      <a href="#">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+        </svg>
+      </a>
+      <a href="#">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+          <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+        </svg>
+      </a>
+    </div>
+
+    <!-- hamburger -->
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </header>
+
+  <!-- HERO CARROSSEL -->
+  <section class="hero-carousel">
+    <div class="carousel-container">
+
+      <!-- Slide 1 -->
+      <div class="carousel-slide slide-1 active">
+        <div class="hero-content">
+          <h1 class="title-elegant">
+            <span>Leite</span>
+            <em>Materno</em>
+          </h1>
+
+          <p class="subtitle">
+            Suporte emocional e terapêutico para mulheres em todas as fases da maternidade.
+          </p>
+
+          <p class="author">
+            Psicóloga Heloiana Lima • Especialista em Psicologia Clínica e Obstétrica
+          </p>
+
+          <div class="buttons">
+            <a href="#" class="btn primary">Alugar Equipamento</a>
+            <a href="#" class="btn secondary">Conheça a Heloiana</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-slide slide-2">
+        <div class="hero-content">
+          <h1 class="title-elegant">
+            <span>Leite</span>
+            <em>Materno</em>
+          </h1>
+
+          <p class="subtitle">
+            Equipamentos de alta qualidade para o conforto das mamães.
+          </p>
+
+          <p class="author">
+            Psicóloga Heloiana Lima • Especialista em Psicologia Clínica e Obstétrica
+          </p>
+
+          <div class="buttons">
+            <a href="#" class="btn primary">Alugar Equipamento</a>
+            <a href="#" class="btn secondary">Conheça a Heloiana</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-slide slide-3">
+        <div class="hero-content">
+          <h1 class="title-elegant">
+            <span>Leite</span>
+            <em>Materno</em>
+          </h1>
+
+          <p class="subtitle">
+            Benefícios comprovados para bebê e mamãe.
+          </p>
+
+          <p class="author">
+            Psicóloga Heloiana Lima • Especialista em Psicologia Clínica e Obstétrica
+          </p>
+
+          <div class="buttons">
+            <a href="#" class="btn primary">Alugar Equipamento</a>
+            <a href="#" class="btn secondary">Conheça a Heloiana</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Indicadores do Carrossel -->
+  <div class="carousel-indicators">
+    <span class="indicator active" data-slide="0"></span>
+    <span class="indicator" data-slide="1"></span>
+    <span class="indicator" data-slide="2"></span>
   </div>
+  </section>
 
-  <!-- menu -->
-  <nav class="nav-menu">
-    <a href="#" class="active">Home</a>
-    <a href="#">Sobre Nós</a>
-    <a href="#">Alugar</a>
-    <a href="#">Comprar</a>
-    <a href="#">Depoimentos</a>
-    <a href="#">Dicas</a>
-  </nav>
 
-  <!-- redes -->
-  <div class="social">
-    <a href="#">
-    <svg viewBox="0 0 24 24">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-    </svg>
-    </a>
-    <a href="#">
-  <svg viewBox="0 0 24 24">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
-    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
-  </svg>
-  </a>
-    <a href="#">
-  <svg viewBox="0 0 24 24">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-    <polygon points="9.5 15 15.5 12 9.5 9 9.5 15"/>
-  </svg>
-  </a>
-  </div>
+  <!-- Botões de Navegação -->
+  <button class="carousel-prev">‹</button>
+  <button class="carousel-next">›</button>
+  </section>
 
-  <!-- hamburger -->
-  <div class="menu-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
 
-</header>
+  <!-- VITRINE MATERNA -->
+  <section class="maternal-showcase">
 
-<!-- HERO -->
-<section class="hero">
+    <span class="section-tag">ACOLHIMENTO</span>
+    <h2>Alimentar, proteger e amar seu bebê.</h2>
 
-<h1>
-<span>Leite</span>
-<em>Materno</em>
-</h1>
+    <div class="showcase-grid">
 
-<p class="subtitle">
-Suporte emocional e terapêutico para mulheres em todas as fases da maternidade.
-Equipamentos de alta qualidade para o conforto das mamães.
-</p>
+      <div class="showcase-card">
+        <img src="imgs/mae-bebe1.jpg" alt="Mãe com bebê">
+        <div class="showcase-text">
+          <h3>Acolhimento verdadeiro</h3>
+          <p>
+            Cada mãe vive a maternidade de forma única. Nosso cuidado
+            é pensado para oferecer apoio emocional e segurança
+            em cada etapa dessa jornada.
+          </p>
+        </div>
+      </div>
 
-<p class="author">
-Psicóloga Heloiana Lima • Especialista em Psicologia Clínica e Obstétrica
-</p>
+      <div class="showcase-card">
+        <img src="imgs/mae-bebe2.png" alt="Momento de carinho">
+        <div class="showcase-text">
+          <h3>Momentos de conexão</h3>
+          <p>
+            A amamentação é mais do que nutrição — é vínculo,
+            cuidado e presença. Nosso objetivo é tornar
+            esse momento mais tranquilo e especial.
+          </p>
+        </div>
+      </div>
 
-<div class="buttons">
-<a href="#" class="btn primary">Alugar Equipamento</a>
-<a href="#" class="btn secondary">Conheça a Heloiana</a>
-</div>
+      <div class="showcase-card">
+        <img src="imgs/mae-bebe3.jpg" alt="Mãe segurando bebê">
+        <div class="showcase-text">
+          <h3>Confiança e profissionalismo</h3>
+          <p>
+            Equipamentos de qualidade e acompanhamento
+            especializado para garantir conforto,
+            segurança e bem-estar para você e seu bebê.
+          </p>
+        </div>
+      </div>
 
-<div class="scroll">
-<span class="arrow">↓</span>
-</div>
+    </div>
 
-</section>
+  </section>
 
-<!-- VITRINE MATERNA -->
-<section class="maternal-showcase">
+  <!-- SERVIÇOS -->
+  <section class="services">
 
-<span class="section-tag">ACOLHIMENTO</span>
-<h2 class="title-elegant">Alimentar, proteger e amar seu bebê.</h2>
+    <span class="section-tag">NOSSOS SERVIÇOS</span>
 
-<div class="showcase-grid">
+    <h2>Como podemos te <em>ajudar</em></h2>
 
-<div class="showcase-card">
-<img src="imgs/mae-bebe1.jpg" alt="Mãe com bebê">
-<div class="showcase-text">
-<h3>Acolhimento verdadeiro</h3>
-<p>
-Cada mãe vive a maternidade de forma única. Nosso cuidado
-é pensado para oferecer apoio emocional e segurança
-em cada etapa dessa jornada.
-</p>
-</div>
-</div>
+    <div class="cards">
 
-<div class="showcase-card">
-<img src="imgs/mae-bebe2.png" alt="Momento de carinho">
-<div class="showcase-text">
-<h3>Momentos de conexão</h3>
-<p>
-A amamentação é mais do que nutrição — é vínculo,
-cuidado e presença. Nosso objetivo é tornar
-esse momento mais tranquilo e especial.
-</p>
-</div>
-</div>
+      <div class="card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+            <path d="M3.3 7L12 12l8.7-5" />
+            <path d="M12 22V12" />
+          </svg>
+        </div>
+        <h3>Locação</h3>
+        <p>Bombas elétricas de alta qualidade</p>
+      </div>
 
-<div class="showcase-card">
-<img src="imgs/mae-bebe3.jpg" alt="Mãe segurando bebê">
-<div class="showcase-text">
-<h3>Confiança e profissionalismo</h3>
-<p>
-Equipamentos de qualidade e acompanhamento
-especializado para garantir conforto,
-segurança e bem-estar para você e seu bebê.
-</p>
-</div>
-</div>
+      <div class="card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24">
+            <path d="M6 2l1.5 4h9L18 2" />
+            <path d="M3 6h18l-1 14H4L3 6z" />
+          </svg>
+        </div>
+        <h3>Venda</h3>
+        <p>Acessórios e materiais de apoio</p>
+      </div>
 
-</div>
-
-</section>
-
-<!-- SERVIÇOS -->
-<section class="services">
-
-<span class="section-tag">NOSSOS SERVIÇOS</span>
-
-<h2 class="title-elegant">Como podemos te <em>ajudar</em></h2>
-
-<div class="cards">
-
-<div class="card">
-<div class="icon-wrapper">
-<svg viewBox="0 0 24 24">
-<path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-<path d="M3.3 7L12 12l8.7-5"/>
-<path d="M12 22V12"/>
-</svg>
-</div>
-<h3>Locação</h3>
-<p>Bombas elétricas de alta qualidade</p>
-</div>
-
-<div class="card">
-<div class="icon-wrapper">
-<svg viewBox="0 0 24 24">
-<path d="M6 2l1.5 4h9L18 2"/>
-<path d="M3 6h18l-1 14H4L3 6z"/>
-</svg>
-</div>
-<h3>Comprar</h3>
-<p>Acessórios e materiais de apoio</p>
-</div>
-
-<!-- <div class="card">
+      <!-- <div class="card">
 <div class="icon-wrapper">
 <svg viewBox="0 0 24 24">
 <path d="M4 12a8 8 0 0 1 16 0"/>
@@ -183,202 +249,202 @@ segurança e bem-estar para você e seu bebê.
 <p>Acompanhamento terapêutico especializado</p>
 </div> -->
 
-<div class="card">
-<div class="icon-wrapper">
-<svg viewBox="0 0 24 24">
-<polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2"/>
-</svg>
-</div>
-<h3>Dicas</h3>
-<p>Conteúdo e orientações para mamães</p>
-</div>
+      <div class="card">
+        <div class="icon-wrapper">
+          <svg viewBox="0 0 24 24">
+            <polygon points="12 2 15 9 22 9 17 14 19 21 12 17 5 21 7 14 2 9 9 9 12 2" />
+          </svg>
+        </div>
+        <h3>Sala de apoio para empresas</h3>
+        <p>Conteúdo e orientações para mamães</p>
+      </div>
 
-</div>
+    </div>
 
-</section>
+  </section>
 
-<!--LOCAÇÃO -->
-<section class="planos">
+  <!--LOCAÇÃO -->
+  <section class="planos">
 
     <div class="header-planos">
-    <span class="tag">NOSSOS PLANOS</span>
+      <span class="tag">NOSSOS PLANOS</span>
 
-    <h2>
+      <h2>
         Melhor opção para te <span>ajudar</span>
-    </h2>
-  </div>
+      </h2>
+    </div>
     <div class="cards">
 
-    <!-- CARD 1 -->
-    <div class="card">
-        
+      <!-- CARD 1 -->
+      <div class="card">
+
         <div class="card-image">
-            <img src="imgs/produto1.png" alt="Free Style Duplo">
+          <img src="imgs/produto1.png" alt="Free Style Duplo">
         </div>
 
         <div class="content">
-            <h3>Free Style Duplo</h3>
-            <p class="subtitle">Ideal para o dia a dia</p>
+          <h3>Free Style Duplo</h3>
+          <p class="subtitle">Ideal para o dia a dia</p>
 
-            <div class="price">R$ 160 <span>/15 dias</span></div>
-            <div class="price">R$ 240 <span>/30 dias</span></div>
+          <div class="price">R$ 160 <span>/15 dias</span></div>
+          <div class="price">R$ 240 <span>/30 dias</span></div>
 
-            <ul>
-                <li>Portátil</li>
-                <li>Tamanho compacto</li>
-                <li>Bateria recarregável</li>
-                <li>Extração dupla</li>
-            </ul>
+          <ul>
+            <li>Portátil</li>
+            <li>Tamanho compacto</li>
+            <li>Bateria recarregável</li>
+            <li>Extração dupla</li>
+          </ul>
 
         </div>
-    </div>
+      </div>
 
 
-    <!-- CARD 2 -->
-    <div class="card destaque">
+      <!-- CARD 2 -->
+      <div class="card destaque">
 
         <div class="card-image">
-            <img src="imgs/produto2.png" alt="Free Style Single">
+          <img src="imgs/produto2.png" alt="Free Style Single">
         </div>
 
         <div class="content">
-            <h3>Free Style Single</h3>
-            <p class="subtitle">Prático e eficiente</p>
+          <h3>Free Style Single</h3>
+          <p class="subtitle">Prático e eficiente</p>
 
-            <div class="price">R$ 120 <span>/15 dias</span></div>
-            <div class="price">R$ 200 <span>/30 dias</span></div>
+          <div class="price">R$ 120 <span>/15 dias</span></div>
+          <div class="price">R$ 200 <span>/30 dias</span></div>
 
-            <ul>
-                <li>Portátil</li>
-                <li>Compacto e leve</li>
-                <li>Bateria recarregável</li>
-                <li>Ideal para uso individual</li>
-            </ul>
+          <ul>
+            <li>Portátil</li>
+            <li>Compacto e leve</li>
+            <li>Bateria recarregável</li>
+            <li>Ideal para uso individual</li>
+          </ul>
 
         </div>
-    </div>
+      </div>
 
 
-    <!-- CARD 3 -->
-    <div class="card hospital">
+      <!-- CARD 3 -->
+      <div class="card hospital">
 
         <div class="card-image">
-            <img src="imgs/produto3.png" alt="Lactina Duplo">
+          <img src="imgs/produto3.png" alt="Lactina Duplo">
         </div>
 
         <div class="content">
-            <h3>Lactina Duplo</h3>
-            <p class="subtitle">Uso avançado</p>
+          <h3>Lactina Duplo</h3>
+          <p class="subtitle">Uso avançado</p>
 
-            <div class="price">R$ 290 <span>/15 dias</span></div>
-            <div class="price">R$ 440 <span>/30 dias</span></div>
+          <div class="price">R$ 290 <span>/15 dias</span></div>
+          <div class="price">R$ 440 <span>/30 dias</span></div>
 
-            <ul>
-                <li>Tecnologia hospitalar</li>
-                <li>Alta eficiência</li>
-                <li>Robusto</li>
-                <li>Extremamente confortável</li>
-            </ul>
+          <ul>
+            <li>Tecnologia hospitalar</li>
+            <li>Alta eficiência</li>
+            <li>Robusto</li>
+            <li>Extremamente confortável</li>
+          </ul>
 
         </div>
-    </div>
+      </div>
 
-</div>
+    </div>
 
     </div>
 
     <a href="#" class="btn-cta">Alugue agora</a>
-</section>
+  </section>
 
-<!-- COMPRAR-->
-<div class="produtos">
+  <!-- COMPRAR-->
+  <div class="produtos">
 
     <div class="header-planos">
-    <span class="tag">NOSSOS PRODUTOS</span>
+      <span class="tag">NOSSOS PRODUTOS</span>
 
-    <h2>
+      <h2>
         Itens que fazem <span>diferença</span>
-    </h2>
-  </div>
+      </h2>
+    </div>
 
     <div class="cards-produtos">
 
-        <!-- CARD 1 -->
-        <div class="produto-card">
-            <div class="produto-img">
-                <img src="imgs/item1.png" alt="Copa Medela">
-            </div>
-
-            <div class="produto-content">
-                <h3>Copa Medela</h3>
-                <p>Acoplador rígido para retirada do leite materno Medela.</p>
-
-                <div class="produto-footer">
-                    <span class="preco">R$ 149,99</span>
-                    <a href="#" class="btn-comprar">
-                        <svg width="16" height="16" stroke="currentColor" fill="none">
-                        <circle cx="6" cy="14" r="1"/>
-                        <circle cx="12" cy="14" r="1"/>
-                        <path d="M1 1h2l2.5 9h7l2-6H4"/>
-                      </svg>
-                      Comprar
-                    </a>
-                </div>
-            </div>
+      <!-- CARD 1 -->
+      <div class="produto-card">
+        <div class="produto-img">
+          <img src="imgs/item1.png" alt="Copa Medela">
         </div>
 
-        <!-- CARD 2 -->
-        <div class="produto-card">
-            <div class="produto-img">
-                <img src="imgs/item2.png" alt="Copa Medela">
-            </div>
+        <div class="produto-content">
+          <h3>Copa Medela</h3>
+          <p>Acoplador rígido para retirada do leite materno Medela.</p>
 
-            <div class="produto-content">
-                <h3>Copa Medela</h3>
-                <p>Compativel com Swing Flex e Free Style.</p>
+          <div class="produto-footer">
+            <span class="preco">R$ 149,99</span>
+            <a href="#" class="btn-comprar">
+              <svg width="16" height="16" stroke="currentColor" fill="none">
+                <circle cx="6" cy="14" r="1" />
+                <circle cx="12" cy="14" r="1" />
+                <path d="M1 1h2l2.5 9h7l2-6H4" />
+              </svg>
+              Comprar
+            </a>
+          </div>
+        </div>
+      </div>
 
-                <div class="produto-footer">
-                    <span class="preco">R$ 279,99</span>
-                    <a href="#" class="btn-comprar">
-                        <svg width="16" height="16" stroke="currentColor" fill="none">
-                        <circle cx="6" cy="14" r="1"/>
-                        <circle cx="12" cy="14" r="1"/>
-                        <path d="M1 1h2l2.5 9h7l2-6H4"/>
-                      </svg>
-                      Comprar
-                    </a>
-                </div>
-            </div>
+      <!-- CARD 2 -->
+      <div class="produto-card">
+        <div class="produto-img">
+          <img src="imgs/item2.png" alt="Copa Medela">
         </div>
 
-        <!-- CARD 3 -->
-        <div class="produto-card">
-            <div class="produto-img">
-                <img src="imgs/item3.png" alt="Pote de vidro | 150ml">
-            </div>
+        <div class="produto-content">
+          <h3>Copa Medela</h3>
+          <p>Compativel com Swing Flex e Free Style.</p>
 
-            <div class="produto-content">
-                <h3>Pote de vidro | 150ml</h3>
-                <p>Pote de vidro, sem graduação, indicado para armazenar e pasteurizar leite materno.</p>
-
-                <div class="produto-footer">
-                    <span class="preco">R$ 9,99</span>
-                    <a href="#" class="btn-comprar">
-                        <svg width="16" height="16" stroke="currentColor" fill="none">
-                        <circle cx="6" cy="14" r="1"/>
-                        <circle cx="12" cy="14" r="1"/>
-                        <path d="M1 1h2l2.5 9h7l2-6H4"/>
-                      </svg>
-                      Comprar
-                    </a>
-                </div>
-            </div>
+          <div class="produto-footer">
+            <span class="preco">R$ 279,99</span>
+            <a href="#" class="btn-comprar">
+              <svg width="16" height="16" stroke="currentColor" fill="none">
+                <circle cx="6" cy="14" r="1" />
+                <circle cx="12" cy="14" r="1" />
+                <path d="M1 1h2l2.5 9h7l2-6H4" />
+              </svg>
+              Comprar
+            </a>
+          </div>
         </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="produto-card">
+        <div class="produto-img">
+          <img src="imgs/item3.png" alt="Pote de vidro | 150ml">
+        </div>
+
+        <div class="produto-content">
+          <h3>Pote de vidro | 150ml</h3>
+          <p>Pote de vidro, sem graduação, indicado para armazenar e pasteurizar leite materno.</p>
+
+          <div class="produto-footer">
+            <span class="preco">R$ 9,99</span>
+            <a href="#" class="btn-comprar">
+              <svg width="16" height="16" stroke="currentColor" fill="none">
+                <circle cx="6" cy="14" r="1" />
+                <circle cx="12" cy="14" r="1" />
+                <path d="M1 1h2l2.5 9h7l2-6H4" />
+              </svg>
+              Comprar
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <a href="#" class="btn-cta">Confira mais produtos</a>
-</div>
+  </div>
 
-<!-- DIFERENÇA 
+  <!-- DIFERENÇA 
 <section class="difference">
 
 <span class="section-tag">VOCÊ SABIA?</span>
@@ -418,87 +484,87 @@ para você.
 </section>
 -->
 
-<!-- CTA -->
-<section class="cta">
+  <!-- CTA -->
+  <section class="cta">
 
-<h2>Sua jornada maternal merece <em>cuidado</em></h2>
+    <h2>Cuidar também é sobre propósito</h2>
 
-<p>
-Das melhores bombas elétricas do mercado ao suporte emocional especializado,
-estamos aqui em cada etapa.
-</p>
+    <p>
+      Mais do que produtos, somos uma equipe que acredita no cuidado,
+      na escuta e no apoio real às mães.
+    </p>
 
-<a href="#" class="btn cta-btn">Saiba Mais Sobre Nós</a>
+    <a href="#" class="btn cta-btn">Conheça nossa história</a>
 
-</section>
-
-
-
-<!-- FOOTER -->
-<footer class="footer">
-
-<div class="footer-top">
-
-<div class="footer-brand">
-<h3>Leite <em>Materno</em></h3>
-<p>Cuidado materno especializado • Recife, PE</p>
-
-<div class="social footer-social">
-<a href="#">
-    <svg viewBox="0 0 24 24">
-        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-    </svg>
-    </a>
-    <a href="#">
-  <svg viewBox="0 0 24 24">
-    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z"/>
-    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/>
-  </svg>
-  </a>
-    <a href="#">
-  <svg viewBox="0 0 24 24">
-    <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/>
-    <polygon points="9.5 15 15.5 12 9.5 9 9.5 15"/>
-  </svg>
-  </a>
-</div>
-</div>
-
-<div class="footer-links">
-<a href="#">Home</a>
-<a href="#">Sobre Nós</a>
-<a href="#">Alugar</a>
-<a href="#">Comprar</a>
-<a href="#">Depoimentos</a>
-<a href="#">Dicas</a>
-</div>
-
-</div>
-
-<hr>
-
-<div class="footer-bottom">
-<span>© 2026 Leite Materno. Todos os direitos reservados.</span>
-
-</div>
-
-</footer>
+  </section>
 
 
 
-<!-- SCRIPTS -->
+  <footer class="footer">
 
-<script src="https://unpkg.com/lucide@latest"></script>
+    <div class="footer-top">
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  lucide.createIcons();
-});
-</script>
+      <div class="footer-logo">
+        <img src="imgs/logo-footer.png" alt="Logo Leite Materno">
+      </div>
 
-<script src="scripts/index.js"></script>
-<script src="scripts/hamburger.js" defer></script>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Sobre Nós</a>
+        <a href="#">Alugar</a>
+        <a href="#">Comprar</a>
+        <a href="#">Depoimentos</a>
+        <a href="#">Dicas</a>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+      <span>© 2026 Leite Materno. Todos os direitos reservados.</span>
+
+      <div class="footer-social">
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+          </svg>
+        </a>
+
+        <a href="#">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12z" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+  </footer>
+
+
+
+  <!-- SCRIPTS -->
+
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      lucide.createIcons();
+    });
+  </script>
+
+  <script src="scripts/index.js"></script>
+  <script src="scripts/hamburger.js" defer></script>
 
 </body>
+
 </html>
