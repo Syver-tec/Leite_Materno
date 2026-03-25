@@ -1,112 +1,6 @@
 /* =========================================================
-   IMPORTAÇÃO DE FONTES
+   HOME — específico (reset, fontes e layout global em global.css)
 ========================================================= */
-
-/* Fonte principal utilizada no projeto */
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap");
-
-@font-face {
-  font-family: "Cheri";
-  src: url("./fonts/Cheri-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* TITULOS PRINCIPAIS (estilo elegante) */
-.title-elegant {
-  font-family: "Cheri", cursive;
-  font-weight: normal;
-  color: #4a4a4a;
-  line-height: 1.3;
-}
-
-/* PALAVRA DESTACADA 
-.title-elegant em,
-.title-elegant span {
-  color: #cfb1d1;
-  font-style: normal;
-} */
-/* IMPORTANTE:
-   A fonte Cheri normalmente não está no Google Fonts.
-   Caso tenha o arquivo local, utilize @font-face.
-   Exemplo:
-
-   
-*/
-
-/* =========================================================
-   RESET GLOBAL
-========================================================= */
-
-/* Remove margens e paddings padrão do navegador */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Facilita cálculo de largura */
-}
-
-/* Estilo base do documento */
-body {
-  font-family: "Comfortaa", sans-serif;
-  color: #3e3e3e;
-  background: #fce6e2;
-}
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-/* Estrutura principal da barra de navegação */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px 8%;
-  position: fixed; /* Fixa no topo */
-  width: 100%;
-  top: 0;
-  background: transparent;
-  transition: 0.3s;
-  z-index: 1000;
-}
-
-/* Estilo aplicado via JS quando rolar a página */
-.navbar.scrolled {
-  background: #eadaea;
-  backdrop-filter: blur(10px);
-}
-
-/* Logo textual */
-.logo {
-  font-family: "Cheri", cursive;
-  font-size: 22px;
-  color: #cfb1d1;
-}
-
-/* Destaque dentro da logo */
-.logo em {
-  color: #ffffff;
-  font-style: normal;
-}
-
-/* Links do menu */
-nav a {
-  margin-left: 30px;
-  text-decoration: none;
-  color: #5a5a5a;
-  font-size: 14px;
-  padding: 8px 18px;
-  border-radius: 20px;
-  transition: 0.3s;
-  white-space: nowrap;
-}
-
-/* Estado ativo ou hover */
-nav a.active,
-nav a:hover {
-  background: #cfb1d1;
-  color: white;
-}
 
 /* =========================================================
    HERO CAROUSEL
@@ -182,18 +76,17 @@ nav a:hover {
   color: white;
 }
 
-/* TÍTULO */
-.title-elegant {
-  font-family: "Cheri", cursive;
+/* TÍTULO (escopo: não redefinir .title-elegant global usado em outras páginas) */
+.hero-content .title-elegant {
   font-size: 70px;
   margin-bottom: 20px;
 }
 
-.title-elegant span {
+.hero-content .title-elegant span {
   display: block;
 }
 
-.title-elegant em {
+.hero-content .title-elegant em {
   color: #cfb1d1;
   font-style: normal;
 }
@@ -285,7 +178,7 @@ nav a:hover {
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
-  .title-elegant {
+  .hero-content .title-elegant {
     font-size: 40px;
   }
 
@@ -296,6 +189,7 @@ nav a:hover {
   .buttons {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
   }
 
   .carousel-prev,
@@ -420,166 +314,6 @@ nav a:hover {
 }
 
 /* =========================================================
-   FOOTER
-========================================================= */
-
-.footer {
-  background: #cfb1d1;
-  color: white;
-  padding: 60px 8%;
-}
-
-/* TOPO */
-.footer-top {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  min-height: 60px;
-  margin-bottom: 40px;
-}
-
-/* LOGO */
-.footer-logo img {
-  height: 100px;
-  width: auto;
-  align-items: top;
-  border-radius: 10px;
-  transition: 0.3s;
-  display: block;
-}
-
-.footer-logo img:hover {
-  transform: scale(1.05);
-}
-
-/* LINKS */
-.footer-links {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.footer-links a {
-  text-decoration: none;
-  color: #fce6e2;
-  font-size: 14px;
-  transition: 0.3s;
-  align-items: center;
-}
-
-.footer-links a:hover {
-  color: white;
-}
-
-/* LINHA */
-.footer hr {
-  margin: 40px 0;
-  margin-top: 100px;
-  border: none;
-  height: 1px;
-  background: #e7d0e6;
-}
-
-/* PARTE DE BAIXO */
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-/* SOCIAL */
-.footer-social {
-  display: flex;
-  gap: 12px;
-}
-
-.footer-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: 0.3s;
-}
-
-.footer-social svg {
-  width: 18px;
-  height: 18px;
-  stroke: white;
-  fill: none;
-  stroke-width: 1.8;
-}
-
-.footer-social a:hover {
-  background: white;
-}
-
-.footer-social a:hover svg {
-  stroke: #cfb1d1;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-  .footer-top,
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-logo img {
-    height: 70px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-links {
-    justify-content: center;
-    gap: 15px;
-  }
-}
-
-@media (max-width: 768px) {
-  .footer-bottom {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-}
-
-/* =========================================================
-   RESPONSIVO
-========================================================= */
-
-@media (max-width: 768px) {
-  /* Reduz tamanho do título principal */
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  /* Rodapé em coluna */
-  .footer-top,
-  .footer-bottom {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  /* Esconde navegação no mobile */
-  nav {
-    display: none;
-  }
-}
-
-/* =========================================================
    COMPONENTES COMPLEMENTARES
 ========================================================= */
 
@@ -609,95 +343,6 @@ nav a:hover {
   background: #ffffffcc;
   backdrop-filter: blur(4px);
   border: 1px solid #e7d0e6;
-}
-
-/* =========================================================
-   LOGO NAVBAR
-========================================================= */
-
-.logo img {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
-}
-
-/* =========================================================
-   SOCIAL NAVBAR
-========================================================= */
-
-.social {
-  display: flex;
-  gap: 15px;
-  margin-left: 30px;
-}
-
-.social a {
-  width: 38px;
-  height: 38px;
-  background: #e7d0e6;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s;
-}
-
-.social a svg {
-  width: 18px;
-  height: 18px;
-  stroke: #cfb1d1;
-  fill: none;
-  stroke-width: 2;
-}
-
-.social a:hover {
-  background: #cfb1d1;
-}
-
-.social a:hover svg {
-  stroke: white;
-}
-
-/* =========================================================
-   FOOTER (EXTENSÕES)
-========================================================= */
-
-.footer {
-  background: #cfb1d1;
-  color: white;
-  padding: 60px 8%;
-}
-
-/* Logo no rodapé */
-.footer-logo {
-  height: 10px;
-  width: auto;
-  opacity: 0.9;
-}
-
-/* Social no rodapé */
-.footer-social {
-  margin-top: 20px;
-}
-
-.footer-social a {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.footer-social a svg {
-  width: 18px;
-  height: 18px;
-  stroke: white;
-  fill: none;
-  stroke-width: 1.8;
-}
-
-.footer-social a:hover {
-  background: white;
-}
-
-.footer-social a:hover svg {
-  stroke: #cfb1d1;
 }
 
 /* =========================================================
@@ -789,77 +434,6 @@ nav a:hover {
   border-radius: 25px;
   font-size: 15px;
 } */
-
-/* ================================
-MENU HAMBURGER
-================================ */
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  gap: 5px;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: #cfb1d1;
-  border-radius: 5px;
-}
-
-/* ================================
-RESPONSIVO NAVBAR
-================================ */
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  nav {
-    position: absolute;
-    top: 90px;
-    left: 0;
-    width: 100%;
-    background: #fce6e2;
-
-    flex-direction: column;
-    align-items: center;
-
-    padding: 30px 0;
-    gap: 15px;
-
-    display: none;
-  }
-
-  nav a {
-    margin: 0;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .hero {
-    padding-top: 130px;
-  }
-
-  .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-links a {
-    margin-left: 0;
-  }
-}
 
 /* VITRINE MATERNA */
 

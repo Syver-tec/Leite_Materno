@@ -1,0 +1,289 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   FONTES
+========================= */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap");
+
+@font-face {
+  font-family: "Cheri";
+  src: url("../fonts/Cheri-Regular.woff2") format("woff2");
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+  font-family: "Comfortaa", sans-serif;
+  color: #3e3e3e;
+  background: #fce6e2;
+}
+
+/* =========================
+   TIPOGRAFIA
+========================= */
+.title-elegant {
+  font-family: "Cheri", cursive;
+  font-weight: normal;
+  color: #4a4a4a;
+  line-height: 1.3;
+}
+
+.title-elegant span {
+  color: #cfb1d1;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.navbar.scrolled {
+  background: #eadaea;
+  backdrop-filter: blur(10px);
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #5a5a5a;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  background: #cfb1d1;
+  color: white;
+}
+
+.social {
+  display: flex;
+  gap: 15px;
+  margin-left: 30px;
+}
+
+.social a {
+  width: 38px;
+  height: 38px;
+  background: #e7d0e6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.social a svg {
+  width: 18px;
+  height: 18px;
+  stroke: #cfb1d1;
+  fill: none;
+  stroke-width: 2;
+}
+
+.social a:hover {
+  background: #cfb1d1;
+}
+
+.social a:hover svg {
+  stroke: white;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #cfb1d1;
+  border-radius: 5px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+.footer {
+  background: #cfb1d1;
+  color: white;
+  padding: 60px 8%;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  min-height: 60px;
+  margin-bottom: 40px;
+}
+
+.footer-logo img {
+  height: 100px;
+  width: auto;
+  align-items: top;
+  border-radius: 10px;
+  transition: 0.3s;
+  display: block;
+}
+
+.footer-logo img:hover {
+  transform: scale(1.05);
+}
+
+.footer-links {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #fce6e2;
+  font-size: 14px;
+  transition: 0.3s;
+  align-items: center;
+}
+
+.footer-links a:hover {
+  color: white;
+}
+
+.footer hr {
+  margin: 40px 0;
+  margin-top: 100px;
+  border: none;
+  height: 1px;
+  background: #e7d0e6;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: 0.3s;
+}
+
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  stroke: white;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.footer-social a:hover {
+  background: white;
+}
+
+.footer-social a:hover svg {
+  stroke: #cfb1d1;
+}
+
+/* =========================
+   RESPONSIVO — layout global
+========================= */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 90px;
+    left: 0;
+    width: 100%;
+    background: #fce6e2;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-logo img {
+    height: 70px;
+  }
+
+  .footer-links {
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    margin-left: 0;
+  }
+
+  .footer-bottom {
+    gap: 15px;
+  }
+}
