@@ -29,22 +29,43 @@
             <a href="comprar.html">Comprar</a>
             <a href="depoimentos.html">Depoimentos</a>
             <a href="dicas.html">Dicas</a>
+            <div class="social social--mobile">
+                <a href="#" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+                        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                        <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+                    </svg>
+                </a>
+            </div>
         </nav>
 
-        <div class="social">
-            <a href="#">
+        <div class="social social--desktop">
+            <a href="#" aria-label="Facebook">
                 <svg viewBox="0 0 24 24">
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
                 </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="Instagram">
                 <svg viewBox="0 0 24 24">
                     <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                     <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
                     <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
                 </svg>
             </a>
-            <a href="#">
+            <a href="#" aria-label="YouTube">
                 <svg viewBox="0 0 24 24">
                     <path
                         d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
@@ -52,6 +73,15 @@
                 </svg>
             </a>
         </div>
+
+        <a href="carrinho.html" class="cart-button" aria-label="Abrir carrinho">
+            <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="20" r="1"></circle>
+                <circle cx="17" cy="20" r="1"></circle>
+                <path d="M1 1h4l2.68 12.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Carrinho</span>
+        </a>
 
         <div class="menu-toggle">
             <span></span>
@@ -63,7 +93,7 @@
     <main class="sobre">
 
         <!-- 1 — Intro (centrada) -->
-        <section class="sobre-intro">
+        <!-- <section class="sobre-intro">
             <div class="sobre-intro-inner">
                 <span class="section-tag">CONHEÇA NOSSA HISTÓRIA</span>
                 <h1 class="title-elegant sobre-intro-title">Sobre <span>Nós</span></h1>
@@ -72,6 +102,12 @@
                     dedicada ao cuidado materno.
                 </p>
             </div>
+        </section> -->
+
+        <section class="sobre-intro">
+            <span class="section-tag">CONHEÇA NOSSA HISTÓRIA</span>
+            <h1>Sobre <em>Nós</em></h1>
+            <p>Uma empresa tipicamente Pernambucana nascida do amor e da ciência, dedicada ao cuidado materno.</p>
         </section>
 
         <!-- 2 — Quem nos lidera -->
@@ -241,12 +277,14 @@
                                 </span>
                                 <span class="sobre-onde-auto-text"><strong>Autoatendimento:</strong> disponível aos sábados, domingos e feriados.</span>
                             </p>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <hr class="linha">
     </main>
 
     <footer class="footer">

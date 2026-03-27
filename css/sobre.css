@@ -3,28 +3,41 @@
 ========================================================= */
 
 .sobre {
-  padding-top: 0;
+  padding-top: 130px;
+  background: #f7f3f2;
 }
 
 /* Alinhado a .section-tag do index */
 .section-tag {
   font-size: 13px;
   letter-spacing: 3px;
-  color: #b59ac9;
-  display: block;
-  margin-bottom: 16px;
+  color: #7A7A7A;
 }
 
 /* ========= 1 — Intro centrada ========= */
 .sobre-intro {
-  padding: 160px 8% 100px;
+  padding: 80px 8%;
   text-align: center;
-  background: #eec6f1;
+  background: #EADAEA;
 }
 
 .sobre-intro-inner {
   max-width: 560px;
   margin: 0 auto;
+}
+
+.sobre-intro h1 {
+  font-size: 52px;
+  color: #4a4a4a;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.sobre-intro h1 em {
+  font-family: "Cheri", cursive;
+  font-style: italic;
+  color: #cfb1d1;
+  font-weight: normal;
 }
 
 .sobre-intro .section-tag {
@@ -437,6 +450,13 @@
 .sobre-onde-auto-text strong {
   color: #ffffff;
   font-weight: 600;
+}
+
+.linha {
+  justify-content: center;
+  border: none;
+  height: 1px;
+  background: #e7d0e6;
 }
 
 /* ========= Responsivo ========= */

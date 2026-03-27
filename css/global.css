@@ -52,13 +52,12 @@ body {
   width: 100%;
   top: 0;
   z-index: 1000;
-  background: transparent;
+  background: #ffffff;
   transition: 0.3s;
 }
 
 .navbar.scrolled {
-  background: #eadaea;
-  backdrop-filter: blur(10px);
+  background: #ffffff;
 }
 
 .logo img {
@@ -93,6 +92,10 @@ nav a.active {
   margin-left: 30px;
 }
 
+.social--mobile {
+  display: none;
+}
+
 .social a {
   width: 38px;
   height: 38px;
@@ -118,6 +121,34 @@ nav a.active {
 
 .social a:hover svg {
   stroke: white;
+}
+
+.cart-button {
+  margin-left: 18px;
+  background: #cfb1d1;
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.cart-button svg {
+  width: 18px;
+  height: 18px;
+  stroke: white;
+  fill: none;
+  stroke-width: 1.8;
+}
+
+.cart-button:hover {
+  background: #b59ac9;
+  transform: translateY(-1px);
 }
 
 .menu-toggle {
@@ -236,21 +267,32 @@ nav a.active {
    RESPONSIVO — layout global
 ========================= */
 @media (max-width: 768px) {
+  .navbar {
+    padding: 18px 6%;
+    gap: 12px;
+  }
+
+  .logo img {
+    height: 72px;
+  }
+
   .menu-toggle {
     display: flex;
+    order: 3;
   }
 
   nav {
     display: none;
     position: absolute;
-    top: 90px;
+    top: 100px;
     left: 0;
     width: 100%;
-    background: #fce6e2;
+    background: #ffffff;
     flex-direction: column;
     align-items: center;
-    padding: 30px 0;
+    padding: 24px 0;
     gap: 15px;
+    box-shadow: 0 12px 30px rgba(207, 177, 209, 0.2);
   }
 
   nav a {
@@ -259,6 +301,27 @@ nav a.active {
 
   nav.active {
     display: flex;
+  }
+
+  .social--desktop {
+    display: none;
+  }
+
+  .social--mobile {
+    display: flex;
+    margin-left: 0;
+    margin-top: 6px;
+  }
+
+  .cart-button {
+    order: 2;
+    margin-left: auto;
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .cart-button span {
+    display: none;
   }
 
   .footer-top,

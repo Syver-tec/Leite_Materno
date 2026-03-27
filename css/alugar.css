@@ -1,0 +1,309 @@
+.alugar-page {
+  padding-top: 130px;
+  background: #f7f3f2;
+  font-family: "Comfortaa", sans-serif;
+}
+
+.alugar-hero {
+  padding: 80px 8%;
+  text-align: center;
+  background: #EADAEA;
+}
+
+.alugar-hero h1 {
+  font-family: "Comfortaa", sans-serif;
+  font-size: 52px;
+  color: #4a4a4a;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+.alugar-hero h1 em {
+  font-family: "Cheri", cursive;
+  font-style: italic;
+  color: #cfb1d1;
+  font-weight: normal;
+}
+
+.alugar-hero-text {
+  all: unset;
+}
+
+.alugar-produtos {
+  padding: 80px 8% 100px;
+}
+
+.alugar-produtos .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.alugar-produtos .card {
+  background: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #e7d0e6;
+  transition: 0.3s;
+}
+
+.alugar-produtos .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+}
+
+.alugar-produtos .card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 240px;
+  background: #f8f6fb;
+}
+
+.alugar-produtos .card-image img {
+  max-width: 80%;
+  height: auto;
+  object-fit: contain;
+}
+
+.alugar-produtos .content {
+  padding: 22px;
+}
+
+.alugar-produtos .content h3 {
+  color: #4a4a4a;
+  font-size: 19px;
+  margin-bottom: 6px;
+}
+
+.alugar-produtos .subtitle {
+  color: #7a7a7a;
+  font-size: 14px;
+}
+
+.alugar-card {
+  cursor: pointer;
+}
+
+.alugar-card .content {
+  text-align: center;
+}
+
+.alugar-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 74, 74, 0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 2000;
+}
+
+.alugar-modal.show {
+  display: flex;
+}
+
+.section-tag {
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: #5a5a5a;
+}
+
+.alugar-modal-card {
+  width: min(1000px, 100%);
+  max-height: 92vh;
+  overflow: auto;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e7d0e6;
+  padding: 22px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: none;
+  background: #f7f3f2;
+  color: #b59ac9;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal-top {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+}
+
+.modal-image-wrap {
+  border: 1px solid #e7d0e6;
+  border-radius: 14px;
+  background: #f8f6fb;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-image-wrap img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.modal-category {
+  color: #b59ac9;
+  letter-spacing: 2px;
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.modal-info h2 {
+  color: #4a4a4a;
+  margin-bottom: 10px;
+}
+
+.modal-desc {
+  color: #5a5a5a;
+  margin-bottom: 16px;
+  line-height: 1.7;
+}
+
+.modal-prices p {
+  margin-bottom: 8px;
+}
+
+.modal-prices strong {
+  color: #b59ac9;
+}
+
+.modal-controls {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.modal-controls label {
+  color: #7a7a7a;
+  font-size: 14px;
+  display: grid;
+  gap: 6px;
+}
+
+.modal-controls select,
+.modal-controls input {
+  border: 1px solid #e7d0e6;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.btn-add-cart {
+  border: none;
+  background: #b59ac9;
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-add-cart:hover {
+  background: #9c7fb8;
+}
+
+.modal-tabs {
+  margin-top: 26px;
+  display: flex;
+  gap: 22px;
+  border-bottom: 1px solid #e7d0e6;
+}
+
+.tab-btn {
+  border: none;
+  background: none;
+  color: #7a7a7a;
+  font-weight: 600;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: #b59ac9;
+  border-bottom: 2px solid #b59ac9;
+}
+
+.tab-content {
+  display: none;
+  padding-top: 18px;
+  color: #5a5a5a;
+  line-height: 1.7;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.avaliacao-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.avaliacao-form {
+  display: grid;
+  gap: 10px;
+}
+
+.avaliacao-form input,
+.avaliacao-form textarea {
+  width: 100%;
+  border: 1px solid #e7d0e6;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.avaliacao-form button {
+  width: 90px;
+  border: none;
+  background: #4a4a4a;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+@media (max-width: 900px) {
+  .modal-top {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-controls,
+  .avaliacao-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .alugar-page {
+    padding-top: 110px;
+  }
+
+  .alugar-hero {
+    padding: 56px 6%;
+  }
+
+  .alugar-hero h1 {
+    font-size: 38px;
+  }
+
+  .alugar-produtos {
+    padding: 56px 6% 70px;
+  }
+}

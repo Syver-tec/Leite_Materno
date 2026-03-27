@@ -1,21 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navbar = document.querySelector(".navbar");
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".navbar nav");
 
-  function updateNavbarScrolled() {
-    if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    }
-  }
-
-  updateNavbarScrolled();
-  window.addEventListener("scroll", updateNavbarScrolled, { passive: true });
-
   if (menuToggle && nav) {
-    menuToggle.addEventListener("click", () => {
+    const toggleMenu = () => {
       nav.classList.toggle("active");
       menuToggle.classList.toggle("active");
+    };
+
+    menuToggle.addEventListener("click", toggleMenu);
+    menuToggle.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleMenu();
+      }
     });
 
     document.querySelectorAll(".navbar nav a").forEach((link) => {

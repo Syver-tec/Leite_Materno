@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho - Leite Materno</title>
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/carrinho.css">
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="imgs/logo_navbar.png" alt="Logo Leite Materno"></a>
+    </div>
+
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="alugar.html">Alugar</a>
+      <a href="comprar.html">Comprar</a>
+      <a href="depoimentos.html">Depoimentos</a>
+      <a href="dicas.html">Dicas</a>
+      <div class="social social--mobile">
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+          </svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+            <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+            <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+          </svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24">
+            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+            <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <div class="social social--desktop">
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+        </svg>
+      </a>
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+          <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+          <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+          <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+        </svg>
+      </a>
+    </div>
+
+    <a href="carrinho.html" class="cart-button" aria-label="Abrir carrinho">
+      <svg viewBox="0 0 24 24">
+        <circle cx="9" cy="20" r="1"></circle>
+        <circle cx="17" cy="20" r="1"></circle>
+        <path d="M1 1h4l2.68 12.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+      </svg>
+      <span>Carrinho</span>
+    </a>
+
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <section class="cart-section">
+      <h1 class="cart-title">Meu carrinho</h1>
+
+      <div class="cart-table-wrapper">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Nome do Produto</th>
+              <th>Preço</th>
+              <th>Quantidade</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cart-body"></tbody>
+        </table>
+      </div>
+
+      <div class="cart-actions">
+        <a class="btn-soft" href="comprar.html">← Continue comprando</a>
+        <button type="button" class="btn-soft js-update">Atualizar carrinho</button>
+        <button type="button" class="btn-soft js-clear">Limpar tudo</button>
+      </div>
+
+      <div class="cart-summary">
+        <p>Total do carrinho: <strong class="js-total">R$ 120,00</strong></p>
+        <button type="button" class="btn-whatsapp js-whatsapp">Pedido via WhatsApp</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="imgs/logo-footer.png" alt="Logo Leite Materno">
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="sobre.html">Sobre Nós</a>
+        <a href="alugar.html">Alugar</a>
+        <a href="comprar.html">Comprar</a>
+        <a href="depoimentos.html">Depoimentos</a>
+        <a href="dicas.html">Dicas</a>
+      </div>
+    </div>
+    <hr>
+    <div class="footer-bottom">
+      <span>© 2026 Leite Materno. Todos os direitos reservados.</span>
+      <div class="footer-social">
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" /><path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" /></svg></a>
+        <a href="#"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12z" /></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/navbar.js" defer></script>
+  <script src="scripts/carrinho.js" defer></script>
+</body>
+
+</html>
