@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprar — Leite Materno</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/comprar.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/imgs/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="imgs/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+</head>
+
+<body>
+
+    <header class="navbar">
+
+        <div class="logo">
+            <a href="index.html"><img src="imgs/logo_navbar.png" alt="Logo Leite Materno"></a>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre Nós</a>
+            <a href="alugar.html">Alugar</a>
+            <a href="comprar.html" class="active">Comprar</a>
+            <a href="depoimentos.html">Depoimentos</a>
+            <a href="dicas.html">Dicas</a>
+            <div class="social social--mobile">
+                <a href="#" aria-label="Facebook">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+                        <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                    </svg>
+                </a>
+                <a href="#" aria-label="YouTube">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                        <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+                    </svg>
+                </a>
+            </div>
+        </nav>
+
+        <div class="social social--desktop">
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+                    <line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+                </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                    <polygon points="9.5 15 15.5 12 9.5 9 9.5 15" />
+                </svg>
+            </a>
+        </div>
+
+        <a href="carrinho.html" class="cart-button" aria-label="Abrir carrinho">
+            <svg viewBox="0 0 24 24">
+                <circle cx="9" cy="20" r="1"></circle>
+                <circle cx="17" cy="20" r="1"></circle>
+                <path d="M1 1h4l2.68 12.39a2 2 0 0 0 2 1.61h7.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>Carrinho</span>
+        </a>
+
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1 — Intro (centrada) -->
+        <section class="comprar-intro">
+            <span class="section-tag">LOJA</span>
+            <h1>Comprar</h1>
+            <p>Acessórios e materiais de apoio selecionados com cuidado para facilitar a sua jornada de amamentação.</p>
+        </section>
+
+        <!-- COMPRAR-->
+        <div class="produtos">
+            <div class="cards-produtos">
+
+                <!-- CARD 1 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto1.png" alt="Válvula Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Válvula Medela</h3>
+                        <p>Peça utilizada junto ao acoplador.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 150,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 2 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto2.png" alt="Copa Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Copa Medela</h3>
+                        <p>Compativel com Swing Flex e Free Style.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 280,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 3 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto3.png" alt="Copo Dosador">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Copo Dosador</h3>
+                        <p>Ideal para oferecer o leite materno na ausencia da mãe.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 4 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto4.png" alt="Correia Dentada Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Correia Dentada Medela</h3>
+                        <p>Correia Plana Para Bombas Hospitalares Lactina Plus e Lactina Select Medela</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 750,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 5 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto5.png" alt="Gelox">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Gelox</h3>
+                        <p>Ideal para o transporte do leite materno.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 45,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 6 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto6.png" alt="Kit de Utilização Individual">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Kit de Utilização Individual</h3>
+                        <p>Kit descartável, de utilização individual, ideal para as mães que querem exclusividade.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 150,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 7 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto7.png" alt="Kit Universal Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Kit Universal Medela</h3>
+                        <p>Kit com todos os itens necessários para a utilização universal do leite materno.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 340,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 8 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto8.png" alt="Mamadeira Calma 150ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Mamadeira Calma 150ml</h3>
+                        <p>Mamadeira com design ergonômico, ideal para bebês que preferem chupar de forma natural.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 220,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 9 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto9.png" alt="Mangueira Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Mangueira Medela</h3>
+                        <p>Compatível com as bombas medela: Swing , Lactina e Symphony medela.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 85,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 10 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto10.png" alt="Mangueira Pump In Style Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Mangueira Pump In Style Medela</h3>
+                        <p>Componente do kit da bomba de sucção silenciosa de acionamento elétrico Pump In Style da Medela.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 100,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD1 11 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto11.png" alt="Medela Tubo Bomba Medela Free Style">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Medela Tubo Bomba Medela Free Style</h3>
+                        <p>Utilizada para conectar a Bomba Tira leite ao Kit Extrator de Leite Materno.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 220,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 12 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto12.png" alt="Membrana">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Membrana</h3>
+                        <p>Membrana para uso em bombas de sucção.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 45,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 13 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto13.png" alt="Pote de vidro 100ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Pote de vidro 100ml</h3>
+                        <p>Pote de vidro, sem graduação, indicado para armazenar leite materno.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 14 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto14.png" alt="Pote de vidro 150ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Pote de vidro 150ml</h3>
+                        <p>Pote de vidro, sem graduação, indicado para armazenar e pasteurizar leite materno.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 15 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto15.png" alt="Pote de vidro 200ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Pote de vidro 200ml</h3>
+                        <p>Pote de vidro com graduação azul.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 16 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto16.png" alt="Pote de vidro 200ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Pote de vidro 200ml</h3>
+                        <p>Pote de vidro com tampa, graduado, ideal para armazenar leite.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 17 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto17.png" alt="Pote de vidro 70ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Pote de vidro 70ml</h3>
+                        <p>Pote de vidro com graduação e rosca universal, rosqueavél em qualquer equipamento Medela. Evitando a manipulação e a contaminação também.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 25,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 18 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto18.png" alt="Recipiente 150ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Recipiente 150ml</h3>
+                        <p>Recipiente Medela 150ml. Compativel com todos os equipamentos medela.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 10,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 19 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto19.png" alt="Recipiente Hospitalar 150ml">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Recipiente Hospitalar 150ml</h3>
+                        <p>Frasco Plástico Para Leite Materno 150ml Medela (unidade).</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 100,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 20 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto20.png" alt="Tampa Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Tampa Medela</h3>
+                        <p>Tampa  para frasco (recipientes, potes) de 150ml e/ou 80ml SGf-0076 da medela: 01 unidade.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 45,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CARD 21 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto21.png" alt="Válvula e Membrana Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Válvula e Membrana Medela</h3>
+                        <p>Válvula amarela com membrana branca Para copas das bombas ordenhadeiras R0010 Medela.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 90,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- CARD 22 -->
+                <div class="produto-card">
+                    <div class="produto-img">
+                        <img src="imgs/compra/produto22.png" alt="Copa Medela">
+                    </div>
+
+                    <div class="produto-content">
+                        <h3>Copa Medela</h3>
+                        <p>Acoplador rígido para retirada do leite materno Medela.</p>
+
+                        <div class="produto-footer">
+                            <span class="preco">R$ 45,00</span>
+                            <a href="#" class="btn-comprar">
+                                <svg width="16" height="16" stroke="currentColor" fill="none">
+                                    <circle cx="6" cy="14" r="1" />
+                                    <circle cx="12" cy="14" r="1" />
+                                    <path d="M1 1h2l2.5 9h7l2-6H4" />
+                                </svg>
+                                Comprar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+
+        <div class="footer-top">
+
+            <div class="footer-logo">
+                <img src="imgs/logo-footer.png" alt="Logo Leite Materno">
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="sobre.html">Sobre Nós</a>
+                <a href="alugar.html">Alugar</a>
+                <a href="comprar.html">Comprar</a>
+                <a href="depoimentos.html">Depoimentos</a>
+                <a href="dicas.html">Dicas</a>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+            <span>© 2026 Leite Materno. Todos os direitos reservados.</span>
+
+            <div class="footer-social">
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                        <path d="M16 11.37a4 4 0 1 1-7.75 1.26 4 4 0 0 1 7.75-1.26z" />
+                    </svg>
+                </a>
+
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-1.96C18.88 4 12 4 12 4s-6.88 0-8.6.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.94 1.96C5.12 20 12 20 12 20s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-1.96A29 29 0 0 0 23 12z" />
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="scripts/navbar.js" defer></script>
+    <script src="scripts/comprar.js" defer></script>
+
+</body>
+
+</html>
