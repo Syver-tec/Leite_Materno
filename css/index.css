@@ -201,6 +201,51 @@
 }
 
 /* =========================================================
+   INDICADORES/STATS
+========================================================= */
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #DBDCD2; /* novo fundo */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.stat h2 {
+  font-size: 48px;
+  color: #6b7d4f;
+  margin: 0;
+  font-weight: bold;
+  position: relative;
+}
+
+/* adiciona o "+ de" antes do número */
+.stat h2::before {
+  content: "+ de ";
+  font-weight: normal;
+}
+
+.stat p {
+  font-size: 20px;
+  color: #555;
+  margin-top: 8px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .stat h2 {
+    font-size: 36px;
+  }
+}
+
+/* =========================================================
    SERVICES
 ========================================================= */
 
@@ -270,6 +315,69 @@
 }
 
 /* =========================================================
+   Planos
+========================================================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.plans {
+  background-color: #EADAEA; /* fundo lilás */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e9e9e6;
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.icon {
+  font-size: 40px;
+  color: #b7b277; /* tom dourado/oliva */
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  color: #8e3a8c; /* roxo */
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .plans {
+    gap: 30px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
+/* =========================================================
    CTA
 ========================================================= */
 
@@ -277,7 +385,6 @@
   background: #e2e1b2;
   padding: 80px 20px;
   text-align: center;
-  border-radius: 20px;
 }
 
 /* TÍTULO */
