@@ -4,7 +4,7 @@
 
 .sobre {
   padding-top: 130px;
-  background: #f7f3f2;
+  background: #ffff;
 }
 
 /* Alinhado a .section-tag do index */
@@ -18,7 +18,7 @@
 .sobre-intro {
   padding: 80px 8%;
   text-align: center;
-  background: #EADAEA;
+  background:#EADAEA;
 }
 
 .sobre-intro-inner {
