@@ -14,6 +14,10 @@
   color: #7A7A7A;
 }
 
+.sobre-intro h1{
+  padding-top: 10px;
+}
+
 /* ========= 1 — Intro centrada ========= */
 .sobre-intro {
   padding: 80px 8%;
@@ -28,7 +32,7 @@
 
 .sobre-intro h1 {
   font-size: 52px;
-  color: #4a4a4a;
+  color: #7A7A7A;
   font-weight: 500;
   margin-bottom: 14px;
 }
@@ -56,7 +60,7 @@
 .sobre-intro-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #4a4a4a;
+  color: #7A7A7A;
 }
 
 #footer-text-strong {
@@ -203,7 +207,7 @@ strong {
 .valor-card h3 {
   font-size: 18px;
   font-weight: 600;
-  color: #4a4a4a;
+  color: #7A7A7A;
   margin-bottom: 12px;
 }
 

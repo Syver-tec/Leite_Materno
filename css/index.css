@@ -46,15 +46,15 @@
 
 /* IMAGENS */
 .slide-1 {
-  background-image: url("../imgs/hero1.jpg");
+  background-image: url("../imgs/hero1.webp");
 }
 
 .slide-2 {
-  background-image: url("../imgs/hero2.png");
+  background-image: url("../imgs/hero2.webp");
 }
 
 .slide-3 {
-  background-image: url("imgs/hero3.jpg");
+  background-image: url("../imgs/hero3.webp");
 }
 
 /* OVERLAY (escurece imagem) */

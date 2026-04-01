@@ -1,6 +1,6 @@
 .alugar-page {
   padding-top: 130px;
-  background: #f7f3f2;
+  background: #ffffff;
   font-family: "Comfortaa", sans-serif;
 }
 
@@ -13,9 +13,10 @@
 .alugar-hero h1 {
   font-family: "Comfortaa", sans-serif;
   font-size: 52px;
-  color: #4a4a4a;
+  color: #7A7A7A;
   font-weight: 500;
   margin-bottom: 14px;
+  padding: 10px;
 }
 
 .alugar-hero h1 em {
@@ -71,7 +72,7 @@
 }
 
 .alugar-produtos .content h3 {
-  color: #4a4a4a;
+  color: #7A7A7A;
   font-size: 19px;
   margin-bottom: 6px;
 }
@@ -166,7 +167,7 @@
 }
 
 .modal-info h2 {
-  color: #4a4a4a;
+  color: #7A7A7A;
   margin-bottom: 10px;
 }
 
@@ -273,7 +274,7 @@
 .avaliacao-form button {
   width: 90px;
   border: none;
-  background: #4a4a4a;
+  background: #7A7A7A;
   color: #ffffff;
   border-radius: 8px;
   padding: 10px;
