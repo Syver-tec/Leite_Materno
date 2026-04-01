@@ -278,6 +278,12 @@
   font-style: normal;
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 /* Grid responsivo de cards */
 .cards {
   display: grid;
