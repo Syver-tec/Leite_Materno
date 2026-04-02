@@ -274,7 +274,7 @@
         </div>
       </a>
 
-      <a href="sobre.html" class="card-link">
+      <div id="openCard" class="card-link" style="cursor:pointer;">
         <div class="card">
           <div class="icon-wrapper">
             <svg viewBox="0 0 24 24">
@@ -284,7 +284,7 @@
           <h3>Sala de apoio para empresas</h3>
           <p>Apoio para mães trabalhadoras</p>
         </div>
-      </a>
+      </div>
 
     </div>
 
@@ -588,21 +588,47 @@
     </div>
 
   </footer>
+  <!-- MODAL FORA DE TUDO -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
 
+      <h2>Sala de Apoio à Amamentação</h2>
+      <br>
+      <p>
+        A sala de apoio à amamentação é um espaço destinado ao apoio e incentivo à amamentação no ambiente de
+        trabalho...
+      </p>
+      <br>
+
+      <h3>Importância e Objetivo</h3>
+      <ul>
+        <li><strong>Cumprimento da legislação:</strong> Empresas com mais de 30 mulheres devem oferecer o espaço.</li>
+        <li><strong>Apoio à maternidade:</strong> Permite continuar amamentando após voltar ao trabalho.</li>
+        <li><strong>Promoção da saúde:</strong> Incentiva o desenvolvimento saudável do bebê.</li>
+      </ul>
+      <br>
+      <h3>Base Legal</h3>
+      <p>Portaria nº 193/2010 do Ministério da Saúde.</p>
+      <br>
+      <h3>Benefícios</h3>
+      <ul>
+        <li>Redução do absenteísmo</li>
+        <li>Maior satisfação das colaboradoras</li>
+        <li>Melhor clima organizacional</li>
+      </ul>
+
+    </div>
+  </div>
 
 
   <!-- SCRIPTS -->
 
   <script src="https://unpkg.com/lucide@latest"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      lucide.createIcons();
-    });
-  </script>
-
   <script src="scripts/navbar.js" defer></script>
-  <script src="scripts/index.js"></script>
+  <script src="scripts/index.js" defer></script>
+  <script src="scripts/modal.js" defer></script>
 
 </body>
 

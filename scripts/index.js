@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Auto-avanço a cada 5 segundos
-  let autoSlide = setInterval(nextSlide, 5000);
+  let autoSlide = setInterval(nextSlide, 3000);
 
   // Pausa no hover
   document
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document
     .querySelector(".hero-carousel")
     .addEventListener("mouseleave", () => {
-      autoSlide = setInterval(nextSlide, 5000);
+      autoSlide = setInterval(nextSlide, 3000);
     });
 
   // Navegação

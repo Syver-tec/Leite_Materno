@@ -14,10 +14,6 @@
   color: #7A7A7A;
 }
 
-.sobre-intro h1{
-  padding-top: 10px;
-}
-
 /* ========= 1 — Intro centrada ========= */
 .sobre-intro {
   padding: 80px 8%;
@@ -31,7 +27,7 @@
 }
 
 .sobre-intro h1 {
-  font-size: 52px;
+  font-size: 32px;
   color: #7A7A7A;
   font-weight: 500;
   margin-bottom: 14px;
