@@ -473,7 +473,99 @@
     <a href="comprar.html" class="btn-cta">Confira mais produtos</a>
   </div>
 
-  <!-- PLANOS-->
+
+  <!-- Formulário de contato -->
+  <div class="header-planos">
+    <span class="tag">FORMULÁRIO DE CONTATO</span>
+
+    <h2>
+      Entre em contato <span>conosco</span>
+    </h2>
+  </div>
+  <form id="formLocacao" novalidate>
+
+    <!-- PAGINA 1 -->
+    <div class="step active">
+      <h2>Dados Pessoais</h2>
+
+      <input type="text" id="nome" placeholder="Nome Completo">
+      <input type="text" id="cpf" placeholder="CPF">
+      <input type="text" id="telefone" placeholder="Telefone">
+      <input type="text" id="referencia" placeholder="Contato de referência">
+      <input type="email" id="email" placeholder="E-mail">
+      <input type="text" id="endereco" placeholder="Endereço e Bairro">
+
+      <h3>Sobre o equipamento</h3>
+
+      <select id="usou">
+        <option value="">Já usou o equipamento?</option>
+        <option>Sim</option>
+        <option>Não</option>
+      </select>
+
+      <input type="text" id="onde" placeholder="Onde usou?">
+
+      <h3>Consultoria</h3>
+      <label><input type="radio" name="consultoria" value="Online"> Online</label>
+      <label><input type="radio" name="consultoria" value="Presencial R$220"> Presencial</label>
+
+      <button type="button" onclick="nextStep()">Avançar</button>
+    </div>
+
+    <!-- PAGINA 2 -->
+    <div class="step">
+      <h2>Equipamento</h2>
+
+      <label><input type="radio" name="periodo" value="15 dias"> 15 dias</label>
+      <label><input type="radio" name="periodo" value="30 dias"> 30 dias</label>
+      <label><input type="radio" name="periodo" value="60 dias"> 60 dias</label>
+
+      <h3>Equipamento</h3>
+      <label><input type="checkbox" value="Swing Pump"> Swing Pump</label>
+      <label><input type="checkbox" value="Pump Style Dupla"> Pump Style Dupla</label>
+      <label><input type="checkbox" value="Free Style"> Free Style</label>
+      <label><input type="checkbox" value="Lactina"> Lactina</label>
+      <label><input type="checkbox" value="Lactina Dupla"> Lactina Dupla</label>
+      <label><input type="checkbox" value="Kit Adicional"> Kit Adicional</label>
+
+      <h3>Materiais</h3>
+      <label><input type="checkbox" value="Frasco 70ml R$20"> Frasco 70ml</label>
+      <label><input type="checkbox" value="Frasco 130ml R$10"> Frasco 130ml</label>
+      <label><input type="checkbox" value="Frasco 200ml R$30"> Frasco 200ml</label>
+      <label><input type="checkbox" value="Kit descartável R$150"> Kit descartável</label>
+      <label><input type="checkbox" value="Copo dosador"> Copo dosador</label>
+      <label><input type="checkbox" value="Kit extra"> Kit extra</label>
+      <label><input type="checkbox" value="Não precisa"> Não preciso de nada</label>
+
+      <div class="nav">
+        <button type="button" onclick="prevStep()">Voltar</button>
+        <button type="button" onclick="nextStep()">Avançar</button>
+      </div>
+    </div>
+
+    <!-- PAGINA 3 -->
+    <div class="step">
+      <h2>Pagamento</h2>
+
+      <label><input type="radio" name="pagamento" value="Pix"> Pix</label>
+      <label><input type="radio" name="pagamento" value="Transferência"> Transferência</label>
+      <label><input type="radio" name="pagamento" value="Cartão"> Cartão</label>
+
+      <input type="date" id="data">
+
+      <h3>Entrega</h3>
+      <label><input type="radio" name="entrega" value="Entrega"> Entrega</label>
+      <label><input type="radio" name="entrega" value="Retirada"> Retirada</label>
+
+      <div class="nav">
+        <button type="button" onclick="prevStep()">Voltar</button>
+        <button type="submit">Enviar WhatsApp</button>
+      </div>
+    </div>
+
+  </form>
+
+  <!-- PLANOS
 
   <section class="plans">
     <div class="card">
@@ -493,13 +585,13 @@
       <p>Ideal para a mamãe que já conhece o equipamento.</p>
       <p>Os pacotes são renovados a cada 30 dias.</p>
     </div>
-  </section>
+  </section> -->
 
-  <!-- Elfsight Google Reviews | Untitled Google Reviews | Avaliações do Google -->
+  <!-- Elfsight Google Reviews | Untitled Google Reviews | Avaliações do Google 
   <DIV>
     <script src="https://elfsightcdn.com/platform.js" async></script>
     <div class="elfsight-app-c2abfc56-efe2-428a-932e-7b066b75bfb9" data-elfsight-app-lazy></div>
-  </DIV>
+  </DIV> -->
 
   <!-- CTA -->
   <section class="cta">
@@ -527,21 +619,64 @@
 
         <div class="footer-col">
           <h4>Onde nos encontrar</h4>
-          <p>Rua Ribeiro de Brito, 544, sala 201, Boa Viagem</p>
-          <p>(81) 4117-0033</p>
-          <p>(81) 9.8737-0033</p>
+          <div class="footer-item">
+            <span class="icon">
+              <!-- localização -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" />
+              </svg>
+            </span>
+            <p>Rua Ribeiro de Brito, 544, sala 201, Boa Viagem</p>
+          </div>
+          <div class="footer-item">
+            <span class="icon">
+              <!-- telefone -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.3 1.1.3 2.3.5 3.5.5.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.1 22 2 13.9 2 3c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.5 3.5.1.3 0 .7-.3 1l-2.1 2.3z" />
+              </svg>
+            </span>
+            <p>(81) 4117-0033</p>
+          </div>
+          <div class="footer-item">
+            <span class="icon">
+              <!-- whatsapp -->
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M20 12a8 8 0 1 0-14.6 4.5L4 20l3.7-1.3A8 8 0 1 0 20 12zm-8 6.5c-1.3 0-2.6-.4-3.7-1.1l-.3-.2-2.2.8.7-2.1-.2-.3A6.5 6.5 0 1 1 18.5 12 6.5 6.5 0 0 1 12 18.5z" />
+              </svg>
+            </span>
+            <p>(81) 9.8737-0033</p>
+          </div>
         </div>
 
         <div class="footer-col">
           <h4>Horário de Funcionamento</h4>
-          <p>Segunda a sábado, das 8h às 12h</p>
-          <p>e das 14h às 17h (com horários agendados)</p>
-          <p><strong>Autoatendimento:</strong> sábados, domingos e feriados</p>
+          <div class="footer-item">
+            <span class="icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke="#8e44ad" stroke-width="2" fill="none" />
+                <path d="M12 7v5l3 2" stroke="#8e44ad" stroke-width="2" fill="none" stroke-linecap="round" />
+              </svg>
+            </span>
+            <p>Segunda a sábado, das 8h às 12h
+              e das 14h às 17h (com horários agendados)</p>
+          </div><div class="footer-item">
+            <span class="icon">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9" stroke="#8e44ad" stroke-width="2" fill="none" />
+                <path d="M12 7v5l3 2" stroke="#8e44ad" stroke-width="2" fill="none" stroke-linecap="round" />
+              </svg>
+            </span>
+            <p><strong>Autoatendimento:</strong> sábados, domingos e feriados</p>
+          </div>
+        
         </div>
 
         <div class="footer-col">
           <h4>Informações</h4>
-          <a href="#">Sobre nós</a>
+          <a href="sobre.html">Sobre nós</a>
           <a href="#">Política de Privacidade</a>
         </div>
 
@@ -558,9 +693,7 @@
 
     </div>
 
-    <hr>
-
-    <div class="footer-bottom">
+    <!-- <div class="footer-bottom">
       <span>Copyright © 2026 Leite Materno | CNPJ: 11.575.731.0001-81</span>
 
       <div class="footer-social">
@@ -585,9 +718,13 @@
         </a>
       </div>
 
-    </div>
+    </div> -->
 
   </footer>
+  <div class="footer-bar">
+    Copyright © 2026 Leite Materno | CNPJ: 11.575.731.0001-81
+  </div>
+
   <!-- MODAL FORA DE TUDO -->
   <div id="modal" class="modal">
     <div class="modal-content">

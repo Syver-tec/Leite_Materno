@@ -280,6 +280,69 @@
   padding: 10px;
 }
 
+/* =========================================================
+   Planos
+========================================================= */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+.plans {
+  background-color: #fff; /* fundo lilás */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #e9e9e6;
+  padding: 40px 30px;
+  border-radius: 20px;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.icon {
+  font-size: 40px;
+  color: #b7b277; /* tom dourado/oliva */
+  margin-bottom: 15px;
+}
+
+.card h2 {
+  color: #8e3a8c; /* roxo */
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.card p {
+  color: #555;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 8px 0;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .plans {
+    gap: 30px;
+  }
+
+  .card {
+    max-width: 90%;
+  }
+}
+
 @media (max-width: 900px) {
   .modal-top {
     grid-template-columns: 1fr;

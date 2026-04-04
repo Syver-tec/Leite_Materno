@@ -27,7 +27,9 @@
 
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 80px;
+  padding-top: 100px;
 
   opacity: 0;
   visibility: hidden;
@@ -70,15 +72,15 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  text-align: center;
-  max-width: 700px;
+  text-align: left;
+  max-width: 500px;
   padding: 0 20px;
   color: white;
 }
 
 /* TÍTULO (escopo: não redefinir .title-elegant global usado em outras páginas) */
 .hero-content .title-elegant {
-  font-size: 70px;
+  font-size: 37px;
   margin-bottom: 20px;
 }
 
@@ -107,7 +109,7 @@
 /* BOTÕES */
 .buttons {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   gap: 20px;
   flex-wrap: wrap;
 }
@@ -410,6 +412,50 @@ body {
   .card {
     max-width: 90%;
   }
+}
+
+/* =========================================================
+   FORMULÁRIO DE CONTATO
+========================================================= */
+
+form {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.step {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step.active {
+  display: flex;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+label {
+  font-size: 14px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background: #B59AC9;
+  color: white;
+  border: none;
+  cursor: pointer;
 }
 
 /* =========================================================

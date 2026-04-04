@@ -16,9 +16,9 @@
 
 /* ========= 1 — Intro centrada ========= */
 .sobre-intro {
-  padding: 80px 8%;
+  padding: 40px 8%;
   text-align: center;
-  background:#EADAEA;
+  background:#ffff;
 }
 
 .sobre-intro-inner {
@@ -28,7 +28,7 @@
 
 .sobre-intro h1 {
   font-size: 32px;
-  color: #7A7A7A;
+  color: #9F4DA5;
   font-weight: 500;
   margin-bottom: 14px;
 }
