@@ -8,6 +8,7 @@
 
 .hero-carousel {
   position: relative;
+  text-align: right;
   height: 100vh;
   overflow: hidden;
 }
@@ -27,8 +28,8 @@
 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding-left: 80px;
+  justify-content: flex-end;
+  padding-right: 80px;
   padding-top: 100px;
 
   opacity: 0;
@@ -192,7 +193,7 @@
   .buttons {
     flex-direction: column;
     gap: 10px;
-    align-items: center;
+    align-items: left;
   }
 
   .carousel-prev,
