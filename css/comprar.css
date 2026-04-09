@@ -152,3 +152,25 @@
   background: #b59ac9;
   color: white;
 }
+
+/* NOTIFICAÇÃO */
+
+.toast-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #CDB3D0;
+  color: #7A7A7A;
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 9999;
+}
+
+.toast-message.show {
+  opacity: 1;
+  transform: translateY(0);
+}

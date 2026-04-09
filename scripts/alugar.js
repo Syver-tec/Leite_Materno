@@ -68,6 +68,23 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.setAttribute("aria-hidden", "true");
   }
 
+  function showToast(message) {
+    const toast = document.createElement("div");
+    toast.className = "toast-message";
+    toast.textContent = message;
+  
+    document.body.appendChild(toast);
+  
+    setTimeout(() => {
+      toast.classList.add("show");
+    }, 100);
+  
+    setTimeout(() => {
+      toast.classList.remove("show");
+      setTimeout(() => toast.remove(), 300);
+    }, 2500);
+  }
+
   cards.forEach((card) => {
     card.addEventListener("click", () => openModal(card));
   });
@@ -112,7 +129,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     saveCart(cart);
+
+    showToast(`"${currentProduct.name}" foi adicionado ao seu carrinho. ✅`);
+
     closeModal();
-    globalThis.location.href = "carrinho.html";
   });
+
 });

@@ -21,7 +21,7 @@ function buildWhatsAppMessage(items, total) {
   const lines = ["Olá, quero solicitar esse produto:", ""];
   items.forEach((item) => {
     lines.push(
-      `-> ${item.qty} x ${item.name} ${item.periodLabel} = ${formatBRL(item.subtotal)}`
+      `-> ${item.qty} x ${item.name} ${item.periodLabel} = ${formatBRL(item.subtotal)}`,
     );
   });
   lines.push("", `Total do carrinho: ${formatBRL(total)}`);
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <tr class="cart-row" data-key="${item.key}">
             <td class="product-cell" data-label="Nome do Produto">
               <img src="${item.image}" alt="${item.name}">
-              <span class="product-name">${item.name.toUpperCase()} - ${item.period} DIAS</span>
+              <span class="product-name">${item.name.toUpperCase()}${item.period > 1 ? ` - ${item.period} DIAS` : ""}</span>
             </td>
             <td data-label="Preço">${formatBRL(item.unitPrice)}</td>
             <td data-label="Quantidade">
@@ -117,10 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cartBody.querySelectorAll(".cart-row").forEach((row) => {
       const key = row.dataset.key;
-      const qty = Math.max(
-        0,
-        Number(row.querySelector(".js-qty-input").value)
-      );
+      const qty = Math.max(0, Number(row.querySelector(".js-qty-input").value));
       map.set(key, qty);
     });
 
@@ -154,18 +151,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ FINALIZAR PEDIDO (AGORA FUNCIONA SEM CONFLITO)
   document.addEventListener("click", (e) => {
     if (e.target.id === "finish-order") {
-
       if (!cart.length) return;
 
-      const name = document.getElementById("client-name").value;
-      const cpf = document.getElementById("client-cpf").value;
-      const phone = document.getElementById("client-phone").value;
-      const email = document.getElementById("client-email").value;
-      const address = document.getElementById("client-address").value;
-      const neighborhood = document.getElementById("client-neighborhood").value;
+      const name = document.getElementById("client-name")?.value || "";
+      const cpf = document.getElementById("client-cpf")?.value || "";
+      const phone = document.getElementById("client-phone")?.value || "";
+      const email = document.getElementById("client-email")?.value || "";
+      const address = document.getElementById("client-address")?.value || "";
+      const neighborhood = document.getElementById("client-neighborhood")?.value || "";
 
-      const consultoria = document.querySelector('input[name="consultoria"]:checked')?.value || "Não informado";
-      const pagamento = document.querySelector('input[name="pagamento"]:checked')?.value || "Não informado";
+      const consultoria =
+        document.querySelector('input[name="consultoria"]:checked')?.value ||
+        "Não informado";
+      const pagamento =
+        document.querySelector('input[name="pagamento"]:checked')?.value ||
+        "Não informado";
 
       const today = new Date();
       const dataFormatada = today.toLocaleDateString("pt-BR");
@@ -178,7 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const items = cart.map((item) => ({
         name: item.name,
         qty: item.qty,
-        periodLabel: `${item.period} dias`,
+        periodLabel:
+          item.period && item.period > 1 ? `${item.period} dias` : "",
         subtotal: item.unitPrice * item.qty,
       }));
 
