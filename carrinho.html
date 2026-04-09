@@ -232,6 +232,50 @@
       </div>
 
     </div> -->
+    <div id="checkout-modal" class="modal">
+      <div class="modal-content">
+    
+        <button id="close-modal">X</button>
+    
+        <h2>Finalizar Pedido</h2>
+    
+        <div class="modal-form">
+    
+          <input type="text" id="client-name" placeholder="Nome completo" class="full"/>
+    
+          <input type="text" id="client-cpf" placeholder="CPF" />
+          <input type="text" id="client-phone" placeholder="Telefone" />
+    
+          <input type="email" id="client-email" placeholder="Email" class="full"/>
+    
+          <input type="text" id="client-address" placeholder="Endereço" class="full"/>
+    
+          <input type="text" id="client-bairro" placeholder="Bairro" />
+    
+          <!-- CONSULTORIA -->
+          <div class="full">
+            <label><strong>Consultoria?</strong></label><br>
+            <label><input type="radio" name="consultoria" value="Online"> Online</label>
+            <label><input type="radio" name="consultoria" value="Presencial"> Presencial</label>
+          </div>
+    
+          <!-- PAGAMENTO -->
+          <div class="full">
+            <label><strong>Pagamento</strong></label><br>
+            <label><input type="radio" name="pagamento" value="Pix"> Pix</label>
+            <label><input type="radio" name="pagamento" value="Transferência"> Transferência</label>
+            <label><input type="radio" name="pagamento" value="Cartão"> Cartão</label>
+          </div>
+    
+        </div> <!-- FECHA modal-form -->
+    
+        <!-- BOTÃO TEM QUE FICAR FORA DO GRID -->
+        <button id="finish-order" class="btn-whatsapp">
+          Finalizar via WhatsApp
+        </button>
+    
+      </div>
+    </div>
 
   </footer>
   <div class="footer-bar">
