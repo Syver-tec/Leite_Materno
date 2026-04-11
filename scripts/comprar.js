@@ -57,8 +57,8 @@ const modalDescricao = document.getElementById("modalDescricao");
 
 // pegar todos os cards
 document.querySelectorAll(".produto-card").forEach((card) => {
-  card.addEventListener("click", () => {
-
+card.addEventListener("click", (e) => {
+  if (e.target.closest(".btn-comprar")) return; // evita conflito com botão comprar
     produtoAtual = {
       name: card.querySelector("h3").innerText,
       priceText: card.querySelector(".preco").innerText,
