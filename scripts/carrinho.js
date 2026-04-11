@@ -1,5 +1,18 @@
 const CART_KEY = "lm_cart";
 
+const modal = document.getElementById("checkout-modal");
+const closeBtn = document.getElementById("close-modal");
+
+closeBtn.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.classList.remove("active");
+  }
+});
+
 function formatBRL(value) {
   return value.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
 }
@@ -42,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateBtn = document.querySelector(".js-update");
   const clearBtn = document.querySelector(".js-clear");
   const whatsappBtn = document.querySelector(".js-whatsapp");
-  const closeBtn = document.getElementById("close-modal");
 
   let cart = getCart();
 
@@ -157,12 +169,21 @@ document.addEventListener("DOMContentLoaded", () => {
       const cpf = document.getElementById("client-cpf")?.value || "";
       const phone = document.getElementById("client-phone")?.value || "";
       const email = document.getElementById("client-email")?.value || "";
+      const contato = document.getElementById("client-contato")?.value || "";
       const address = document.getElementById("client-address")?.value || "";
-      const neighborhood = document.getElementById("client-neighborhood")?.value || "";
+      const bairro = document.getElementById("client-bairro")?.value || "";
 
-      const consultoria =
-        document.querySelector('input[name="consultoria"]:checked')?.value ||
-        "Não informado";
+      const consultoriaSelecionada = document.querySelector(
+        'input[name="consultoria"]:checked',
+      )?.value;
+
+      let consultoria = "Não informado";
+
+      if (consultoriaSelecionada === "Online") {
+        consultoria = "Online - Gratuito";
+      } else if (consultoriaSelecionada === "Presencial") {
+        consultoria = "Presencial - R$270,00";
+      }
       const pagamento =
         document.querySelector('input[name="pagamento"]:checked')?.value ||
         "Não informado";
@@ -191,13 +212,14 @@ document.addEventListener("DOMContentLoaded", () => {
       message += `\nNome: ${name}`;
       message += `\nCPF: ${cpf || "Não informado"}`;
       message += `\nTelefone: ${phone}`;
+      message += `\nContato: ${contato || "Não informado"}`;
       message += `\nEmail: ${email || "Não informado"}`;
       message += `\nEndereço: ${address || "Não informado"}`;
-      message += `\nBairro: ${neighborhood || "Não informado"}`;
+      message += `\nBairro: ${bairro || "Não informado"}`;
 
       message += `\n\n--- Consultoria ---\n${consultoria}`;
       message += `\n\n--- Pagamento ---\n${pagamento}`;
-      message += `\nObs: Equipamento liberado após confirmação do pagamento`;
+      message += `\nObs: Pedido liberado após confirmação do pagamento`;
       message += `\n\nData do Pedido: ${dataFormatada}`;
 
       const url = `https://wa.me/5581987370033?text=${encodeURIComponent(message)}`;
@@ -210,6 +232,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ✅ MÁSCARAS AGORA FUNCIONAM CERTO
   const cpfInput = document.getElementById("client-cpf");
   const phoneInput = document.getElementById("client-phone");
+  const contatoInput = document.getElementById("client-contato");
 
   if (cpfInput) {
     cpfInput.addEventListener("input", (e) => {
@@ -227,6 +250,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (phoneInput) {
     phoneInput.addEventListener("input", (e) => {
+      let value = e.target.value.replace(/\D/g, "");
+
+      if (value.length <= 10) {
+        value = value
+          .replace(/^(\d{2})(\d)/g, "($1) $2")
+          .replace(/(\d{4})(\d)/, "$1-$2")
+          .slice(0, 14);
+      } else {
+        value = value
+          .replace(/^(\d{2})(\d)/g, "($1) $2")
+          .replace(/(\d{5})(\d)/, "$1-$2")
+          .slice(0, 15);
+      }
+
+      e.target.value = value;
+    });
+  }
+
+  if (contatoInput) {
+    contatoInput.addEventListener("input", (e) => {
       let value = e.target.value.replace(/\D/g, "");
 
       if (value.length <= 10) {

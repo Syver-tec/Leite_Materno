@@ -59,10 +59,6 @@
   color: #7A7A7A;
 }
 
-#footer-text-strong {
-  color: #ffff;
-}
-
 /* SECTION GERAL */
 .tips-section {
   padding: 40px;
@@ -79,7 +75,7 @@
 }
 
 /* ICONES */
-.icon {
+.icon-container {
   width: 40px;
   height: 40px;
   background: #f3e8ff;
@@ -90,7 +86,7 @@
   justify-content: center;
 }
 
-.icon svg {
+.icon-containereq123 svg {
   width: 20px;
   height: 20px;
 }

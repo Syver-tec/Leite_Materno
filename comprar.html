@@ -19,6 +19,45 @@
 
 </head>
 
+<div class="modal" id="modalProduto">
+    <div class="modal-content">
+
+        <button class="modal-close" id="fecharModal">×</button>
+
+        <div class="modal-body">
+
+            <img id="modalImg" src="" alt="Produto">
+
+            <div class="modal-info">
+                <h2 id="modalTitulo"></h2>
+
+                <p><strong>Categorias:</strong> Comprar, Leite Materno, Potes</p>
+
+                <p>
+                    Este produto está disponível para <strong>COMPRA</strong>.<br>
+                    Ideal para reposição e uso contínuo.
+                </p>
+
+                <p>
+                    Caso precise alugar um equipamento completo, veja os produtos na categoria “Aluguel”.
+                </p>
+
+                <h3 id="modalPreco"></h3>
+
+                <div class="modal-actions">
+                    <input type="number" value="1" min="1">
+                    <button>Comprar</button>
+                </div>
+
+                <p><strong>Descrição:</strong></p>
+                <p id="modalDescricao"></p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
 <body>
 
     <header class="navbar">
@@ -108,13 +147,13 @@
             <div class="cards-produtos">
 
                 <!-- CARD 1 -->
-                <div class="produto-card">
+                <div class="produto-card" data-id="1">
                     <div class="produto-img">
-                        <img src="imgs/compra/produto1.png" alt="Válvula Medela">
+                        <img src="imgs/compra/produto1.png" alt="Copa Medela">
                     </div>
 
                     <div class="produto-content">
-                        <h3>Válvula Medela</h3>
+                        <h3>Copa Medela</h3>
                         <p>Peça utilizada junto ao acoplador.</p>
 
                         <div class="produto-footer">
@@ -447,11 +486,11 @@
                 <!-- CARD 15 -->
                 <div class="produto-card">
                     <div class="produto-img">
-                        <img src="imgs/compra/produto15.png" alt="Pote de vidro 200ml">
+                        <img src="imgs/compra/produto15.png" alt="Pote de vidro 200ml (Azul)">
                     </div>
 
                     <div class="produto-content">
-                        <h3>Pote de vidro 200ml</h3>
+                        <h3>Pote de vidro 200ml (Azul)</h3>
                         <p>Pote de vidro com graduação azul.</p>
 
                         <div class="produto-footer">
@@ -471,11 +510,11 @@
                 <!-- CARD 16 -->
                 <div class="produto-card">
                     <div class="produto-img">
-                        <img src="imgs/compra/produto16.png" alt="Pote de vidro 200ml">
+                        <img src="imgs/compra/produto16.png" alt="Pote de vidro 200ml (Rosa)">
                     </div>
 
                     <div class="produto-content">
-                        <h3>Pote de vidro 200ml</h3>
+                        <h3>Pote de vidro 200ml (Rosa)</h3>
                         <p>Pote de vidro com tampa, graduado, ideal para armazenar leite.</p>
 
                         <div class="produto-footer">
@@ -528,7 +567,7 @@
                         <p>Recipiente Medela 150ml. Compativel com todos os equipamentos medela.</p>
 
                         <div class="produto-footer">
-                            <span class="preco">R$ 10,00</span>
+                            <span class="preco">R$ 100,00</span>
                             <a href="#" class="btn-comprar">
                                 <svg width="16" height="16" stroke="currentColor" fill="none">
                                     <circle cx="6" cy="14" r="1" />
@@ -616,11 +655,11 @@
                 <!-- CARD 22 -->
                 <div class="produto-card">
                     <div class="produto-img">
-                        <img src="imgs/compra/produto22.png" alt="Copa Medela">
+                        <img src="imgs/compra/produto22.png" alt="Válvula Medela">
                     </div>
 
                     <div class="produto-content">
-                        <h3>Copa Medela</h3>
+                        <h3>Válvula Medela</h3>
                         <p>Acoplador rígido para retirada do leite materno Medela.</p>
 
                         <div class="produto-footer">

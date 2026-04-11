@@ -39,6 +39,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  will-change: opacity, transform;
 }
 
 /* SLIDE ATIVO */
@@ -81,8 +82,20 @@
 
 /* TÍTULO (escopo: não redefinir .title-elegant global usado em outras páginas) */
 .hero-content .title-elegant {
-  font-size: 37px;
+  font-size: clamp(28px, 5vw, 42px);
   margin-bottom: 20px;
+}
+
+.services h2,
+.header-planos h2 {
+  font-size: clamp(26px, 4vw, 42px);
+}
+
+.services,
+.planos,
+.produtos,
+.maternal-showcase {
+  padding: clamp(60px, 8vw, 100px) 5%;
 }
 
 .hero-content .title-elegant span {
@@ -96,7 +109,7 @@
 
 /* TEXTO */
 .subtitle {
-  font-size: 18px;
+  font-size: clamp(14px, 2.5vw, 18px);
   margin-bottom: 15px;
   color: #ffffff;
 }
@@ -152,7 +165,7 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.5);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
 }
 
@@ -166,7 +179,7 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
   width: 45px;
@@ -176,13 +189,36 @@
   z-index: 3;
 }
 
-.carousel-prev { left: 20px; }
-.carousel-next { right: 20px; }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+}
+
+.carousel-prev {
+  left: 20px;
+}
+.carousel-next {
+  right: 20px;
+}
+
+.cards-produtos,
+.showcase-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
   .hero-content .title-elegant {
     font-size: 40px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    text-align: center;
   }
 
   .subtitle {
@@ -193,13 +229,20 @@
   .buttons {
     flex-direction: column;
     gap: 10px;
-    align-items: left;
+    align-items: center;
+    justify-content: center;
   }
 
   .carousel-prev,
   .carousel-next {
     width: 35px;
     height: 35px;
+  }
+
+  .carousel-slide {
+    justify-content: center;
+    padding: 120px 20px 40px 20px;
+    text-align: center;
   }
 }
 
@@ -211,7 +254,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: #DBDCD2; /* novo fundo */
+  background-color: #dbdcd2; /* novo fundo */
   padding: 40px 20px;
   text-align: center;
 }
@@ -252,10 +295,23 @@
    SERVICES
 ========================================================= */
 
-.services {
-  padding: 100px 8%;
+.services .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services .section-tag,
+.services h2 {
   text-align: center;
-  background: #ffffff;
+}
+
+.services .section-tag {
+  display: block;
+  text-align: center;
 }
 
 /* Modal */
@@ -268,7 +324,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .modal-content {
@@ -288,6 +344,7 @@
 
 /* Texto pequeno superior da seção */
 .section-tag {
+  text-align: center;
   font-size: 13px;
   letter-spacing: 3px;
   color: #cfb1d1;
@@ -297,7 +354,7 @@
 .services h2 {
   font-size: 42px;
   font-weight: 500;
-  color: #7A7A7A;
+  color: #7a7a7a;
   line-height: 1.3;
   padding-bottom: 30px;
   padding-top: 10px;
@@ -305,7 +362,7 @@
 
 /* Destaque no título */
 .services h2 em {
-  color: #7A7A7A;
+  color: #7a7a7a;
   font-style: normal;
 }
 
@@ -356,7 +413,7 @@ body {
 }
 
 .plans {
-  background-color: #EADAEA; /* fundo lilás */
+  background-color: #eadaea; /* fundo lilás */
   padding: 60px 20px;
   display: flex;
   justify-content: center;
@@ -370,13 +427,15 @@ body {
   border-radius: 20px;
   max-width: 350px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
 .icon {
@@ -407,6 +466,20 @@ body {
   .card {
     max-width: 90%;
   }
+
+  .services {
+    align-items: center;
+  }
+
+  .services .section-tag {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .services h2 {
+    text-align: center;
+  }
 }
 
 /* =========================================================
@@ -431,7 +504,9 @@ form {
   display: flex;
 }
 
-input, select, button {
+input,
+select,
+button {
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -447,7 +522,7 @@ label {
 }
 
 button {
-  background: #B59AC9;
+  background: #b59ac9;
   color: white;
   border: none;
   cursor: pointer;
@@ -458,7 +533,7 @@ button {
 ========================================================= */
 
 .cta {
-  background: #CECC8F;
+  background: #cecc8f;
   padding: 80px 20px;
   text-align: center;
 }
@@ -658,7 +733,7 @@ button {
 
 .showcase-card img {
   width: 100%;
-  height: 220px;
+  height: clamp(180px, 25vw, 220px);
   object-fit: cover;
 }
 
@@ -696,7 +771,7 @@ button {
   justify-content: center;
   gap: 30px;
   width: 100%;
-  max-width: 1000px; 
+  max-width: 1000px;
   margin-bottom: 50px;
 }
 
@@ -736,15 +811,6 @@ button {
 .header-planos p {
   color: #666;
   font-size: 16px;
-}
-
-/* GRID */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
-  justify-content: center;
-  gap: 30px;
-  
 }
 
 /* CARD */
@@ -876,6 +942,9 @@ ul li::before {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
 }
 
 /* CARD */
@@ -906,8 +975,8 @@ ul li::before {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 280px;
-  background: #f8f6fb; /* opcional, deixa mais clean */
+  height: clamp(200px, 30vw, 280px);
+  background: #f8f6fb;
 }
 
 .card-image img {
@@ -981,19 +1050,6 @@ ul li::before {
   left: 0;
   color: #9b6cc3;
 }
-
-/* BOTÃO 
-.btn-card {
-    display: block;
-    text-align: center;
-    padding: 12px;
-    border-radius: 30px;
-    background: #b59ac9;
-    color: white;
-    text-decoration: none;
-    font-size: 14px;
-    transition: 0.3s;
-} */
 
 .btn-card:hover {
   background: #9c7fb8;
@@ -1100,4 +1156,24 @@ ul li::before {
 .btn-comprar:hover {
   background: #b59ac9;
   color: white;
+}
+
+@media (max-width: 480px) {
+  .stat h2 {
+    font-size: 28px;
+  }
+
+  .stat p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn,
+  .btn-cta,
+  .btn-comprar {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
 }

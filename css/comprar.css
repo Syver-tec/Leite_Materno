@@ -28,7 +28,7 @@
 
 .comprar-intro h1 {
   font-size: 52px;
-  color: #7A7A7A;
+  color: #7a7a7a;
   font-weight: 500;
   margin-bottom: 14px;
 }
@@ -56,7 +56,7 @@
 .comprar-intro-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }
 
 /* COMPRAR */
@@ -77,6 +77,8 @@
 
 /* CARD */
 .produto-card {
+  display: flex;
+  flex-direction: column;
   background: #ffffffcc;
   backdrop-filter: blur(6px);
   border: 1px solid #e7d0e6;
@@ -115,11 +117,15 @@
 .produto-content {
   padding: 25px;
   text-align: left;
+
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* ESSENCIAL */
 }
 
 .produto-content h3 {
   margin-bottom: 10px;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }
 
 .produto-content p {
@@ -129,10 +135,11 @@
 }
 
 .produto-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
 
 /* BOTÃO */
 .btn-comprar {
@@ -159,8 +166,8 @@
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background: #CDB3D0;
-  color: #7A7A7A;
+  background: #cdb3d0;
+  color: #7a7a7a;
   padding: 12px 18px;
   border-radius: 8px;
   font-size: 14px;
@@ -173,4 +180,226 @@
 .toast-message.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ========= 2 — Modal ========= */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  padding-top: 150px;
+
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(5px);
+
+  z-index: 999;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 800px;
+
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+
+  width: 36px;
+  height: 36px;
+
+  border-radius: 50%;
+  border: none;
+
+  background: #f0f0f0;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  background: #e0e0e0;
+}
+
+.modal-body {
+  display: flex;
+  gap: 25px;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-body img {
+  width: 220px;
+  height: 220px;
+  object-fit: contain;
+
+  border-radius: 10px;
+  background: #f8f8f8;
+  padding: 10px;
+
+  flex-shrink: 0;
+}
+
+.modal-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.modal-info h2 {
+  font-size: 26px;
+  margin-bottom: 10px;
+}
+
+.modal-info p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.modal-info h3 {
+  font-size: 22px;
+  margin: 15px 0;
+  color: #8e44ad; /* mantém tua identidade */
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.modal-actions input {
+  width: 70px;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.modal-actions button {
+  background: #b59ac9;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+
+  cursor: pointer;
+  font-weight: 500;
+
+  transition: 0.2s;
+}
+
+.modal-actions button:hover {
+  transform: scale(1.05);
+}
+
+/* animações */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* RESPONSIVO (importante) */
+
+@media (max-width: 768px) {
+  .modal {
+    padding-top: 10px;
+  }
+
+  .modal-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .modal-content {
+    height: auto;
+    padding: 20px;
+
+    padding: 18px;
+    border-radius: 14px;
+
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: subirModal 0.3s ease;
+  }
+
+  .modal-body img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .modal-info h2 {
+    font-size: 20px;
+  }
+
+  .modal-info p {
+    font-size: 14px;
+  }
+
+  .modal-info h3 {
+    font-size: 18px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .modal-actions input {
+    width: 100%;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+
+  .modal-close {
+    right: 10px;
+    left: auto;
+    top: 10px;
+  }
+
+  @keyframes subirModal {
+    from {
+      transform: translateY(40px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
 }
