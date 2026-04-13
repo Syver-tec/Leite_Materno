@@ -516,11 +516,6 @@ label {
   font-size: 14px;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-}
-
 button {
   background: #b59ac9;
   color: white;

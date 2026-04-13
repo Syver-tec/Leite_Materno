@@ -73,6 +73,8 @@ body {
 nav {
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 nav a {
@@ -94,9 +96,12 @@ nav a.active {
   display: flex;
   gap: 15px;
   margin-left: 30px;
+  position: relative;
+  z-index: 10;
 }
 
 .social--mobile {
+  color: #ffffff;
   display: none;
 }
 
@@ -173,7 +178,7 @@ nav a.active {
    FOOTER
 ========================= */
 .footer {
-  background: #EADAEA;
+  background: #eadaea;
   color: white;
   padding: 70px 10%;
 }
@@ -231,7 +236,7 @@ nav a.active {
 }
 
 .footer-bar {
-  background: #9F4DA5;
+  background: #9f4da5;
   color: white;
   text-align: center;
   padding: 15px;
@@ -321,18 +326,18 @@ nav a.active {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 10px;
-  color: #9F4DA5;
+  color: #9f4da5;
 }
 
 .footer-col p {
   font-size: 14px;
-  color: #6C6D75;
+  color: #6c6d75;
   line-height: 1.5;
 }
 
 .footer-col a {
   text-decoration: none;
-  color: #6C6D75;
+  color: #6c6d75;
   font-size: 14px;
   transition: 0.3s;
 }
@@ -391,6 +396,31 @@ nav a.active {
     margin-top: 6px;
   }
 
+  .social--mobile a {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: #e3cbe4;
+  }
+
+  .social--mobile a svg {
+    width: 28px;
+    height: 28px;
+    stroke-width: 2.5;
+    stroke: white;
+    fill: none;
+    transform: scale(1.2);
+  }
+
+  .social--mobile a:hover {
+    background: #9f4da5;
+    transform: translateY(-2px);
+  }
+
+  .social--mobile a:hover svg {
+    stroke: white;
+  }
+
   .cart-button {
     order: 2;
     margin-left: auto;
@@ -430,7 +460,6 @@ nav a.active {
 }
 
 @media (max-width: 768px) {
-
   .footer {
     padding: 50px 20px;
   }
@@ -462,5 +491,4 @@ nav a.active {
     max-width: 100%;
     align-items: center;
   }
-
 }
