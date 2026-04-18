@@ -1,5 +1,5 @@
 /* =========================================================
-   SOBRE — paleta alinhada a index.css / global.css (sem cores novas)
+   SOBRE
 ========================================================= */
 
 .sobre {
@@ -426,6 +426,23 @@ strong {
   border: none;
   height: 1px;
   background: #e7d0e6;
+}
+
+/* ========= Animações ========= */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* delay suave pros cards */
+.valor-card {
+  transition: all 0.7s ease;
 }
 
 /* ========= Responsivo ========= */

@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (consultoriaSelecionada === "Online") {
         consultoria = "Online - Gratuito";
       } else if (consultoriaSelecionada === "Presencial") {
-        consultoria = "Presencial - R$270,00";
+        consultoria = "Presencial - R$220,00";
       }
       const pagamento =
         document.querySelector('input[name="pagamento"]:checked')?.value ||

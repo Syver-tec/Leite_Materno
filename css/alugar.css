@@ -1,3 +1,7 @@
+/* =========================================================
+   ALUGAR
+========================================================= */
+
 .alugar-page {
   padding-top: 130px;
   background: #ffffff;
@@ -88,7 +92,7 @@
 }
 
 .alugar-card .content {
-  text-align: center;
+  text-align: center; 
 }
 
 .alugar-modal {
@@ -387,7 +391,6 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
 }
 
 .plans {
@@ -466,7 +469,7 @@ body {
   }
 
   .card {
-    max-width: 90%;
+    max-width: 100%;
   }
 }
 

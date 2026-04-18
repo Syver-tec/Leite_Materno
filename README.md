@@ -1,39 +1,99 @@
-**Welcome to your Base44 project** 
+# 🌸 Projeto Leite Materno
 
-**About**
+## 🌐 Demonstração
 
-View and Edit  your app on [Base44.com](http://Base44.com) 
+O projeto está disponível online:
 
-This project contains everything you need to run your app locally.
+👉 https://seudominio.com
 
-**Edit the code in your local development environment**
+---
 
-Any change pushed to the repo will also be reflected in the Base44 Builder.
+## 🏢 Desenvolvido por
 
-**Prerequisites:** 
+Este projeto foi desenvolvido pela **Syver**.
 
-1. Clone the repository using the project's Git URL 
-2. Navigate to the project directory
-3. Install dependencies: `npm install`
-4. Create an `.env.local` file and set the right environment variables
+🌐 Acesse o site oficial:
+👉 https://syver.tec.br/
 
-```
-VITE_BASE44_APP_ID=your_app_id
-VITE_BASE44_APP_BASE_URL=your_backend_url
+A **Syver** é especializada no desenvolvimento de soluções digitais sob medida, incluindo sites institucionais, sistemas web e automações, sempre com foco em performance, organização e crescimento dos negócios. ([syver.tec.br][1])
 
-e.g.
-VITE_BASE44_APP_ID=cbef744a8545c389ef439ea6
-VITE_BASE44_APP_BASE_URL=https://my-to-do-list-81bfaad7.base44.app
-```
+---
 
-Run the app: `npm run dev`
+## 📌 Sobre o projeto
 
-**Publish your changes**
+O site **Leite Materno** foi desenvolvido com o objetivo de apresentar, de forma clara e acolhedora, os serviços e produtos oferecidos pela empresa, reforçando sua missão de apoiar mães em sua jornada de amamentação.
 
-Open [Base44.com](http://Base44.com) and click on Publish.
+A proposta do projeto é transmitir confiança, cuidado e profissionalismo, refletindo a experiência de mais de 20 anos da empresa no mercado pernambucano.
 
-**Docs & Support**
+---
 
-Documentation: [https://docs.base44.com/Integrations/Using-GitHub](https://docs.base44.com/Integrations/Using-GitHub)
+## 💡 Objetivo
 
-Support: [https://app.base44.com/support](https://app.base44.com/support)
+Criar uma presença digital moderna, responsiva e intuitiva, que:
+
+* Facilite o contato com as mães
+* Apresente os serviços de forma organizada
+* Destaque os benefícios da amamentação
+* Transmita credibilidade e acolhimento
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+O projeto foi desenvolvido utilizando tecnologias web consolidadas:
+
+* **HTML5** → estrutura do site
+* **CSS3** → estilização e responsividade
+* **JavaScript** → interatividade e funcionalidades
+
+---
+
+## 📱 Responsividade
+
+O site foi desenvolvido para funcionar perfeitamente em diferentes dispositivos:
+
+* 📱 Celulares
+* 💻 Computadores
+* 📲 Tablets
+
+Garantindo uma experiência agradável independentemente do tamanho da tela.
+
+---
+
+## ⚙️ Funcionalidades
+
+* Carrossel interativo na página inicial
+* Botões de contato direto via WhatsApp
+* Seções organizadas (serviços, planos e produtos)
+* Layout moderno e intuitivo
+* Animações suaves para melhor experiência do usuário
+
+---
+
+## 🎯 Experiência do usuário
+
+Todo o design foi pensado para proporcionar:
+
+* Navegação simples e fluida
+* Leitura confortável
+* Acesso rápido às informações principais
+* Sensação de acolhimento e confiança
+
+---
+
+## 🚀 Estrutura do projeto
+
+O projeto foi organizado de forma simples e eficiente:
+
+* `index.html` → estrutura principal
+* `css/` → arquivos de estilo
+* `js/` → scripts de interação
+* `imgs/` → imagens utilizadas
+
+---
+
+## 🤝 Considerações finais
+
+Este projeto foi desenvolvido com foco em representar a essência da empresa **Leite Materno**: cuidado, acolhimento e apoio às mães.
+
+Mais do que um site, a proposta é ser uma ferramenta que aproxima a empresa de seu público, facilitando o acesso às informações e serviços oferecidos.

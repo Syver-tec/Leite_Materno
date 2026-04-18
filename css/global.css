@@ -1,3 +1,7 @@
+/* =========================================================
+   GLOBAL (reset, fontes e layout global)
+========================================================= */
+
 /* =========================
    RESET
 ========================= */
@@ -23,7 +27,6 @@
 body {
   font-family: "Comfortaa", sans-serif;
   color: #3e3e3e;
-  /* background: #fce6e2; */
 }
 
 /* =========================
@@ -205,19 +208,13 @@ nav a.active {
   border-radius: 20px;
 }
 
-/* .footer-logo img:hover {
-  height: 120px;
-  transform: scale(1.05);
-} */
-
 .footer-item {
   display: flex;
-  align-items: flex-start; /* alinha com o topo do texto */
-  gap: 1px;
+  align-items: flex-start;
+  gap: 10px;
 }
 
 .footer-item .icon {
-  min-width: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -226,13 +223,14 @@ nav a.active {
 .footer-item .icon svg {
   width: 18px;
   height: 18px;
-  fill: #8e44ad; /* cor roxa */
+  fill: #8e44ad;
 }
 
 .footer-item p {
   margin: 0;
-  line-height: 1.4;
-  color: #333;
+  line-height: 1.5;
+  color: #6c6d75;
+  text-align: left;
 }
 
 .footer-bar {
@@ -491,4 +489,28 @@ nav a.active {
     max-width: 100%;
     align-items: center;
   }
+
+  .footer-item {
+    display: flex;
+    align-items: flex-start;  
+    justify-content: center;
+    text-align: left;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  .footer-item p {
+    margin: 0;
+    max-width: 100%;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .footer-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20px;
+
+}
 }
