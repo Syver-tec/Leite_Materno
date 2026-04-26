@@ -1,3 +1,7 @@
+// ===============================
+// Política de Privacidade
+// ===============================
+
 document.addEventListener("DOMContentLoaded", () => {
   const elements = document.querySelectorAll(".politica h1, .politica h2, .politica p, .politica li");
 

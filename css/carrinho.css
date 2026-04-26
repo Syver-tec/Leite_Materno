@@ -247,7 +247,51 @@
   margin-top: 5px;
 }
 
+/* -- REMOVER PRODUTO --*/
 
+/* Container da imagem */
+.product-image-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Botão remover */
+.remove-item {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 26px;
+    height: 26px;
+    border: none;
+    border-radius: 50%;
+    background: #f29aa3;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    transition: transform 0.2s ease;
+    z-index: 5;
+}
+
+.remove-item:hover {
+    transform: scale(1.08);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .remove-item {
+        width: 22px;
+        height: 22px;
+        top: -6px;
+        right: -6px;
+        font-size: 15px;
+    }
+}
 
 /* MOBILE */
 @media (max-width: 600px) {

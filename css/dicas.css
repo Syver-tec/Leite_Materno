@@ -32,7 +32,7 @@
 
 .dicas-intro h1 {
   font-size: 52px;
-  color: #7A7A7A;
+  color: #7a7a7a;
   font-weight: 500;
   margin-bottom: 14px;
 }
@@ -60,7 +60,7 @@
 .dicas-intro-text {
   font-size: 16px;
   line-height: 1.8;
-  color: #7A7A7A;
+  color: #7a7a7a;
 }
 
 /* SECTION GERAL */
@@ -74,7 +74,7 @@
 
 .tips-container {
   width: 100%;
-  max-width: 900px; 
+  max-width: 900px;
   margin: 0 auto;
 }
 

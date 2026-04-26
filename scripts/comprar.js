@@ -1,3 +1,7 @@
+// ===============================
+// Comprar
+// ===============================
+
 const CART_KEY = "lm_cart";
 let produtoAtual = null;
 
@@ -123,22 +127,6 @@ window.addEventListener("click", (e) => {
   }
 });
 
-// Comprar - adicionar ao carrinho
-
-// const id = card.dataset.id;
-// const produto = produtos[id];
-
-// modalTitulo.innerText = produto.titulo;
-
-// const produtos = {
-//   1: {
-//     titulo: "Copa Medela",
-//     preco: "R$ 150,00",
-//     descricao: "Peça utilizada junto ao acoplador",
-//     img: "imgs/compra/produto1.png",
-//   },
-// };
-
 document.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll(".btn-comprar");
 
@@ -172,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
           id: key,
           name,
           image,
-          period: 1, // compra não usa período, mas mantemos padrão do carrinho
+          period: 1,
           unitPrice,
           qty: 1,
         });
@@ -181,8 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
       saveCart(cart);
 
       showToast(`"${name}" foi adicionado ao seu carrinho. ✅`);
-      // REDIRECIONA PRO CARRINHO
-      //   window.location.href = "carrinho.html";
     });
   });
 });

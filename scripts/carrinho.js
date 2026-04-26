@@ -1,3 +1,7 @@
+// ===============================
+// Carrinho
+// ===============================
+
 const CART_KEY = "lm_cart";
 
 const modal = document.getElementById("checkout-modal");
@@ -75,9 +79,18 @@ document.addEventListener("DOMContentLoaded", () => {
         return `
           <tr class="cart-row" data-key="${item.key}">
             <td class="product-cell" data-label="Nome do Produto">
+            <div class="product-image-wrapper">
               <img src="${item.image}" alt="${item.name}">
-              <span class="product-name">${item.name.toUpperCase()}${item.period > 1 ? ` - ${item.period} DIAS` : ""}</span>
-            </td>
+              <button type="button" class="remove-item js-remove" aria-label="Remover produto">
+                ×
+              </button>
+            </div>
+
+            <span class="product-name">
+              ${item.name.toUpperCase()}
+              ${item.period > 1 ? ` - ${item.period} DIAS` : ""}
+            </span>
+          </td>
             <td data-label="Preço">${formatBRL(item.unitPrice)}</td>
             <td data-label="Quantidade">
               <div class="qty-control">
@@ -101,17 +114,47 @@ document.addEventListener("DOMContentLoaded", () => {
       const input = row.querySelector(".js-qty-input");
       const minus = row.querySelector(".js-minus");
       const plus = row.querySelector(".js-plus");
+      const removeBtn = row.querySelector(".js-remove");
+      const key = row.dataset.key;
+
+      function updateItemQuantity(newQty) {
+        newQty = Math.max(0, Number(newQty));
+
+        const item = cart.find((item) => item.key === key);
+        if (!item) return;
+
+        item.qty = newQty;
+
+        if (item.qty <= 0) {
+          cart = cart.filter((item) => item.key !== key);
+        }
+
+        saveCart(cart);
+        render();
+      }
 
       minus.addEventListener("click", () => {
-        input.value = Math.max(0, Number(input.value) - 1);
+        updateItemQuantity(Number(input.value) - 1);
       });
 
       plus.addEventListener("click", () => {
-        input.value = Number(input.value) + 1;
+        updateItemQuantity(Number(input.value) + 1);
+      });
+
+      input.addEventListener("change", () => {
+        updateItemQuantity(input.value);
       });
 
       input.addEventListener("input", () => {
-        if (Number(input.value) < 0) input.value = 0;
+        if (Number(input.value) < 0) {
+          input.value = 0;
+        }
+      });
+
+      removeBtn.addEventListener("click", () => {
+        cart = cart.filter((item) => item.key !== key);
+        saveCart(cart);
+        render();
       });
     });
   }
@@ -229,7 +272,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // ✅ MÁSCARAS AGORA FUNCIONAM CERTO
+  // MÁSCARAS AGORA FUNCIONAM CERTO
   const cpfInput = document.getElementById("client-cpf");
   const phoneInput = document.getElementById("client-phone");
   const contatoInput = document.getElementById("client-contato");

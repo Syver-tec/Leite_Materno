@@ -1,3 +1,7 @@
+// ===============================
+// Home
+// ===============================
+
 // JavaScript para o Carrossel
 document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".carousel-slide");

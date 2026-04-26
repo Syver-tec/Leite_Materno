@@ -353,8 +353,12 @@ nav a.active {
     gap: 12px;
   }
 
+  .nav-menu{
+    top: 110px;
+  }
+
   .logo img {
-    height: 72px;
+    height: 100px;
   }
 
   .menu-toggle {

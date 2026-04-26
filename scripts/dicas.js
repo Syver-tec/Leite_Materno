@@ -1,3 +1,7 @@
+// ===============================
+// Dicas
+// ===============================
+
 // Seleciona todos os headers do accordion
 const accordionHeaders = document.querySelectorAll(".accordion-header");
 

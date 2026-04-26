@@ -3,7 +3,7 @@
 ========================================================= */
 
 .depoimentos {
-  padding-top: 130px;
+  padding-top: 180px;
   background: #ffff;
 }
 
@@ -17,25 +17,26 @@
 /* ========= 1 — Depoimentos - Elfsight Google Reviews ========= */
 
 .reviews-section {
-  background: #F8F6FB;
+  background: #f8f6fb;
   border-radius: 20px;
-  max-width: 100%; /* diminui largura */
-  margin: 0 auto;   /* centraliza */
-  transform: scale(0.9); /* reduz tudo proporcionalmente */
+  max-width: 100%;
+  margin: 0 auto;
+  transform: scale(0.9);
   transform-origin: top center;
-  overflow: hidden; 
+  overflow: hidden;
 }
 
 .reviews-section .elfsight-app-c2abfc56-efe2-428a-932e-7b066b75bfb9 {
-  max-width: 800px !important;
+  max-width: 1000px !important;
   margin: 0 auto;
 }
 
 @media (max-width: 768px) {
   .reviews-section {
     max-width: 100%;
-    padding: 0 10px;
+    width: 100%;
   }
+
 }
 
 /* ========= 2 — Clientes (carrossel automático) ========= */

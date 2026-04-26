@@ -1,3 +1,7 @@
+// ===============================
+// Navbar
+// ===============================
+
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".navbar nav");
@@ -21,6 +25,21 @@ document.addEventListener("DOMContentLoaded", () => {
         nav.classList.remove("active");
         menuToggle.classList.remove("active");
       });
+    });
+
+    // Fecha menu ao clicar fora dele
+    document.addEventListener("click", (event) => {
+      const clickedOutsideNav = !nav.contains(event.target);
+      const clickedOutsideButton = !menuToggle.contains(event.target);
+
+      if (
+        nav.classList.contains("active") &&
+        clickedOutsideNav &&
+        clickedOutsideButton
+      ) {
+        nav.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
     });
   }
 });

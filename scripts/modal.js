@@ -1,3 +1,7 @@
+// ===============================
+// Modal
+// ===============================
+
 document.addEventListener("DOMContentLoaded", function () {
   const modal = document.getElementById("modal");
   const btn = document.getElementById("openCard");

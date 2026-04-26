@@ -1,3 +1,7 @@
+// ===============================
+// Sobre nós
+// ===============================
+
 /* Página Sobre: interações opcionais; carrossel de clientes é CSS (marquee). */
 document.addEventListener("DOMContentLoaded", () => {
 
