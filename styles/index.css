@@ -8,23 +8,34 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #f4f1f6;
     color: #444;
+    margin: 0;
+    padding: 0;
 }
 
 section {
     padding: 100px 10%;
-}
+} 
 
 /* HERO */
+.hero {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    
+}
 
 .carousel {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 10%;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
 }
 
 .carousel-item img {
     height: 500px;
     object-fit: cover;
+    border-radius: 0%;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
 
 .carousel-control-prev-icon,
@@ -55,7 +66,7 @@ section {
 
 .titulo-secao {
     font-size: 42px;
-    color: #8e44ad;
+    color: #cfb1d1;
     margin-bottom: 60px;
 }
 
@@ -101,7 +112,7 @@ section {
 
 .card h3 {
     margin-top: 20px;
-    color: #8e44ad;
+    color: #cfb1d1;
     font-weight: 600;
 }
 
@@ -109,7 +120,7 @@ section {
     display: inline-block;
     margin-top: 60px;
     padding: 15px 45px;
-    background: #8e44ad;
+    background: #cfb1d1;
     color: #fff;
     border-radius: 40px;
     text-decoration: none;
@@ -118,7 +129,7 @@ section {
 }
 
 .btn-alugar:hover {
-    background: #732d91;
+    background: #c0a0c0;
     transform: scale(1.05);
 }
 
@@ -144,12 +155,12 @@ section {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background-color: rgba(255,255,255,0.5);
+    background-color: #cfb1d1;
     border: none;
 }
 
 #carouselExampleCaptions .carousel-indicators .active {
-    background-color: #8e44ad;
+    background-color: #cfb1d1;
 }
 
 /* Responsivo */
@@ -179,12 +190,12 @@ section {
 }
 
 .btn-primary {
-    background: #8e44ad;
+    background: #cfb1d1;
     color: white;
 }
 
 .btn-primary:hover {
-    background: #732d91;
+    background: #cfb1d1;
 }
 
 .btn-secondary {
@@ -219,7 +230,7 @@ section {
     margin-top: 8px;
 }
 
-/* CARROSSEL */
+/* ALUGUEL DE EQUIPAMENTOS */
 
 .carousel-section {
     background: #faf7fb;
@@ -232,11 +243,12 @@ section {
     margin-bottom: 60px;
 }
 
-.carousel {
+.carousel-itens {
     position: relative;
     overflow: hidden;
     max-width: 950px;
     margin: auto;
+    border-radius: 20px;
 }
 
 .carousel-track {
@@ -249,7 +261,7 @@ section {
     margin: 0 20px;
     background: white;
     padding: 30px;
-    border-radius: 20px;
+    border-radius: 25px;
     box-shadow: 0 15px 30px rgba(0,0,0,0.05);
     transition: 0.3s;
 }
@@ -266,7 +278,7 @@ section {
 
 .card h3 {
     margin-top: 20px;
-    color: #8e44ad;
+    color: #e2e1b2;
 }
 
 .carousel-btn {
@@ -282,16 +294,17 @@ section {
     border-radius: 50%;
 }
 
-/* PACOTES COM ANIMAÇÃO */
+/* PACOTES DE LOCAÇÃO */
 
 .packages {
     background: #efe5f5;
     text-align: center;
+    border-radius: 0px;
 }
 
 .packages h2 {
     font-size: 34px;
-    color: #8e44ad;
+    color: #cfb1d1;
     margin-bottom: 60px;
 }
 
@@ -327,7 +340,7 @@ section {
 
 .package-card h3 {
     font-size: 32px;
-    color: #8e44ad;
+    color: #cecd8c;
     margin-bottom: 15px;
 }
 
@@ -344,7 +357,7 @@ section {
 
 .info h2 {
     text-align: center;
-    color: #8e44ad;
+    color: #cfb1d1;
     margin-bottom: 60px;
 }
 
@@ -365,7 +378,7 @@ section {
 
 .info-box h4 {
     margin-bottom: 20px;
-    color: #8e44ad;
+    color: #cfb1d1;
 }
 
 .info-box ul {
@@ -374,7 +387,7 @@ section {
 
 .warning {
     background: #fff3f3;
-    border-left: 6px solid #d9534f;
+    border-left: 6px solid #e2e1b2;
 }
 
 .stats {
@@ -387,7 +400,7 @@ section {
 .stat h2 {
   font-size: 48px;
   font-weight: 700;
-  color: #8e44ad;
+  color: #cfb1d1;
 }
 
 .stat p {
