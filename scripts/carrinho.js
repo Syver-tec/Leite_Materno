@@ -215,6 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const contato = document.getElementById("client-contato")?.value || "";
       const address = document.getElementById("client-address")?.value || "";
       const bairro = document.getElementById("client-bairro")?.value || "";
+      const retirada =
+        document.querySelector('input[name="retirada"]:checked')?.value ||
+        "Não informado";
 
       const consultoriaSelecionada = document.querySelector(
         'input[name="consultoria"]:checked',
@@ -261,6 +264,7 @@ document.addEventListener("DOMContentLoaded", () => {
       message += `\nBairro: ${bairro || "Não informado"}`;
 
       message += `\n\n--- Consultoria ---\n${consultoria}`;
+      message += `\n\n--- Retirada ---\n${retirada}`
       message += `\n\n--- Pagamento ---\n${pagamento}`;
       message += `\nObs: Pedido liberado após confirmação do pagamento`;
       message += `\n\nData do Pedido: ${dataFormatada}`;
