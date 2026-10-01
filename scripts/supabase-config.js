@@ -11,8 +11,8 @@
 // ficar no código do site (a segurança de verdade é feita
 // pelas políticas RLS configuradas no banco - veja supabase/schema.sql)
 
-const SUPABASE_URL = "COLE_AQUI_A_URL_DO_SEU_PROJETO_SUPABASE";
-const SUPABASE_ANON_KEY = "COLE_AQUI_A_ANON_KEY_DO_SEU_PROJETO_SUPABASE";
+const SUPABASE_URL = "https://bbbaubiiolymrvdvvvpj.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJiYmF1Ymlpb2x5bXJ2ZHZ2dnBqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA4MTAzNTMsImV4cCI6MjEwNjM4NjM1M30.broTDWjYkHYlOzpNjgbyzwAIujsP0vGAd4Ix24B_UbA";
 
 // persistSession: false -> a sessão de login NÃO fica salva no navegador.
 // Assim, ao fechar/sair da página do admin e voltar depois (ou dar F5),
