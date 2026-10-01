@@ -62,6 +62,13 @@ async function verificarSessao() {
 function mostrarLogin() {
   loginScreen.hidden = false;
   painel.hidden = true;
+
+  // Limpa qualquer dado/produto que estava em tela, pra não ficar
+  // visível por um instante caso a pessoa volte a abrir o painel.
+  lista.innerHTML = "";
+  produtosCache = [];
+  loginForm.reset();
+  fecharModal();
 }
 
 function mostrarPainel() {
@@ -352,3 +359,12 @@ excluirBtn.addEventListener("click", async () => {
 
 // --------- INÍCIO ---------
 document.addEventListener("DOMContentLoaded", verificarSessao);
+
+// Alguns navegadores restauram a página "congelada" (ex: botão Voltar)
+// sem recarregar o script. Isso força checar a sessão de novo nesse caso,
+// pra não deixar o painel visível indevidamente.
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) {
+    verificarSessao();
+  }
+});
