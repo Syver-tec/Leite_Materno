@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel Administrativo - Leite Materno</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/admin.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="imgs/favicon/favicon-32x32.png">
+</head>
+
+<body class="admin-body">
+
+  <!-- TELA DE LOGIN -->
+  <section id="admin-login-screen" class="admin-login-screen">
+    <form id="admin-login-form" class="admin-login-card">
+      <img src="imgs/logo_navbar.png" alt="Logo Leite Materno" class="admin-login-logo">
+      <h1>Painel Administrativo</h1>
+      <p class="admin-login-sub">Acesso restrito à equipe Leite Materno.</p>
+
+      <label class="admin-field">
+        E-mail
+        <input type="email" id="admin-email" required autocomplete="username">
+      </label>
+
+      <label class="admin-field">
+        Senha
+        <input type="password" id="admin-senha" required autocomplete="current-password">
+      </label>
+
+      <p id="admin-login-erro" class="admin-erro" hidden></p>
+
+      <button type="submit" class="btn-admin-primary" id="admin-login-btn">Entrar</button>
+    </form>
+  </section>
+
+  <!-- PAINEL (após login) -->
+  <section id="admin-panel" class="admin-panel" hidden>
+
+    <header class="admin-header">
+      <div class="admin-header-left">
+        <img src="imgs/logo_navbar.png" alt="Logo Leite Materno">
+        <span>Painel Administrativo</span>
+      </div>
+      <div class="admin-header-right">
+        <a href="index.html" target="_blank" rel="noopener">Ver site ↗</a>
+        <button type="button" id="admin-logout-btn" class="btn-admin-secondary">Sair</button>
+      </div>
+    </header>
+
+    <main class="admin-main">
+
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab active" data-pagina="comprar">Comprar</button>
+        <button type="button" class="admin-tab" data-pagina="alugar">Alugar</button>
+      </div>
+
+      <div class="admin-toolbar">
+        <p id="admin-lista-titulo">Produtos da página <strong>Comprar</strong></p>
+        <button type="button" id="admin-novo-btn" class="btn-admin-primary">+ Novo produto</button>
+      </div>
+
+      <p id="admin-lista-status" class="produtos-status">Carregando...</p>
+
+      <div id="admin-lista" class="admin-lista"></div>
+
+    </main>
+  </section>
+
+  <!-- MODAL DE EDIÇÃO / NOVO PRODUTO -->
+  <div id="admin-modal" class="admin-modal">
+    <div class="admin-modal-content">
+      <button type="button" id="admin-modal-fechar" class="admin-modal-fechar" aria-label="Fechar">×</button>
+
+      <h2 id="admin-modal-titulo">Novo produto</h2>
+
+      <form id="admin-form">
+        <input type="hidden" id="f-id">
+        <input type="hidden" id="f-pagina">
+
+        <label class="admin-field">
+          Título / Nome do produto *
+          <input type="text" id="f-titulo" required>
+        </label>
+
+        <label class="admin-field" id="campo-categoria">
+          Categoria
+          <input type="text" id="f-categoria" placeholder="Ex: Bomba Elétrica">
+        </label>
+
+        <label class="admin-field">
+          Descrição *
+          <textarea id="f-descricao" rows="3" required></textarea>
+        </label>
+
+        <label class="admin-field" id="campo-indicacao">
+          Indicação / Contra-indicação (opcional)
+          <textarea id="f-indicacao" rows="6" placeholder="Indicação:
+
+...
+
+Contra Indicação:
+
+..."></textarea>
+        </label>
+
+        <div class="admin-form-row" id="campo-preco-unico">
+          <label class="admin-field">
+            Preço (R$) *
+            <input type="number" id="f-preco" min="0" step="0.01">
+          </label>
+        </div>
+
+        <div class="admin-form-row" id="campo-precos-locacao">
+          <label class="admin-field">
+            Preço 15 dias (R$) *
+            <input type="number" id="f-preco15" min="0" step="0.01">
+          </label>
+          <label class="admin-field">
+            Preço 30 dias (R$) *
+            <input type="number" id="f-preco30" min="0" step="0.01">
+          </label>
+        </div>
+
+        <label class="admin-field">
+          Imagem do produto
+          <input type="file" id="f-imagem-arquivo" accept="image/*">
+        </label>
+        <div class="admin-imagem-preview-wrap">
+          <img id="f-imagem-preview" class="admin-imagem-preview" alt="Pré-visualização" hidden>
+          <span id="admin-upload-status"></span>
+        </div>
+        <input type="hidden" id="f-imagem-url">
+
+        <label class="admin-field admin-field-inline">
+          <input type="checkbox" id="f-ativo" checked>
+          Produto visível no site
+        </label>
+
+        <p id="admin-form-erro" class="admin-erro" hidden></p>
+
+        <div class="admin-form-actions">
+          <button type="button" id="admin-excluir-btn" class="btn-admin-danger" hidden>Excluir produto</button>
+          <button type="submit" class="btn-admin-primary" id="admin-salvar-btn">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="scripts/supabase-config.js" defer></script>
+  <script src="scripts/admin.js" defer></script>
+</body>
+
+</html>

@@ -518,3 +518,12 @@ nav a.active {
 
 }
 }
+
+/* Status de carregamento dos produtos (Comprar/Alugar) */
+.produtos-status {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #7a7a7a;
+  padding: 40px 10px;
+  font-size: 15px;
+}

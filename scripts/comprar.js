@@ -59,28 +59,77 @@ const modalTitulo = document.getElementById("modalTitulo");
 const modalPreco = document.getElementById("modalPreco");
 const modalDescricao = document.getElementById("modalDescricao");
 
-// pegar todos os cards
-document.querySelectorAll(".produto-card").forEach((card) => {
-card.addEventListener("click", (e) => {
-  if (e.target.closest(".btn-comprar")) return; // evita conflito com botão comprar
-    produtoAtual = {
-      name: card.querySelector("h3").innerText,
-      priceText: card.querySelector(".preco").innerText,
-      image: card.querySelector("img").src,
-      descricao: card.querySelector("p").innerText
-    };
+// Vincula os eventos de clique aos cards de produto atualmente no DOM.
+// Precisa ser chamada de novo toda vez que os cards são (re)renderizados
+// dinamicamente (ver scripts/produtos-comprar.js).
+function initProdutoCards() {
+  document.querySelectorAll(".produto-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      if (e.target.closest(".btn-comprar")) return; // evita conflito com botão comprar
+      produtoAtual = {
+        name: card.querySelector("h3").innerText,
+        priceText: card.querySelector(".preco").innerText,
+        image: card.querySelector("img").src,
+        descricao: card.querySelector("p").innerText
+      };
 
-    modalImg.src = produtoAtual.image;
-    modalTitulo.innerText = produtoAtual.name;
-    modalPreco.innerText = "A partir de: " + produtoAtual.priceText;
-    modalDescricao.innerText = produtoAtual.descricao;
+      modalImg.src = produtoAtual.image;
+      modalTitulo.innerText = produtoAtual.name;
+      modalPreco.innerText = "A partir de: " + produtoAtual.priceText;
+      modalDescricao.innerText = produtoAtual.descricao;
 
-    // reseta quantidade
-    document.getElementById("modalQtd").value = 1;
+      // reseta quantidade
+      document.getElementById("modalQtd").value = 1;
 
-    modal.style.display = "flex";
+      modal.style.display = "flex";
+    });
   });
-});
+
+  document.querySelectorAll(".btn-comprar").forEach((button) => {
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const card = button.closest(".produto-card");
+
+      if (!card) return;
+
+      // PEGANDO DADOS DO HTML
+      const name = card.querySelector("h3")?.textContent || "Produto";
+      const priceText = card.querySelector(".preco")?.textContent || "R$ 0";
+      const image = card.querySelector("img")?.src || "";
+
+      const unitPrice = parsePrice(priceText);
+
+      const key = card.dataset.id ? `produto-${card.dataset.id}` : name;
+
+      let cart = getCart();
+
+      const existing = cart.find((item) => item.key === key);
+
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          key,
+          id: key,
+          name,
+          image,
+          period: 1,
+          unitPrice,
+          qty: 1,
+        });
+      }
+
+      saveCart(cart);
+
+      showToast(`"${name}" foi adicionado ao seu carrinho. ✅`);
+    });
+  });
+}
+
+// Deixa acessível para o script que busca os produtos no Supabase
+window.initProdutoCards = initProdutoCards;
 
 document.getElementById("modalAddCarrinho").addEventListener("click", () => {
 
@@ -125,50 +174,4 @@ window.addEventListener("click", (e) => {
   if (e.target === modal) {
     modal.style.display = "none";
   }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  const buttons = document.querySelectorAll(".btn-comprar");
-
-  buttons.forEach((button, index) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-
-      const card = button.closest(".produto-card");
-
-      if (!card) return;
-
-      // PEGANDO DADOS DO HTML
-      const name = card.querySelector("h3")?.textContent || "Produto";
-      const priceText = card.querySelector(".preco")?.textContent || "R$ 0";
-      const image = card.querySelector("img")?.src || "";
-
-      const unitPrice = parsePrice(priceText);
-
-      const key = `produto-${index}`;
-
-      let cart = getCart();
-
-      const existing = cart.find((item) => item.key === key);
-
-      if (existing) {
-        existing.qty += 1;
-      } else {
-        cart.push({
-          key,
-          id: key,
-          name,
-          image,
-          period: 1,
-          unitPrice,
-          qty: 1,
-        });
-      }
-
-      saveCart(cart);
-
-      showToast(`"${name}" foi adicionado ao seu carrinho. ✅`);
-    });
-  });
 });

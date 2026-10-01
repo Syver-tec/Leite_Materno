@@ -9,7 +9,6 @@ const CART_KEY = "lm_cart";
 
 const modal = document.getElementById("alugar-modal");
 const closeBtn = document.getElementById("modal-close");
-const cards = document.querySelectorAll(".alugar-card");
 const periodSelect = document.getElementById("modal-periodo");
 const qtyInput = document.getElementById("modal-qty");
 const addBtn = document.getElementById("modal-add-cart");
@@ -97,9 +96,17 @@ function closeModal() {
   document.body.style.overflow = "";
 }
 
-cards.forEach((card) => {
-  card.addEventListener("click", () => openModal(card));
-});
+// Vincula o clique de abertura do modal aos cards de equipamento
+// atualmente no DOM. Precisa ser chamada de novo toda vez que os
+// cards são (re)renderizados dinamicamente (ver scripts/produtos-alugar.js).
+function initAlugarCards() {
+  document.querySelectorAll(".alugar-card").forEach((card) => {
+    card.addEventListener("click", () => openModal(card));
+  });
+}
+
+// Deixa acessível para o script que busca os produtos no Supabase
+window.initAlugarCards = initAlugarCards;
 
 closeBtn.addEventListener("click", closeModal);
 
